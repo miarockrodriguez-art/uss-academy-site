@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Compete | USS Academy — Competitive Shooting, USPSA, IDPA, Steel Challenge | Central Florida</title>
+<meta name="description" content="USS Academy competitive shooting — USPSA, IDPA, Steel Challenge competitions in Florida and the Southeast. Join the USS Elite Competitive Team. Firearms training Orlando, competition calendar, and events.">
+<meta name="keywords" content="competitive shooting Florida, USPSA Orlando, IDPA Florida, Steel Challenge Central Florida, firearms training Orlando, gun safety class Central Florida, concealed carry class Orlando, shooting competition calendar Florida">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.ussacademy.org/compete">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Compete | USS Academy — USPSA, IDPA, Competitive Shooting Orlando">
+<meta property="og:description" content="USS Academy competitive shooting team and competition calendar. USPSA, IDPA, Steel Challenge in Florida. Firearms training Orlando.">
+<meta property="og:url" content="https://www.ussacademy.org/compete">
+<meta property="og:site_name" content="USS Academy">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap');
+  :root{--navy:#0a1628;--navy-mid:#112240;--navy-light:#1a3358;--gold:#c9a84c;--gold-light:#e8c96a;--silver:#b0b8c8;--white:#f4f4f6}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:70px;background:rgba(10,22,40,.97);border-bottom:1px solid rgba(201,168,76,.25);backdrop-filter:blur(12px)}
+  .nav-logo{font-family:'Cinzel',serif;font-weight:900;font-size:18px;color:var(--gold);text-decoration:none;letter-spacing:.1em}
+  .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+  .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--silver);text-decoration:none;transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)!important;background:var(--gold);padding:9px 18px;text-decoration:none;transition:background .2s}
+  .nav-cta:hover{background:var(--gold-light)!important}
+
+  .hero{padding:140px 40px 72px;text-align:center;background:linear-gradient(180deg,var(--navy) 0%,var(--navy-mid) 100%);position:relative}
+  .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+  .hero .label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .hero h1{font-family:'Cinzel',serif;font-size:38px;font-weight:900;color:var(--white);margin-bottom:16px;line-height:1.2}
+  .hero h1 span{color:var(--gold)}
+  .hero p{font-size:16px;font-weight:300;color:var(--silver);max-width:680px;margin:0 auto;line-height:1.7}
+
+  .section-inner{max-width:1100px;margin:0 auto;padding:72px 40px}
+  .section-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;text-align:center}
+  .section-inner h2{font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);text-align:center;margin-bottom:12px}
+  .section-inner h2 span{color:var(--gold)}
+  .section-desc{font-size:15px;font-weight:300;color:var(--silver);max-width:640px;margin:0 auto 40px;line-height:1.7;text-align:center}
+
+  /* Calendar */
+  .cal-header{display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+  .cal-filter{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border:1px solid rgba(201,168,76,.25);background:transparent;color:var(--silver);cursor:pointer;transition:all .2s}
+  .cal-filter:hover,.cal-filter.active{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+
+  .cal-grid{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+  .cal-month{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--gold);margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(201,168,76,.15)}
+  .cal-event{display:grid;grid-template-columns:100px 1fr auto;gap:20px;align-items:center;padding:16px 20px;background:var(--navy);border:1px solid rgba(201,168,76,.1);transition:border-color .3s}
+  .cal-event:hover{border-color:rgba(201,168,76,.35)}
+  .cal-date{text-align:center}
+  .cal-date .day{font-family:'Cinzel',serif;font-size:28px;font-weight:900;color:var(--white);line-height:1}
+  .cal-date .month-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+  .cal-date .dow{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--silver);opacity:.6}
+  .cal-info h4{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
+  .cal-info p{font-size:12px;font-weight:300;color:var(--silver);line-height:1.5}
+  .cal-info .tags{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+  .cal-tag{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid rgba(201,168,76,.25);color:var(--gold)}
+  .cal-tag.uspsa{border-color:rgba(59,130,246,.4);color:#60a5fa}
+  .cal-tag.idpa{border-color:rgba(34,197,94,.4);color:#4ade80}
+  .cal-tag.steel{border-color:rgba(245,158,11,.4);color:#fbbf24}
+  .cal-tag.tactical{border-color:rgba(239,68,68,.4);color:#f87171}
+  .cal-tag.uss{border-color:rgba(201,168,76,.5);color:var(--gold)}
+  .cal-status{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;white-space:nowrap}
+  .cal-status.open{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.3)}
+  .cal-status.full{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.3)}
+  .cal-status.tbd{background:rgba(201,168,76,.08);color:var(--gold);border:1px solid rgba(201,168,76,.25)}
+
+  /* Team */
+  .team-section{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .team-logo{width:120px;height:120px;margin:0 auto 16px;border-radius:50%;background:rgba(201,168,76,.08);border:2px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center}
+  .team-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+  .team-stat{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);padding:14px;text-align:center}
+  .team-stat .num{font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:var(--gold)}
+  .team-stat .lbl{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--silver);margin-top:2px}
+  .btn-gold{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:15px 32px;text-decoration:none;transition:background .2s;border:none;cursor:pointer}
+  .btn-gold:hover{background:var(--gold-light)}
+  .btn-outline{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:11px 24px;text-decoration:none;background:transparent;transition:all .2s}
+  .btn-outline:hover{background:rgba(201,168,76,.1)}
+
+  /* USS Events */
+  .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .event-card{background:var(--navy);border:1px solid rgba(201,168,76,.15);border-top:3px solid var(--gold);padding:28px 24px;transition:border-color .3s}
+  .event-card:hover{border-color:rgba(201,168,76,.4)}
+  .event-card .event-date{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .event-card h4{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px}
+  .event-card p{font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;margin-bottom:12px}
+  .event-card .event-details{font-size:11px;color:var(--silver);opacity:.6;line-height:1.8}
+
+  .footer{padding:32px 40px;border-top:1px solid rgba(201,168,76,.15);text-align:center;font-size:11px;color:rgba(176,184,200,.4)}
+  .footer a{color:var(--gold);text-decoration:none;opacity:.6}
+  .footer a:hover{opacity:1}
+
+  @media(max-width:768px){
+    .hero h1{font-size:26px}
+    .team-section{grid-template-columns:1fr}
+    .cal-event{grid-template-columns:80px 1fr;gap:12px}
+    .cal-status{display:none}
+    nav{padding:0 16px}
+    .nav-links{gap:14px}
+    .section-inner{padding:48px 20px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">USS ACADEMY</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/compete.html" class="active">Compete</a></li>
+    <li><a href="/host-a-class.html">Host a Class</a></li>
+    <li><a href="/waivers.html">Waivers</a></li>
+    <li><a href="tel:8005088772" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="label">USS Academy Competitive Shooting</div>
+  <h1>Train. Compete. <span>Dominate.</span></h1>
+  <p>From local club matches to internationally sanctioned competitions — USS Academy trains shooters at every level. Join the team, find your next match, and represent Central Florida.</p>
+</section>
+
+<!-- COMPETITION CALENDAR -->
+<section style="background:var(--navy-mid);">
+  <div class="section-inner">
+    <div class="section-label">Competition Calendar</div>
+    <h2>Upcoming <span>Matches & Events</span></h2>
+    <p class="section-desc">Florida and Southeast US shooting competitions — 6 months out. Dates and details are updated regularly. Contact us to confirm before traveling.</p>
+
+    <div class="cal-header">
+      <button class="cal-filter active" onclick="filterCal('all')">All</button>
+      <button class="cal-filter" onclick="filterCal('uspsa')">USPSA</button>
+      <button class="cal-filter" onclick="filterCal('idpa')">IDPA</button>
+      <button class="cal-filter" onclick="filterCal('steel')">Steel Challenge</button>
+      <button class="cal-filter" onclick="filterCal('uss')">USS Events</button>
+    </div>
+
+    <div class="cal-grid" id="calGrid">
+
+      <div class="cal-month">April 2026</div>
+
+      <div class="cal-event" data-type="uspsa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">04</div><div class="month-label">Apr</div></div>
+        <div class="cal-info">
+          <h4>USPSA Club Match — Central Florida Rifle & Pistol Club</h4>
+          <p>Monthly USPSA club match. All divisions welcome. Registration opens 1 week prior.</p>
+          <div class="tags"><span class="cal-tag uspsa">USPSA</span><span class="cal-tag">Orlando, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-event" data-type="idpa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">11</div><div class="month-label">Apr</div></div>
+        <div class="cal-info">
+          <h4>IDPA Classifier Match — Volusia County Gun & Hunt Club</h4>
+          <p>IDPA classifier match. SSP, ESP, CDP, CCP, and BUG divisions. Bring 150 rounds minimum.</p>
+          <div class="tags"><span class="cal-tag idpa">IDPA</span><span class="cal-tag">Daytona, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-event" data-type="steel">
+        <div class="cal-date"><div class="dow">Sun</div><div class="day">19</div><div class="month-label">Apr</div></div>
+        <div class="cal-info">
+          <h4>Steel Challenge — Manatee Gun & Archery Club</h4>
+          <p>Steel Challenge practice match. Rimfire and centerfire divisions. Great for beginners.</p>
+          <div class="tags"><span class="cal-tag steel">Steel Challenge</span><span class="cal-tag">Bradenton, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-month">May 2026</div>
+
+      <div class="cal-event" data-type="uspsa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">02</div><div class="month-label">May</div></div>
+        <div class="cal-info">
+          <h4>USPSA Club Match — Central Florida Rifle & Pistol Club</h4>
+          <p>Monthly USPSA club match. All divisions welcome.</p>
+          <div class="tags"><span class="cal-tag uspsa">USPSA</span><span class="cal-tag">Orlando, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-event" data-type="uspsa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">16</div><div class="month-label">May</div></div>
+        <div class="cal-info">
+          <h4>Florida Open — USPSA Level II Match</h4>
+          <p>Major USPSA sanctioned match. Multiple stages over 2 days. Advance registration required.</p>
+          <div class="tags"><span class="cal-tag uspsa">USPSA</span><span class="cal-tag tactical">Level II</span><span class="cal-tag">Punta Gorda, FL</span></div>
+        </div>
+        <div class="cal-status tbd">Reg Opening</div>
+      </div>
+
+      <div class="cal-event" data-type="uss">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">23</div><div class="month-label">May</div></div>
+        <div class="cal-info">
+          <h4>USS Academy Team Practice — Competition Prep</h4>
+          <p>USS Elite team practice session. Stage simulation, draw drills, and match strategy review.</p>
+          <div class="tags"><span class="cal-tag uss">USS Event</span><span class="cal-tag">Orlando, FL</span></div>
+        </div>
+        <div class="cal-status open">Team Only</div>
+      </div>
+
+      <div class="cal-month">June 2026</div>
+
+      <div class="cal-event" data-type="uspsa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">06</div><div class="month-label">Jun</div></div>
+        <div class="cal-info">
+          <h4>USPSA Club Match — Central Florida Rifle & Pistol Club</h4>
+          <p>Monthly USPSA club match. All divisions welcome.</p>
+          <div class="tags"><span class="cal-tag uspsa">USPSA</span><span class="cal-tag">Orlando, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-event" data-type="idpa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">13</div><div class="month-label">Jun</div></div>
+        <div class="cal-info">
+          <h4>IDPA Tier 2 Match — South Florida Shooting Club</h4>
+          <p>Regional IDPA match. Enhanced scoring, multiple stages. 200 round count.</p>
+          <div class="tags"><span class="cal-tag idpa">IDPA</span><span class="cal-tag">Ft. Lauderdale, FL</span></div>
+        </div>
+        <div class="cal-status tbd">TBD</div>
+      </div>
+
+      <div class="cal-month">July 2026</div>
+
+      <div class="cal-event" data-type="uspsa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">04</div><div class="month-label">Jul</div></div>
+        <div class="cal-info">
+          <h4>USPSA Club Match — Central Florida Rifle & Pistol Club</h4>
+          <p>Monthly USPSA club match. Independence Day special — fun stages.</p>
+          <div class="tags"><span class="cal-tag uspsa">USPSA</span><span class="cal-tag">Orlando, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-event" data-type="steel">
+        <div class="cal-date"><div class="dow">Sun</div><div class="day">12</div><div class="month-label">Jul</div></div>
+        <div class="cal-info">
+          <h4>FL State Steel Challenge Championship</h4>
+          <p>State-level Steel Challenge championship. All divisions. Advance registration required.</p>
+          <div class="tags"><span class="cal-tag steel">Steel Challenge</span><span class="cal-tag tactical">State Championship</span><span class="cal-tag">Frostproof, FL</span></div>
+        </div>
+        <div class="cal-status tbd">Reg Opening</div>
+      </div>
+
+      <div class="cal-month">August 2026</div>
+
+      <div class="cal-event" data-type="uss">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">08</div><div class="month-label">Aug</div></div>
+        <div class="cal-info">
+          <h4>USS Academy Invitational — Inter-Club Match</h4>
+          <p>USS Academy hosts a multi-club invitational match. Open to all competitive shooters. Prizes and team awards.</p>
+          <div class="tags"><span class="cal-tag uss">USS Event</span><span class="cal-tag uspsa">USPSA Format</span><span class="cal-tag">Orlando, FL</span></div>
+        </div>
+        <div class="cal-status tbd">Coming Soon</div>
+      </div>
+
+      <div class="cal-event" data-type="idpa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">22</div><div class="month-label">Aug</div></div>
+        <div class="cal-info">
+          <h4>IDPA Club Match — Palm Bay Rifle & Pistol Club</h4>
+          <p>Monthly IDPA club match. All skill levels welcome. 150 round count.</p>
+          <div class="tags"><span class="cal-tag idpa">IDPA</span><span class="cal-tag">Palm Bay, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-month">September 2026</div>
+
+      <div class="cal-event" data-type="uspsa">
+        <div class="cal-date"><div class="dow">Sat</div><div class="day">05</div><div class="month-label">Sep</div></div>
+        <div class="cal-info">
+          <h4>USPSA Club Match — Central Florida Rifle & Pistol Club</h4>
+          <p>Monthly USPSA club match. All divisions welcome.</p>
+          <div class="tags"><span class="cal-tag uspsa">USPSA</span><span class="cal-tag">Orlando, FL</span></div>
+        </div>
+        <div class="cal-status open">Open</div>
+      </div>
+
+      <div class="cal-event" data-type="tactical">
+        <div class="cal-date"><div class="dow">Sat–Sun</div><div class="day">19</div><div class="month-label">Sep</div></div>
+        <div class="cal-info">
+          <h4>Southeast Regional Tactical Match</h4>
+          <p>Multi-gun tactical match. 2-day event combining pistol, rifle, and physical fitness stages. Advanced competitors.</p>
+          <div class="tags"><span class="cal-tag tactical">Tactical</span><span class="cal-tag">Multi-Gun</span><span class="cal-tag">Georgia</span></div>
+        </div>
+        <div class="cal-status tbd">TBD</div>
+      </div>
+
+    </div>
+
+    <p style="font-size:12px;color:var(--silver);opacity:.5;text-align:center;margin-top:16px;">Dates are subject to change. Always confirm with the hosting club before traveling. Last updated: March 2026.</p>
+  </div>
+</section>
+
+<!-- USS ELITE TEAM -->
+<section style="background:var(--navy);">
+  <div class="section-inner">
+    <div class="section-label">Official Team</div>
+    <h2>USS Elite <span>Competitive Team</span></h2>
+    <p class="section-desc">USS Academy's competitive shooting team representing Central Florida in USPSA, IDPA, and regional competitions across the Southeast.</p>
+
+    <div class="team-section">
+      <div>
+        <p style="font-size:14px;font-weight:300;line-height:1.82;color:var(--silver);margin-bottom:16px;">The USS Elite Competitive Team is the official competition arm of USS Academy. Our team members train under USS Academy's advanced coaching program and compete as representatives of the academy at sanctioned events throughout Florida, the Southeast, and nationally.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">▸</span>Official USS Academy team jersey and competition gear</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">▸</span>USPSA, IDPA &amp; Steel Challenge team representation</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">▸</span>Dedicated coaching, match prep, and performance tracking</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">▸</span>Regional and national match travel coordination</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">▸</span>Selection by invitation or application — intermediate to advanced</div>
+        </div>
+        <a href="/#apply" class="btn-gold">Join the Team</a>
+      </div>
+      <div style="text-align:center;">
+        <div class="team-logo">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-bottom:24px;">Team Logo — Coming Soon</div>
+        <div class="team-stats">
+          <div class="team-stat"><div class="num">—</div><div class="lbl">Active Members</div></div>
+          <div class="team-stat"><div class="num">—</div><div class="lbl">Matches / Year</div></div>
+          <div class="team-stat"><div class="num">—</div><div class="lbl">Podium Finishes</div></div>
+          <div class="team-stat"><div class="num">FL</div><div class="lbl">Home State</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USS EVENTS -->
+<section style="background:var(--navy-mid);" id="events">
+  <div class="section-inner">
+    <div class="section-label">USS Academy Events</div>
+    <h2>Hosted <span>Events & Matches</span></h2>
+    <p class="section-desc">Events organized and hosted by USS Academy — from team practices to invitational matches and special shooting events.</p>
+
+    <div class="events-grid">
+
+      <!-- EVENT 1 — editable -->
+      <div class="event-card">
+        <div class="event-date">May 23, 2026</div>
+        <h4>Team Practice — Competition Prep</h4>
+        <p>USS Elite team practice session. Stage simulation, draw drills, transition practice, and match strategy review. Team members only.</p>
+        <div class="event-details">
+          📍 Partner Range — Orlando, FL<br>
+          🕐 9:00 AM – 1:00 PM<br>
+          🎯 200 rounds recommended
+        </div>
+      </div>
+
+      <!-- EVENT 2 — editable -->
+      <div class="event-card">
+        <div class="event-date">August 8, 2026</div>
+        <h4>USS Academy Invitational</h4>
+        <p>Multi-club invitational match hosted by USS Academy. Open to all competitive shooters. USPSA-format stages. Prizes and team awards.</p>
+        <div class="event-details">
+          📍 TBD — Central Florida<br>
+          🕐 Full day event<br>
+          🎯 250+ rounds, all divisions
+        </div>
+      </div>
+
+      <!-- EVENT 3 — editable -->
+      <div class="event-card">
+        <div class="event-date">Date TBD</div>
+        <h4>Tactical Games Prep Session</h4>
+        <p>Intensive tactical match preparation combining firearms proficiency with physical fitness. For Tier 2 team members preparing for Tactical Games 2027.</p>
+        <div class="event-details">
+          📍 TBD<br>
+          🕐 TBD<br>
+          🎯 Advanced competitors only
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:32px;">
+      <a href="mailto:support@ussacademy.org?subject=Competition Inquiry" class="btn-outline">Questions About Competing? Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  USS Academy LLC · 450 S. Orange Ave., 3rd Floor, Orlando, FL 32801 · <a href="tel:8005088772">800-508-8772</a> · <a href="mailto:support@ussacademy.org">support@ussacademy.org</a>
+  <br><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/">Home</a>
+</div>
+
+<script>
+function filterCal(type) {
+  document.querySelectorAll('.cal-filter').forEach(function(b){b.classList.remove('active')});
+  event.target.classList.add('active');
+  document.querySelectorAll('.cal-event').forEach(function(e){
+    if(type==='all') { e.style.display='grid'; }
+    else { e.style.display = e.dataset.type===type ? 'grid' : 'none'; }
+  });
+}
+</script>
+
+</body>
+</html>

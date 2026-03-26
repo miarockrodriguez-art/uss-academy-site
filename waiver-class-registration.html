@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Class Registration & Welcome Packet | USS Academy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#e0e0e0;line-height:1.6}
+  .container{max-width:800px;margin:0 auto;padding:32px 24px}
+  h1{font-size:24px;font-weight:800;color:#c9a227;margin-bottom:4px}
+  .subtitle{font-size:13px;color:#666;margin-bottom:24px}
+  h2{font-size:16px;font-weight:700;color:#fff;margin:24px 0 12px;padding:8px 12px;background:#1a1a25;border-left:3px solid #c9a227;border-radius:0 6px 6px 0}
+  .field{margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;color:#aaa;margin-bottom:4px}
+  input,select,textarea{width:100%;padding:10px 12px;background:#12121a;border:1px solid #2a2a3a;border-radius:6px;color:#fff;font-size:14px;font-family:'Inter',sans-serif}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:#c9a227}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .checkbox-group{margin:12px 0}
+  .checkbox-group label{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#888;line-height:1.5;margin-bottom:12px;cursor:pointer}
+  .checkbox-group input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:#c9a227}
+  .waiver-text{font-size:11px;color:#666;line-height:1.7;padding:12px 16px;background:#0d0d14;border:1px solid #1a1a25;border-radius:6px;margin-bottom:8px}
+  .sig-area{margin-top:24px;padding:20px;background:#12121a;border:1px solid #2a2a3a;border-radius:8px}
+  .sig-line{border-bottom:1px solid #444;height:50px;margin:8px 0}
+  .sig-label{font-size:11px;color:#666}
+  .submit-btn{width:100%;padding:14px;background:#c9a227;color:#0a0a0f;font-size:16px;font-weight:700;border:none;border-radius:8px;cursor:pointer;margin-top:24px;transition:background 0.2s}
+  .submit-btn:hover{background:#d4af37}
+  .back{display:inline-block;margin-bottom:16px;font-size:13px;color:#c9a227;text-decoration:none}
+  .required{color:#ef4444}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="/" class="back">← Back to USS Academy</a>
+<h1>Class Registration & Welcome Packet</h1>
+<p class="subtitle">USS Academy LLC · Please complete all fields accurately</p>
+
+<form id="registrationForm">
+
+<h2>Personal Information</h2>
+<div class="field"><label>Today's Date <span class="required">*</span></label><input type="date" name="todays_date" required></div>
+<div class="row">
+  <div class="field"><label>First Name <span class="required">*</span></label><input type="text" name="first_name" required></div>
+  <div class="field"><label>Last Name <span class="required">*</span></label><input type="text" name="last_name" required></div>
+</div>
+<div class="row">
+  <div class="field"><label>Date of Birth <span class="required">*</span></label><input type="date" name="dob" required></div>
+  <div class="field"><label>Age</label><input type="number" name="age"></div>
+</div>
+<div class="field"><label>State Issued ID Number <span class="required">*</span></label><input type="text" name="state_id" required></div>
+<div class="row">
+  <div class="field"><label>Gender</label><select name="gender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option></select></div>
+  <div class="field"><label>Mobile Number <span class="required">*</span></label><input type="tel" name="mobile" required></div>
+</div>
+<div class="field"><label>Email <span class="required">*</span></label><input type="email" name="email" required></div>
+
+<h2>Mailing Address</h2>
+<div class="field"><label>Street Address</label><input type="text" name="street"></div>
+<div class="row3">
+  <div class="field"><label>City</label><input type="text" name="city"></div>
+  <div class="field"><label>State</label><input type="text" name="state"></div>
+  <div class="field"><label>Zip Code</label><input type="text" name="zip"></div>
+</div>
+
+<h2>Certifications & Acknowledgments</h2>
+<div class="checkbox-group">
+  <label><input type="checkbox" required> I certify that I am not a fugitive from justice, or under indictment. I have not been convicted of a felony, misdemeanor or any crime. I am not drug or alcohol dependent; I am not under adjudication of mental incompetence; I have not been convicted for domestic violence.</label>
+  <label><input type="checkbox" required> I acknowledge the risks and dangers that exist in my use of any and all firearms and/or defensive tactics and techniques.</label>
+  <label><input type="checkbox" required> I expressly agree and promise to accept all of the risks existing in this activity. Participation in this activity is purely voluntary, and I elect to participate in spite of the risks.</label>
+  <label><input type="checkbox" required> I agree when arriving or departing range property, I must keep all firearm(s) unloaded and either cased or actions open.</label>
+  <label><input type="checkbox" required> Students agree to follow all safety rules as outlined by the instructor and class materials.</label>
+  <label><input type="checkbox" required> I shall immediately notify an instructor(s) of any injury that I receive, or should I observe injury to any other participant.</label>
+</div>
+
+<h2>Class Policies</h2>
+<div class="checkbox-group">
+  <label><input type="checkbox" required> If, for any reason the course is cancelled the student will be notified by e-mail or phone or text. Class can be cancelled at company's discretion.</label>
+  <label><input type="checkbox" required> In the event of class cancellation, tuition may be rolled over to the next available class date at the discretion of management.</label>
+  <label><input type="checkbox" required> Conditions, such as, weather, improper equipment, closed range, traffic conditions and emergencies may influence the completion date of a class.</label>
+  <label><input type="checkbox" required> Certification is not guaranteed by paying tuition and attendance. Course standards must be met.</label>
+  <label><input type="checkbox" required> Upon successful completion of the program certificates will be provided within 30 days to the person or entity paying for the program.</label>
+  <label><input type="checkbox" required> Professional individuals who attend our programs under guidance from their organization agree to pay for their tuition should their organization default on payment. Ultimately the license certificate belongs to the individual.</label>
+  <label><input type="checkbox" required> Classes, Range Sessions, and events can and will be held in other locations other than the corporate office as designated by management.</label>
+  <label><input type="checkbox" required> Company reserves the right to ask any to remove themselves from our Class Room or the Shooting Range immediately.</label>
+</div>
+
+<h2>Waiver & Release of Liability</h2>
+<div class="waiver-text">
+I am fully aware of the risks and hazards connected with the participation in this course, including physical injury or even death, and hereby elect to voluntarily participate in said event, knowing that the associated physical activity may be hazardous to me and my property.<br><br>
+I HEREBY ASSUME ALL OF THE RISK OF PARTICIPATING IN THIS ACTIVITY OR EVENT, including by way of example and not limitation, any risk that may arise from negligence or carelessness on the part of the persons or entities being released, from dangerous or defective equipment or property owned, maintained, or controlled by them, or because of their possible liability without fault.<br><br>
+I certify that to the best of my knowledge, I am in good physical condition and fully able to participate in this course and have not been advised to not participate by a qualified medical professional. I certify that there are no health-related reasons or problems, which preclude my participation in this course. If you are pregnant; please understand due to safety concerns, we cannot offer you the shooting portion of the range, but we will be happy to reschedule your class as needed.<br><br>
+I VOLUNTARILY ASSUME FULL RESPONSIBILITY FOR ANY RISKS OR LOSS, PROPERTY DAMAGE, OR PERSONAL INJURY, INCLUDING DEATH, that may be sustained by me, or loss or damage to property owned by me, as a result of participation in this course.<br><br>
+I RELEASE, WAIVE, DISCHARGE, from any and all liability, including but not limited to, liability arising from negligence or fault of the entities or persons released, for my death, disability, personal injury, property damage, property theft, or actions of any kind which may hereafter occur to me including my traveling to and from this course. THE FOLLOWING ENTITIES OR PERSONS: USS Agency LLC, their officers, servants, agents, and employees (hereinafter referred to as RELEASEES).<br><br>
+I hereby consent to receive medical treatment which may be deemed advisable in the event of injury, accident, and/or illness during this course or activity.<br><br>
+I INDEMNIFY, HOLD HARMLESS, AND PROMISE NOT TO SUE the Entities Company, subsidiaries, executives, employees and associates mentioned in this waiver from any and all liabilities, claims, loss, damage occurred, or caused as a result of participation or attendance in this course, program, or event.<br><br>
+I understand that during this course or related activities, I may be photographed. I agree to allow my photo, video, or film likeness to be used for any legitimate purpose by USS Agency LLC, their officers, servants or agents.
+</div>
+<div class="checkbox-group">
+  <label><input type="checkbox" required> <strong>I have read, understand, and agree to ALL of the above terms, conditions, and waivers.</strong></label>
+</div>
+
+<h2>Signature</h2>
+<div class="sig-area">
+  <div class="field"><label>Print Full Name <span class="required">*</span></label><input type="text" name="print_name" required></div>
+  <div class="row">
+    <div class="field"><label>First Name</label><input type="text" name="sig_first"></div>
+    <div class="field"><label>Last Name</label><input type="text" name="sig_last"></div>
+  </div>
+  <div class="field"><label>Date Signed</label><input type="date" name="date_signed"></div>
+</div>
+
+<button type="submit" class="submit-btn">Submit Registration & Waiver</button>
+</form>
+</div>
+
+<script>
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Registration submitted successfully! USS Academy will confirm your booking via SMS and email.');
+});
+// Auto-fill today's date
+document.querySelector('[name="todays_date"]').valueAsDate = new Date();
+document.querySelector('[name="date_signed"]').valueAsDate = new Date();
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CWP Exam Registration & Waiver | USS Academy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#e0e0e0;line-height:1.6}
+  .container{max-width:800px;margin:0 auto;padding:32px 24px}
+  h1{font-size:24px;font-weight:800;color:#c9a227;margin-bottom:4px}
+  .subtitle{font-size:13px;color:#666;margin-bottom:24px}
+  h2{font-size:16px;font-weight:700;color:#fff;margin:24px 0 12px;padding:8px 12px;background:#1a1a25;border-left:3px solid #c9a227;border-radius:0 6px 6px 0}
+  .field{margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;color:#aaa;margin-bottom:4px}
+  input,select{width:100%;padding:10px 12px;background:#12121a;border:1px solid #2a2a3a;border-radius:6px;color:#fff;font-size:14px;font-family:'Inter',sans-serif}
+  input:focus,select:focus{outline:none;border-color:#c9a227}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .radio-group{display:flex;gap:16px;margin-top:6px}
+  .radio-group label{display:flex;align-items:center;gap:6px;font-size:14px;color:#ccc;cursor:pointer}
+  .radio-group input[type="radio"]{width:16px;height:16px;accent-color:#c9a227}
+  .sig-area{margin-top:24px;padding:20px;background:#12121a;border:1px solid #2a2a3a;border-radius:8px}
+  .submit-btn{width:100%;padding:14px;background:#c9a227;color:#0a0a0f;font-size:16px;font-weight:700;border:none;border-radius:8px;cursor:pointer;margin-top:24px;transition:background 0.2s}
+  .submit-btn:hover{background:#d4af37}
+  .back{display:inline-block;margin-bottom:16px;font-size:13px;color:#c9a227;text-decoration:none}
+  .required{color:#ef4444}
+  .note{font-size:12px;color:#666;margin-top:4px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="/" class="back">← Back to USS Academy</a>
+<h1>CWP Exam Registration & Waiver</h1>
+<p class="subtitle">USS Academy LLC · Concealed Weapons Permit Exam Registration</p>
+
+<form id="examForm">
+
+<h2>Exam Information</h2>
+<div class="field"><label>Exam Date <span class="required">*</span></label><input type="date" name="exam_date" required></div>
+
+<h2>Personal Information</h2>
+<div class="row">
+  <div class="field"><label>First Name <span class="required">*</span></label><input type="text" name="first_name" required></div>
+  <div class="field"><label>Last Name <span class="required">*</span></label><input type="text" name="last_name" required></div>
+</div>
+<div class="field"><label>State Issued ID Number <span class="required">*</span></label><input type="text" name="state_id" required></div>
+<div class="field"><label>Mobile Number <span class="required">*</span></label><input type="tel" name="mobile" required></div>
+<div class="field"><label>Email <span class="required">*</span></label><input type="email" name="email" required></div>
+
+<h2>Certificate Delivery</h2>
+<div class="field">
+  <label>Digital Certificate Requested <span class="required">*</span></label>
+  <div class="radio-group">
+    <label><input type="radio" name="digital_cert" value="yes" required> Yes (Emailed within 7-10 business days)</label>
+    <label><input type="radio" name="digital_cert" value="no"> No</label>
+  </div>
+  <p class="note">Digital certificates are emailed to the address provided above.</p>
+</div>
+
+<h2>Signature</h2>
+<div class="sig-area">
+  <div class="field"><label>Print Full Name <span class="required">*</span></label><input type="text" name="print_name" required></div>
+  <div class="row">
+    <div class="field"><label>First Name</label><input type="text" name="sig_first"></div>
+    <div class="field"><label>Last Name</label><input type="text" name="sig_last"></div>
+  </div>
+  <div class="field"><label>Date Signed</label><input type="date" name="date_signed"></div>
+</div>
+
+<button type="submit" class="submit-btn">Submit Exam Registration</button>
+</form>
+</div>
+
+<script>
+document.getElementById('examForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Exam registration submitted! You will receive a confirmation via SMS and email.');
+});
+document.querySelector('[name="date_signed"]').valueAsDate = new Date();
+</script>
+</body>
+</html>
