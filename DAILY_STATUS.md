@@ -1,60 +1,64 @@
-# MFS Empire — Daily Status Report
-**Date:** 2026-03-27  
-**Chief of Staff:** POLY
+# MFS Empire — Daily Status
+**Date:** 2026-03-28  
+**Compiled by:** POLY, Chief of Staff
 
 ---
 
 ## USS Academy Site
 
-**Status: ACTIVE — 2 commits today**
+**Status: ACTIVE — Heavy build day**
 
-| Commit | Summary |
-|--------|---------|
-| v9.1 (today 06:27) | CCW→CWP rename sitewide, added Civilian Patrol Rifle class (AR-15/AK-47, 300m), added PPC Pistol Caliber Carbine class (100m), LE Firearms Instructor credential, competitive shooting + hunting options, contact form updated |
-| v9.0 (yesterday 06:37) | Full 12-page site build — courses, schedule, contact, waivers, compete, host-a-class, blog, terms, privacy |
-| Cloudflare deploy (yesterday 07:03) | GitHub Actions workflow added for Cloudflare Pages auto-deploy |
+### Recent Commits (today, 5 total)
+| Time | Summary |
+|------|---------|
+| 09:27 | Batch update — Ask Your Instructor, Ember & Iron, videos removed, sticky bar |
+| 09:20 | Hero carousel (3 rotating images, 5s crossfade) |
+| 06:55 | Fix 3 photo placements — NV truck, Q&A resize, Cert photo |
+| 06:33 | 18-point correction — hero, phones, photos, gallery rebuild |
+| 05:47 | Complete gallery rebuild — 188 photos, 32 videos |
 
-**File Structure: OK**
-- `index.html` — present (225KB)
-- 12 HTML pages total — all present
-- `images/` — 22 images present (PNG, WEBP, JPG, favicon)
-- `_redirects`, `netlify.toml`, `.github/` — all present
+### Structure Check
+- `index.html` — ✅ Present, valid (`<!DOCTYPE html>` + `</html>`, ~308KB)
+- All linked pages — ✅ `compete.html`, `host-a-class.html`, `waivers.html`, `ember-iron.html` all exist
+- `images/` directory — ✅ Present
+- `netlify.toml` + `_redirects` — ✅ Present
 
-**Issues / PRs:** None open
+### Flags
+- `ember-iron.html` is a **placeholder** (2KB). Needs real content when Ember & Iron event is confirmed.
+- Videos section is **placeholder** — real YouTube links pending upload.
+- index.html is 308KB — large but single-page; monitor if load times become an issue.
 
-**Flags:**
-- Cloudflare Pages deploy workflow requires secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` must be set in repo settings to activate auto-deploy
-- Image filenames still contain "CCW" (e.g. `USS+ACADEMY-+CCW+IN+ORLANDO*.webp`) — filenames only, not visible to users; no broken links
-
----
-
-## Cityone Transportation Site
-
-**Status: ACTIVE — 2 commits today**
-
-| Commit | Summary |
-|--------|---------|
-| v7 (today 06:22) | Phones updated → Main: (407) 509-0880 / Line 2: (407) 963-8278. All old numbers removed. Slogan "Relax and Enjoy the Ride" added to header + footer. Rideshare renamed (Private Transfer → Orlando/Kissimmee Transfers, KSC Transfer → Kennedy Space Center Transfers). "Powered by Phoenix Blueprint" footer credit added. |
-| v6 (today 02:20) | 16 changes — pricing tabs fixed, airline dropdown (40+ MCO airlines), form fields updated, logo C1X→C1T |
-
-**File Structure: OK**
-- `index.html` — present (299KB, single-file site with inline CSS/JS)
-
-**Issues:** None open
-
-**PRs: 1 OPEN — ACTION NEEDED**
-- **PR #1** from Cloudflare bot: "Add Cloudflare Workers configuration"
-  - Adds `wrangler.jsonc` for Cloudflare Workers/Pages auto-deploy
-  - Framework: static | Deploy: `npx wrangler deploy`
-  - **Decision required:** Merge to enable Cloudflare auto-deploy, or close if deploying elsewhere
+### Issues / PRs
+- Issues: None
+- PRs: None
 
 ---
 
-## Summary
+## CityOne Transportation Site
 
-| Repo | Health | Open Issues | Open PRs | Action Needed |
-|------|--------|-------------|----------|---------------|
-| uss-academy-site | ✅ Healthy | 0 | 0 | Set Cloudflare secrets in repo settings |
-| cityone-transportation-site | ✅ Healthy | 0 | 1 | Review/merge or close PR #1 (Cloudflare Workers) |
+**Status: ACTIVE — Pricing & disclaimer update**
 
-Both sites committed and active today. No broken links or missing files detected.
+### Recent Commits (today, 1 today + 1 overnight)
+| Time | Summary |
+|------|---------|
+| 09:27 | Add ALL RATES SUBJECT TO CHANGE disclaimer to Port Canaveral section |
+| 00:15 | Update service type, rates, email (Bookmyride@), slogan placement |
+
+### Structure Check
+- `index.html` — ✅ Present, valid (`<!DOCTYPE html>` + `</html>`, ~300KB)
+- Single-file site — no local asset dependencies; logo is inline base64 (no broken image risk)
+
+### Flags
+- **Open PR #1** — Cloudflare Workers autoconfig bot PR (opened 2026-03-26, updated today)
+  - Adds `wrangler.jsonc` for Cloudflare Workers deployment
+  - **Action needed:** Decide to merge or close. If site stays on Cloudflare Pages (static), this may be unnecessary.
+
+### Issues
+- Issues: None
+
+---
+
+## Action Items
+1. [ ] **CityOne PR #1** — Review and merge or close Cloudflare Workers autoconfig PR
+2. [ ] **USS Academy** — Upload YouTube videos and replace placeholder video cards
+3. [ ] **USS Academy** — Build out `ember-iron.html` once Ember & Iron event details are confirmed
