@@ -97,7 +97,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:0;}
-.hero-bg{position:absolute;inset:0;background:url('images/group-class-photo-outdoor.jpg') center/cover no-repeat;}.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.78) 0%,rgba(10,22,40,0.65) 40%,rgba(15,34,68,0.72) 100%);}
+.hero-bg{position:absolute;inset:0;overflow:hidden;}
+.hero-bg .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease-in-out;}
+.hero-bg .hero-slide.active{opacity:1;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.78) 0%,rgba(10,22,40,0.65) 40%,rgba(15,34,68,0.72) 100%);z-index:1;}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 60% 50%,black 20%,transparent 80%);}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:6px 14px;margin-bottom:28px;animation:fadeUp .8s ease both;}
@@ -456,7 +459,11 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <div class="hero-slide active" style="background-image:url('images/1120-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/IMG_8887.JPG')"></div>
+    <div class="hero-slide" style="background-image:url('images/_ART4245.jpg')"></div>
+  </div>
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div class="hero-left">
@@ -622,7 +629,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       </div>
       <!-- Card 3 — Real-World -->
       <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:0;text-align:center;transition:border-color .3s;overflow:hidden;">
-        <img src="images/josh-instructor-portrait.jpg" alt="John — USS Academy Instructor — Real World Experience" style="width:100%;height:200px;object-fit:cover;object-position:center top;">
+        <img src="images/IMG_0665.JPG" alt="USS Academy — Real World Range Experience" style="width:100%;height:200px;object-fit:cover;object-position:center top;">
         <div style="padding:24px 28px;">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Real-World Experience</div>
           <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">No textbook-only instructors here. Every member of our team has operational field experience — ensuring you learn practical skills that work in real situations.</p>
@@ -735,7 +742,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.55;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a></div>
       </div>
       <div class="program-card" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;min-height:200px;">
-        <img src="images/IMG_6707.JPEG" alt="Noah — Young shooter at USS Academy" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/1014-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="USS Academy range training" style="width:100%;height:100%;object-fit:cover;">
       </div>
     </div>
 
@@ -3061,4 +3068,23 @@ function getBotReply(q){
   if(q.includes('online')||q.includes('virtual')||q.includes('national')||q.includes('remote'))
     return "Yes! USS Academy offers virtual/online training and trains students nationally. Contact us at 800-508-8772 (USSA) or support@ussacademy.org to discuss which programs are available virtually.";
   if(q.includes('ladies')||q.includes('women'))
-    return "USS Academy
+    return "USS Academy hosts our Official Ladies Day event — an empowering, exclusively women's firearms experience. Follow us on social media for the next date announcement. Contact: 800-508-8772 (USSA) or support@ussacademy.org.";
+  return "Thank you for your question! For specific inquiries, please call us at 800-508-8772 (USSA) or 407-305-8335, email support@ussacademy.org, or fill out the contact form on our website. We're happy to help!";
+}
+</script>
+
+<!-- Hero Carousel -->
+<script>
+(function(){
+  var slides = document.querySelectorAll('.hero-slide');
+  if(slides.length < 2) return;
+  var current = 0;
+  setInterval(function(){
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+})();
+</script>
+</body>
+</html>
