@@ -90,7 +90,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 }
 
 /* ── NOTICE BAR ── */
-.notice-bar{background:rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.25);padding:10px 48px;text-align:center;position:relative;z-index:999;margin-top:80px;}
+.notice-bar{position:sticky;top:0;z-index:1000;background:rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.25);padding:10px 48px;text-align:center;position:relative;z-index:999;margin-top:80px;}
 .notice-bar p{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--gold);}
 .notice-bar a{color:var(--white);text-decoration:none;}
 .notice-bar a:hover{text-decoration:underline;}
@@ -766,7 +766,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.55;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a></div>
       </div>
       <div class="program-card" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;min-height:200px;">
-        <img src="images/_DSC2621.jpg" alt="One-on-one firearms instruction" style="width:100%;height:100%;min-height:300px;object-fit:cover;object-position:center;">
+        <img src="images/_DSC2621.jpg" alt="Josh Rodriguez — USS Academy Tactical Instructor" style="width:100%;height:320px;object-fit:cover;object-position:center top;">
       </div>
     </div>
 
@@ -977,7 +977,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 <section class="ladies-section" id="ladies-day">
   <div class="section-inner">
     <div class="section-label" style="color:#e8b4c8;">Official Annual Event</div>
-    <h2>USS Academy <span style="color:#e8b4c8;">Ladies Day</span></h2>
+    <h2>USS Academy <span style="color:#e8b4c8;">Ladies Day</span> — <span style="color:var(--gold);">Ember &amp; Iron</span></h2>
     <p class="section-desc">USS Academy proudly hosts its Official Ladies Day event — an empowering, welcoming, exclusively women's firearms experience designed specifically to introduce women to responsible gun ownership and self-protection in a fun, safe, and supportive atmosphere.</p>
 
     <div class="ladies-hero reveal" style="position:relative;overflow:hidden;">
@@ -1006,6 +1006,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           <h3>Frequency &amp; Schedule</h3>
           <p style="margin-bottom:12px;">Ladies Day is held <strong style="color:var(--white);">annually</strong> — and occasionally <strong style="color:var(--white);">semi-annually</strong> when demand calls for it. Exact dates are announced in advance via our newsletter, social media, and event calendar below.</p>
           <p style="margin-bottom:16px;"><strong style="color:#e8b4c8;">Sign up for our newsletter</strong> or follow us on social media to be notified as soon as the next Ladies Day date is announced.</p>
+      <a href="ember-iron.html" class="btn-primary" style="display:inline-block;margin-top:16px;font-size:13px;padding:12px 28px;background:linear-gradient(135deg,#e8b4c8,var(--gold));color:var(--navy);font-weight:700;">Learn More About Ember &amp; Iron</a>
           <div style="background:rgba(232,180,200,.08);border:1px solid rgba(232,180,200,.2);padding:16px;margin-top:12px;">
             <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#e8b4c8;margin-bottom:6px;">What To Expect</p>
             <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
@@ -1643,7 +1644,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     </div>
     <div style="display:flex;gap:4px;margin-bottom:24px;padding:4px;background:var(--navy-mid);border-radius:8px;border:1px solid rgba(201,168,76,.1);max-width:320px;margin-left:auto;margin-right:auto;">
       <button id="tab-photos" onclick="document.getElementById('panel-photos').style.display='grid';document.getElementById('panel-videos').style.display='none';this.style.background='var(--gold)';this.style.color='var(--navy)';document.getElementById('tab-videos').style.background='transparent';document.getElementById('tab-videos').style.color='var(--silver)';" style="flex:1;padding:10px;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:var(--navy);">📷 Photos (175)</button>
-      <button id="tab-videos" onclick="document.getElementById('panel-videos').style.display='grid';document.getElementById('panel-photos').style.display='none';this.style.background='var(--gold)';this.style.color='var(--navy)';document.getElementById('tab-photos').style.background='transparent';document.getElementById('tab-photos').style.color='var(--silver)';" style="flex:1;padding:10px;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--silver);">🎬 Videos (32)</button>
+      <button id="tab-videos" onclick="document.getElementById('panel-videos').style.display='block';document.getElementById('panel-photos').style.display='none';this.style.background='var(--gold)';this.style.color='var(--navy)';document.getElementById('tab-photos').style.background='transparent';document.getElementById('tab-photos').style.color='var(--silver)';" style="flex:1;padding:10px;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--silver);">🎬 Videos (Coming Soon)</button>
     </div>
     <div id="panel-photos" style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;">
           <img src="images/_DSC2951.jpg" alt=" DSC2951" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
