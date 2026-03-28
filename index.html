@@ -437,7 +437,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <li><a href="/compete.html">Compete</a></li>
     <li><a href="/host-a-class.html">Host a Class</a></li>
     <li><a href="#alumni">Alumni</a></li>
-    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
     <li><a href="#partners">Partners</a></li>
     <li><a href="#apply">Apply</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -563,8 +563,6 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
   </div>
 </section>
 
-<!-- Social proof photo removed — now hero background only -->
-
 <!-- ═══ STATS BAR ═══ -->
 <div class="stats-bar">
   <div class="stats-inner">
@@ -635,6 +633,81 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">No textbook-only instructors here. Every member of our team has operational field experience — ensuring you learn practical skills that work in real situations.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EVENT CALENDAR ═══ -->
+<section style="background:var(--navy-mid);position:relative;z-index:1;" id="schedule">
+  <div class="section-inner">
+    <div class="section-label">Class &amp; Event Calendar</div>
+    <h2>Upcoming Classes <span class="gold">&amp; Events</span></h2>
+    <p class="section-desc">Sample calendar — contact us to confirm current availability, exact locations, and registration details. Classes held online and at partner ranges.</p>
+
+    <div class="cal-filter">
+      <button class="cal-btn active" onclick="filterCal('all',this)">All Events</button>
+      <button class="cal-btn" onclick="filterCal('ccw',this)">CWP / CCW</button>
+      <button class="cal-btn" onclick="filterCal('beginner',this)">Beginner</button>
+      <button class="cal-btn" onclick="filterCal('ladies',this)">Ladies Day</button>
+      <button class="cal-btn" onclick="filterCal('advanced',this)">Advanced</button>
+      <button class="cal-btn" onclick="filterCal('virtual',this)">Virtual / Online</button>
+    </div>
+
+    <div id="calContainer">
+      <div class="cal-event reveal" data-cat="ladies">
+        <div class="cal-date"><div class="cal-month">TBD</div><div class="cal-day">★</div></div>
+        <div class="cal-info"><h4>🌸 Ladies Day — Annual Event</h4><p>USS Academy's official Ladies Day event — full day, partner range, all experience levels welcome.</p><span class="cal-tag tag-ladies">Ladies Day · Annual</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Ladies Day','TBD — Contact for Date','Call to Register')">Register Interest</button>
+      </div>
+      <div class="cal-event reveal" data-cat="ccw">
+        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>Florida CWP / CCW Permit Class</h4><p>State-approved concealed carry permit class. FL 790 &amp; 776. Live-fire qualification. Partner range — contact for location.</p><span class="cal-tag tag-ccw">CWP · CWP · Weekly</span></div>
+        <button class="cal-register-btn" onclick="openPayment('CWP / CCW2 Permit Class','Weekly','Call for Pricing')">Register</button>
+      </div>
+      <div class="cal-event reveal" data-cat="beginner">
+        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>Entry-Level Beginner Course</h4><p>First-time firearm handling. Safe, welcoming, pressure-free. Partner range or online. All levels welcome.</p><span class="cal-tag tag-beginner">Beginner · First-Timers</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Entry-Level Beginner Course','Weekly','Call for Pricing')">Register</button>
+      </div>
+      <div class="cal-event reveal" data-cat="virtual">
+        <div class="cal-date"><div class="cal-month">ONGOING</div><div class="cal-day">↗</div></div>
+        <div class="cal-info"><h4>Virtual / Online Classes</h4><p>USS Academy offers online training nationally. Contact us to confirm which programs are available virtually.</p><span class="cal-tag tag-virtual">Virtual · National</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Virtual Training','Flexible','Call for Info')">Inquire</button>
+      </div>
+      <div class="cal-event reveal" data-cat="ccw">
+        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>Self-Defense Seminar — FL 790 &amp; 776</h4><p>Know your rights. Know your law. Florida self-defense law, gun protection, and carry-to-conceal legal foundations.</p><span class="cal-tag tag-ccw">Self-Defense · FL Law</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Self-Defense Seminar FL 790 &amp; 776','Weekly','Call for Pricing')">Register</button>
+      </div>
+      <div class="cal-event reveal" data-cat="advanced">
+        <div class="cal-date"><div class="cal-month">MONTHLY</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>Night Vision Training Course</h4><p>Advanced NVD operation, weapon mounting, low-light engagement fundamentals. Partner range. Limited seats.</p><span class="cal-tag tag-advanced">Night Vision · Advanced</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Night Vision Course','Monthly','Call for Info')">Register</button>
+      </div>
+      <div class="cal-event reveal" data-cat="beginner">
+        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>Women's Firearms Training</h4><p>Women-only firearms sessions — beginner to advanced. Safe, empowering, supportive environment.</p><span class="cal-tag tag-ladies">Women-Only</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Women\'s Firearms Training','Weekly','Call for Pricing')">Register</button>
+      </div>
+      <div class="cal-event reveal" data-cat="beginner">
+        <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>Zero to Accurate — Sight Alignment, Sight Picture &amp; Zeroing Fundamentals</h4><p>Proper sight alignment, sight picture, and zeroing procedures for iron sights, red dots, and scopes. All platforms welcome.</p><span class="cal-tag tag-beginner">All Levels · All Platforms</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Zero to Accurate','Rolling','Call for Pricing')">Register</button>
+      </div>
+      <div class="cal-event reveal" data-cat="advanced">
+        <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>The Science of the Shot — Precision Marksmanship &amp; Respiratory Pause</h4><p>Respiratory control, natural pause cycle, trigger discipline, and precision fundamentals. Pistol &amp; rifle. All advanced levels.</p><span class="cal-tag tag-advanced">Precision · Intermediate–Advanced</span></div>
+        <button class="cal-register-btn" onclick="openPayment('Precision Marksmanship &amp; Respiratory Pause','Rolling','Call for Pricing')">Register</button>
+      </div>
+      <div class="cal-event reveal" data-cat="advanced">
+        <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
+        <div class="cal-info"><h4>G-Qualification — Armed Security</h4><p>Florida G-License requalification. Live-fire range session. Certificate provided. Call for availability.</p><span class="cal-tag tag-advanced">G-License · Security</span></div>
+        <button class="cal-register-btn" onclick="openPayment('G-Qualification','Rolling','Call for Pricing')">Register</button>
+      </div>
+    </div>
+    <div style="margin-top:20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <p style="font-size:13px;font-weight:300;color:var(--silver);">⚠ Always contact us to confirm your class date, time, and <strong style="color:var(--white);">exact location</strong> — classes are held at partner ranges, not the corporate office.</p>
+      <a href="tel:8005088772" class="btn-primary" style="font-size:12px;padding:12px 22px;">📞 800-508-8772 (USSA)</a>
     </div>
   </div>
 </section>
@@ -973,6 +1046,44 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
   </div>
 </section>
 
+<!-- ═══ WHAT TO BRING — RANGE PREPARATION ═══ -->
+<section style="background:var(--navy);padding:72px 40px;" id="what-to-bring">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Before You Arrive</div>
+      <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);margin-bottom:12px;">What to Bring — <span style="color:var(--gold);">Range Preparation</span></h2>
+      <p style="font-size:15px;font-weight:300;color:var(--silver);max-width:640px;margin:0 auto;line-height:1.7;">Come prepared and ready to train. Review this checklist before every range session or class.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:960px;margin:0 auto;">
+      <!-- Mandatory -->
+      <div style="background:var(--navy-mid);border:1px solid rgba(201,168,76,.15);border-top:2px solid var(--gold);padding:28px;border-radius:4px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Mandatory Items</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Eye Protection</strong> — ANSI-rated shooting glasses required</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Ear Protection</strong> — Over-ear muffs or in-ear plugs (electronic muffs recommended)</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Photo ID</strong> — Valid government-issued identification</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Closed-Toe Shoes</strong> — No sandals, flip-flops, or open-toe footwear</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Range-Appropriate Attire</strong> — No low-cut tops, high collars recommended to prevent hot brass contact</div>
+        </div>
+      </div>
+      <!-- Bring Your Own -->
+      <div style="background:var(--navy-mid);border:1px solid rgba(201,168,76,.15);border-top:2px solid var(--gold);padding:28px;border-radius:4px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Bring Your Own</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Firearm</strong> — Your personal firearm (if applicable to course). Unloaded, cased.</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Ammunition</strong> — Factory-loaded ammo appropriate for your firearm. Check course requirements.</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Targets</strong> — Standard silhouette or bullseye targets (some courses supply these)</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Water &amp; Snacks</strong> — Stay hydrated, especially for outdoor range sessions in Florida heat</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Notepad &amp; Pen</strong> — For notes during classroom portions</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;padding:16px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:4px;max-width:960px;margin-left:auto;margin-right:auto;">
+      <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;"><strong style="color:var(--gold);">Note:</strong> Some items may be supplied by USS Academy depending on the course. CWP classes include all required materials. Check your confirmation email for course-specific requirements. Questions? Call <strong style="color:var(--white);">800-508-8772</strong>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ LADIES DAY EVENT ═══ -->
 <section class="ladies-section" id="ladies-day">
   <div class="section-inner">
@@ -1030,119 +1141,6 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           <p id="ladies-success" style="display:none;margin-top:10px;font-size:12px;color:#90ee90;font-weight:600;">✓ You'll be notified when the next Ladies Day is scheduled!</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ WHAT TO BRING — RANGE PREPARATION ═══ -->
-<section style="background:var(--navy);padding:72px 40px;" id="what-to-bring">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:40px;">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Before You Arrive</div>
-      <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);margin-bottom:12px;">What to Bring — <span style="color:var(--gold);">Range Preparation</span></h2>
-      <p style="font-size:15px;font-weight:300;color:var(--silver);max-width:640px;margin:0 auto;line-height:1.7;">Come prepared and ready to train. Review this checklist before every range session or class.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:960px;margin:0 auto;">
-      <!-- Mandatory -->
-      <div style="background:var(--navy-mid);border:1px solid rgba(201,168,76,.15);border-top:2px solid var(--gold);padding:28px;border-radius:4px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Mandatory Items</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Eye Protection</strong> — ANSI-rated shooting glasses required</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Ear Protection</strong> — Over-ear muffs or in-ear plugs (electronic muffs recommended)</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Photo ID</strong> — Valid government-issued identification</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Closed-Toe Shoes</strong> — No sandals, flip-flops, or open-toe footwear</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Range-Appropriate Attire</strong> — No low-cut tops, high collars recommended to prevent hot brass contact</div>
-        </div>
-      </div>
-      <!-- Bring Your Own -->
-      <div style="background:var(--navy-mid);border:1px solid rgba(201,168,76,.15);border-top:2px solid var(--gold);padding:28px;border-radius:4px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Bring Your Own</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Firearm</strong> — Your personal firearm (if applicable to course). Unloaded, cased.</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Ammunition</strong> — Factory-loaded ammo appropriate for your firearm. Check course requirements.</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Targets</strong> — Standard silhouette or bullseye targets (some courses supply these)</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Water &amp; Snacks</strong> — Stay hydrated, especially for outdoor range sessions in Florida heat</div>
-          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:300;color:var(--silver);"><span style="color:var(--gold);font-size:10px;margin-top:3px;">&#9670;</span> <strong style="color:var(--white);">Notepad &amp; Pen</strong> — For notes during classroom portions</div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:24px;padding:16px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:4px;max-width:960px;margin-left:auto;margin-right:auto;">
-      <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;"><strong style="color:var(--gold);">Note:</strong> Some items may be supplied by USS Academy depending on the course. CWP classes include all required materials. Check your confirmation email for course-specific requirements. Questions? Call <strong style="color:var(--white);">800-508-8772</strong>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ EVENT CALENDAR ═══ -->
-<section style="background:var(--navy-mid);position:relative;z-index:1;" id="schedule">
-  <div class="section-inner">
-    <div class="section-label">Class &amp; Event Calendar</div>
-    <h2>Upcoming Classes <span class="gold">&amp; Events</span></h2>
-    <p class="section-desc">Sample calendar — contact us to confirm current availability, exact locations, and registration details. Classes held online and at partner ranges.</p>
-
-    <div class="cal-filter">
-      <button class="cal-btn active" onclick="filterCal('all',this)">All Events</button>
-      <button class="cal-btn" onclick="filterCal('ccw',this)">CWP / CCW</button>
-      <button class="cal-btn" onclick="filterCal('beginner',this)">Beginner</button>
-      <button class="cal-btn" onclick="filterCal('ladies',this)">Ladies Day</button>
-      <button class="cal-btn" onclick="filterCal('advanced',this)">Advanced</button>
-      <button class="cal-btn" onclick="filterCal('virtual',this)">Virtual / Online</button>
-    </div>
-
-    <div id="calContainer">
-      <div class="cal-event reveal" data-cat="ladies">
-        <div class="cal-date"><div class="cal-month">TBD</div><div class="cal-day">★</div></div>
-        <div class="cal-info"><h4>🌸 Ladies Day — Annual Event</h4><p>USS Academy's official Ladies Day event — full day, partner range, all experience levels welcome.</p><span class="cal-tag tag-ladies">Ladies Day · Annual</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Ladies Day','TBD — Contact for Date','Call to Register')">Register Interest</button>
-      </div>
-      <div class="cal-event reveal" data-cat="ccw">
-        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>Florida CWP / CCW Permit Class</h4><p>State-approved concealed carry permit class. FL 790 &amp; 776. Live-fire qualification. Partner range — contact for location.</p><span class="cal-tag tag-ccw">CWP · CWP · Weekly</span></div>
-        <button class="cal-register-btn" onclick="openPayment('CWP / CCW2 Permit Class','Weekly','Call for Pricing')">Register</button>
-      </div>
-      <div class="cal-event reveal" data-cat="beginner">
-        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>Entry-Level Beginner Course</h4><p>First-time firearm handling. Safe, welcoming, pressure-free. Partner range or online. All levels welcome.</p><span class="cal-tag tag-beginner">Beginner · First-Timers</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Entry-Level Beginner Course','Weekly','Call for Pricing')">Register</button>
-      </div>
-      <div class="cal-event reveal" data-cat="virtual">
-        <div class="cal-date"><div class="cal-month">ONGOING</div><div class="cal-day">↗</div></div>
-        <div class="cal-info"><h4>Virtual / Online Classes</h4><p>USS Academy offers online training nationally. Contact us to confirm which programs are available virtually.</p><span class="cal-tag tag-virtual">Virtual · National</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Virtual Training','Flexible','Call for Info')">Inquire</button>
-      </div>
-      <div class="cal-event reveal" data-cat="ccw">
-        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>Self-Defense Seminar — FL 790 &amp; 776</h4><p>Know your rights. Know your law. Florida self-defense law, gun protection, and carry-to-conceal legal foundations.</p><span class="cal-tag tag-ccw">Self-Defense · FL Law</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Self-Defense Seminar FL 790 &amp; 776','Weekly','Call for Pricing')">Register</button>
-      </div>
-      <div class="cal-event reveal" data-cat="advanced">
-        <div class="cal-date"><div class="cal-month">MONTHLY</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>Night Vision Training Course</h4><p>Advanced NVD operation, weapon mounting, low-light engagement fundamentals. Partner range. Limited seats.</p><span class="cal-tag tag-advanced">Night Vision · Advanced</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Night Vision Course','Monthly','Call for Info')">Register</button>
-      </div>
-      <div class="cal-event reveal" data-cat="beginner">
-        <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>Women's Firearms Training</h4><p>Women-only firearms sessions — beginner to advanced. Safe, empowering, supportive environment.</p><span class="cal-tag tag-ladies">Women-Only</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Women\'s Firearms Training','Weekly','Call for Pricing')">Register</button>
-      </div>
-      <div class="cal-event reveal" data-cat="beginner">
-        <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>Zero to Accurate — Sight Alignment, Sight Picture &amp; Zeroing Fundamentals</h4><p>Proper sight alignment, sight picture, and zeroing procedures for iron sights, red dots, and scopes. All platforms welcome.</p><span class="cal-tag tag-beginner">All Levels · All Platforms</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Zero to Accurate','Rolling','Call for Pricing')">Register</button>
-      </div>
-      <div class="cal-event reveal" data-cat="advanced">
-        <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>The Science of the Shot — Precision Marksmanship &amp; Respiratory Pause</h4><p>Respiratory control, natural pause cycle, trigger discipline, and precision fundamentals. Pistol &amp; rifle. All advanced levels.</p><span class="cal-tag tag-advanced">Precision · Intermediate–Advanced</span></div>
-        <button class="cal-register-btn" onclick="openPayment('Precision Marksmanship &amp; Respiratory Pause','Rolling','Call for Pricing')">Register</button>
-      </div>
-      <div class="cal-event reveal" data-cat="advanced">
-        <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
-        <div class="cal-info"><h4>G-Qualification — Armed Security</h4><p>Florida G-License requalification. Live-fire range session. Certificate provided. Call for availability.</p><span class="cal-tag tag-advanced">G-License · Security</span></div>
-        <button class="cal-register-btn" onclick="openPayment('G-Qualification','Rolling','Call for Pricing')">Register</button>
-      </div>
-    </div>
-    <div style="margin-top:20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-      <p style="font-size:13px;font-weight:300;color:var(--silver);">⚠ Always contact us to confirm your class date, time, and <strong style="color:var(--white);">exact location</strong> — classes are held at partner ranges, not the corporate office.</p>
-      <a href="tel:8005088772" class="btn-primary" style="font-size:12px;padding:12px 22px;">📞 800-508-8772 (USSA)</a>
     </div>
   </div>
 </section>
@@ -1634,356 +1632,39 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
   </div>
 </section>
 
-<!-- ═══ TRAINING GALLERY ═══ -->
-<section style="background:var(--navy);padding:72px 40px;" id="gallery">
-  <div style="max-width:1400px;margin:0 auto;">
+<!-- ═══ TRAINING IN ACTION ═══ -->
+<section style="background:var(--navy);padding:72px 40px;" id="training">
+  <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:32px;">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">USS Academy In Action</div>
-      <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);">Training <span style="color:var(--gold);">Gallery</span></h2>
-      <p style="font-size:14px;font-weight:300;color:var(--silver);max-width:640px;margin:12px auto 0;">175 photos · 32 training videos</p>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">See It In Action</div>
+      <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);">Training <span style="color:var(--gold);">In Action</span></h2>
     </div>
-    <div style="display:flex;gap:4px;margin-bottom:24px;padding:4px;background:var(--navy-mid);border-radius:8px;border:1px solid rgba(201,168,76,.1);max-width:320px;margin-left:auto;margin-right:auto;">
-      <button id="tab-photos" onclick="document.getElementById('panel-photos').style.display='grid';document.getElementById('panel-videos').style.display='none';this.style.background='var(--gold)';this.style.color='var(--navy)';document.getElementById('tab-videos').style.background='transparent';document.getElementById('tab-videos').style.color='var(--silver)';" style="flex:1;padding:10px;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:var(--navy);">📷 Photos (175)</button>
-      <button id="tab-videos" onclick="document.getElementById('panel-videos').style.display='block';document.getElementById('panel-photos').style.display='none';this.style.background='var(--gold)';this.style.color='var(--navy)';document.getElementById('tab-photos').style.background='transparent';document.getElementById('tab-photos').style.color='var(--silver)';" style="flex:1;padding:10px;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--silver);">🎬 Videos (Coming Soon)</button>
+
+    <!-- Featured Video Placeholder -->
+    <div style="background:var(--navy-mid);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:48px;text-align:center;margin-bottom:24px;">
+      <div style="font-size:48px;margin-bottom:12px;">🎬</div>
+      <h3 style="font-family:'Cinzel',serif;font-size:20px;color:var(--white);margin-bottom:8px;">USS Academy — Official Training Video</h3>
+      <p style="font-size:13px;color:var(--silver);">Coming soon — upload your marketing video to feature here.</p>
     </div>
-    <div id="panel-photos" style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;">
-          <img src="images/_DSC2951.jpg" alt=" DSC2951" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2645.jpg" alt=" DSC2645" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/tactical-seated-rifle.jpg" alt="tactical seated rifle" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC3398.jpg" alt=" DSC3398" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_ART6637-copy.jpg" alt=" ART6637 copy" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_ART6630-copy.jpg" alt=" ART6630 copy" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2632.jpg" alt=" DSC2632" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2943.jpg" alt=" DSC2943" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/operator-hilltop-sunset.jpg" alt="operator hilltop sunset" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2635.jpg" alt=" DSC2635" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2956.jpg" alt=" DSC2956" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8964.JPG" alt="IMG 8964" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2650.jpg" alt=" DSC2650" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/operators-fistbump.jpg" alt="operators fistbump" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2648.jpg" alt=" DSC2648" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8984.JPG" alt="IMG 8984" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC2953.jpg" alt=" DSC2953" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/tactical-prone-barricade.jpg" alt="tactical prone barricade" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_ART4245.jpg" alt=" ART4245" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC3409.jpg" alt=" DSC3409" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_ART6643-copy.jpg" alt=" ART6643 copy" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_ART6647-copy.jpg" alt=" ART6647 copy" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_ART4245-copy.jpg" alt=" ART4245 copy" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_DSC3407.jpg" alt=" DSC3407" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8755.JPG" alt="IMG 8755" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_7988.JPEG" alt="IMG 7988" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_0665.JPG" alt="IMG 0665" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_9032.JPG" alt="IMG 9032" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_2799.JPG" alt="IMG 2799" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8921.JPG" alt="IMG 8921" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8778.JPG" alt="IMG 8778" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_0543.JPG" alt="IMG 0543" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8754.JPG" alt="IMG 8754" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_7403.JPG" alt="IMG 7403" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8263.JPG" alt="IMG 8263" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_7406.JPG" alt="IMG 7406" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8838-2.JPG" alt="IMG 8838 2" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8966.JPG" alt="IMG 8966" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8923.JPG" alt="IMG 8923" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8903.JPG" alt="IMG 8903" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8891.JPG" alt="IMG 8891" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8887.JPG" alt="IMG 8887" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8967.JPG" alt="IMG 8967" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_7402.JPG" alt="IMG 7402" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/EC307460-0161-4615-8208-B5726B83FA44.JPG" alt="EC307460 0161 4615 8208 B5726B83FA44" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_3931.JPG" alt="IMG 3931" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_9075.JPG" alt="IMG 9075" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_4988.JPEG" alt="IMG 4988" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_0543-2.JPG" alt="IMG 0543 2" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/FullSizeRender.JPG" alt="FullSizeRender" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_0762.JPG" alt="IMG 0762" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8974.JPG" alt="IMG 8974" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_4058.jpg" alt="IMG 4058" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_9074.JPG" alt="IMG 9074" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_8838.JPG" alt="IMG 8838" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_4291.JPG" alt="IMG 4291" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/AF4F5BA1-B5BC-4E6D-9654-EA50730D829E.JPG" alt="AF4F5BA1 B5BC 4E6D 9654 EA50730D829E" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/IMG_7854.JPG" alt="IMG 7854" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1002-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1002 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1195-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1195 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1024-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1024 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1169-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1169 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1023-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1023 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1145-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1145 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1213-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1213 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1159-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1159 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1213-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1213 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1029-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1029 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1229-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1229 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1066-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1066 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/instructor-target-line.jpg" alt="instructor target line" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1002-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1002 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1021-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1021 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1019-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1019 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/target-results-patches.jpg" alt="target results patches" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1010-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1010 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1037-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1037 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1242-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1242 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1587-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1587 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1204-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1204 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1056-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1056 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1576-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1576 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/outdoor-range-pistol-training.jpg" alt="outdoor range pistol training" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1552-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1552 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1218-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1218 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1311-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1311 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1044-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1044 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1161-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1161 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1024-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1024 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1194-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1194 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1190-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1190 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1318-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1318 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1181-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1181 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/classroom-instructor-teaching.jpg" alt="classroom instructor teaching" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1280-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1280 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1562-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1562 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1200-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1200 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1001-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1001 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1120-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1120 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1025-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1025 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1243-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1243 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/instructor-gesturing-class.jpg" alt="instructor gesturing class" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1307-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1307 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1225-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpeg" alt="1225 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1047-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1047 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1417-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1417 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1160-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1160 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1312-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1312 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1170-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1170 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1310-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1310 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1019-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1019 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/dual-operators-firing.jpg" alt="dual operators firing" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/female-shooter-rifle-bw.jpg" alt="female shooter rifle bw" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1449-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1449 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1198-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1198 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1003-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1003 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1573-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1573 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1004-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1004 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1271-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1271 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1078-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1078 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1330-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1330 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/women-group-range-selfie.jpg" alt="women group range selfie" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/vehicle-shooting-reddot.jpg" alt="vehicle shooting reddot" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/glock-nvg-helmet-reddot.jpg" alt="glock nvg helmet reddot" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1196-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016-copy-2.jpg" alt="1196 USS Agency ranch shooting practice  ArtzPhoto 11192016 copy 2" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1548-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1548 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/classic-rifle-bench.jpg" alt="classic rifle bench" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/Untitled-design--2821-29.png" alt="Untitled design  2821 29" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1026-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1026 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1084-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1084 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1028-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1028 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1207-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1207 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1191-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1191 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1220-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1220 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1326-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1326 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1381-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1381 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1306-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1306 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1059-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1059 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1014-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1014 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/ar15-on-bench-golden.jpg" alt="ar15 on bench golden" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1193-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1193 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1163-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1163 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1004-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1004 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1064-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1064 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1013-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1013 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1165-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1165 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/group-class-photo-outdoor.jpg" alt="group class photo outdoor" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1062-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1062 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1305-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1305 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1512-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016-copy.jpg" alt="1512 USS Agency ranch shooting practice  ArtzPhoto 11192016 copy" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/classroom-students-diverse.jpg" alt="classroom students diverse" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/instructor-firing-ar-range.jpg" alt="instructor firing ar range" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1190-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1190 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1211-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1211 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/team-outdoor-range-casual.jpg" alt="team outdoor range casual" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1074-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1074 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1564-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1564 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1269-USS-Agency-ranch-shooting-_ArtzPhoto_11222016.jpg" alt="1269 USS Agency ranch shooting  ArtzPhoto 11222016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1036-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1036 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/women-thumbsup-range.jpg" alt="women thumbsup range" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1316-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1316 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1017-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1017 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1365-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1365 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1480-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016-copy.jpg" alt="1480 USS Agency ranch shooting practice  ArtzPhoto 11192016 copy" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1528-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1528 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1114-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1114 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1441-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1441 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1057-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1057 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1182-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1182 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1186-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1186 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1034-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg" alt="1034 USS Agency ranch shooting  ArtzPhoto 11212016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1184-USS-Agency-class-and-stock-photos-_ArtzPhoto_11192016.jpg" alt="1184 USS Agency class and stock photos  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/hero-sunset-silhouette.jpg" alt="hero sunset silhouette" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/1353-USS-Agency-ranch-shooting-practice-_ArtzPhoto_11192016.jpg" alt="1353 USS Agency ranch shooting practice  ArtzPhoto 11192016" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
-          <img src="images/_ART1830.jpg" alt=" ART1830" style="width:100%;height:160px;object-fit:cover;border-radius:2px;" loading="lazy">
+
+    <!-- 12 Key Photos -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:24px;">
+      <img src="images/CA46FC45-569B-42F2-ACE1-07C5D873AB2A.JPG" alt="Josh Rodriguez tactical" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/IMG_8887.JPG" alt="Class group photo" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/_ART4245.jpg" alt="Team silhouette" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/IMG_0665.JPG" alt="Instructor at range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/_DSC2956.jpg" alt="Operators fist bump" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/IMG_9070.JPG" alt="Range supervision" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/nightvision-operators-dusk.jpg" alt="Night vision training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/IMG_8964.JPG" alt="Vehicle shooting" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/classroom-students-diverse.jpg" alt="Diverse classroom" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/women-group-range-selfie.jpg" alt="Women at range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/ar15-on-bench-golden.jpg" alt="AR-15" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/IMG_6707.JPEG" alt="Young shooter" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
     </div>
-    <div id="panel-videos" style="display:none;grid-template-columns:repeat(4,1fr);gap:10px;">
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎯</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Range — Live Fire</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎯</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Range — AR-15</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Tactical Drill</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Field Training</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Advanced Drill</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🏆</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Competition Prep</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Shoot & Move</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎖️</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Tactical Scenario</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Night Ops</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎯</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Long Range</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Team Drill</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Movement Training</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Low Light Drill</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Night Training</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🔫</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Suppressor Session</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Night Vision Ops</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">NVG Field</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">NVG CQB</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">NVG Engagement</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Quick Draw</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎯</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Precision Shot</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎯</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Marksmanship</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎖️</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Tactical Scenario 2</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Field Exercise</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎖️</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Advanced Tactical</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">📹</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Training Replay</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🌙</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Night Session</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎖️</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Tactical Brief</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">🎯</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Range Footage</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">📋</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Ops Brief</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">📹</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Full Session</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
-          <div style="background:linear-gradient(135deg,var(--navy-mid),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:18px;text-align:center;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,.12)'">
-            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Tactical Move</div>
-            <div style="font-size:10px;color:var(--gold);margin-top:4px;opacity:0.7;">▶ Play</div>
-          </div>
+
+    <div style="text-align:center;">
+      <a href="gallery.html" class="btn-primary" style="display:inline-block;font-size:14px;padding:14px 36px;">View Full Gallery — 175+ Photos &amp; Videos</a>
     </div>
   </div>
 </section>
@@ -2579,8 +2260,8 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           <li><a href="#alumni">Alumni Community</a></li>
           <li><a href="#apply">Apply — Instructors</a></li>
           <li><a href="#apply">Apply — Media</a></li>
-          <li><a href="#gallery">Photo Gallery</a></li>
-          <li><a href="#gallery">Video Gallery</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="gallery.html">Video Gallery</a></li>
           <li><a href="#partners">Partners</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
