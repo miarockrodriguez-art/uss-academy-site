@@ -97,7 +97,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:0;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(201,168,76,.06) 0%,transparent 60%),linear-gradient(135deg,#050d1a 0%,#0a1628 40%,#0f2244 100%);}
+.hero-bg{position:absolute;inset:0;background:url('images/hero-sunset-silhouette.jpg') center/cover no-repeat;}.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.75) 0%,rgba(10,22,40,0.6) 40%,rgba(15,34,68,0.7) 100%);}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 60% 50%,black 20%,transparent 80%);}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:6px 14px;margin-bottom:28px;animation:fadeUp .8s ease both;}
@@ -556,6 +556,11 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
   </div>
 </section>
 
+<!-- ═══ SOCIAL PROOF PHOTO ═══ -->
+<div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+  <img src="images/group-class-photo-outdoor.jpg" alt="USS Academy Class Group Photo — 29,000+ Students Trained" style="width:100%;height:260px;object-fit:cover;object-position:center;border-radius:4px;border:1px solid rgba(201,168,76,.15);">
+</div>
+
 <!-- ═══ STATS BAR ═══ -->
 <div class="stats-bar">
   <div class="stats-inner">
@@ -602,29 +607,29 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);margin-bottom:12px;">Led by <span style="color:var(--gold);">Experts</span></h2>
     <p style="font-size:15px;font-weight:300;color:var(--silver);max-width:640px;margin:0 auto 40px;line-height:1.7;">Classes are taught by Law Enforcement Firearms Instructors, U.S. Marine Corps Instructors, NRA Instructors, USCCA Instructors, and Florida K License Instructors. All instructors are vetted, state-certified, and bring real-world experience into every class.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:960px;margin:0 auto;">
-      <!-- Card 1 -->
-      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:36px 28px;text-align:center;transition:border-color .3s;">
-        <div style="width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <!-- Card 1 — Certified -->
+      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:0;text-align:center;transition:border-color .3s;overflow:hidden;">
+        <img src="images/josh-instructor-portrait.jpg" alt="USS Academy Certified Instructor" style="width:100%;height:200px;object-fit:cover;object-position:center top;">
+        <div style="padding:24px 28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Certified & State-Approved</div>
+          <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">Every instructor holds current Florida state certifications, including Law Enforcement Firearms Instructor credentials, and meets all requirements to teach concealed weapons permit courses and advanced firearms training.</p>
         </div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Certified & State-Approved</div>
-        <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">Every instructor holds current Florida state certifications, including Law Enforcement Firearms Instructor credentials, and meets all requirements to teach concealed weapons permit courses and advanced firearms training.</p>
       </div>
-      <!-- Card 2 -->
-      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:36px 28px;text-align:center;transition:border-color .3s;">
-        <div style="width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <!-- Card 2 — Military/LE -->
+      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:0;text-align:center;transition:border-color .3s;overflow:hidden;">
+        <img src="images/team-ridge-silhouette.jpg" alt="USS Academy Tactical Team" style="width:100%;height:200px;object-fit:cover;object-position:center;">
+        <div style="padding:24px 28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Military & Law Enforcement Backgrounds</div>
+          <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">Our team includes active and retired military personnel and law enforcement officers who bring disciplined, professional instruction to every session.</p>
         </div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Military & Law Enforcement Backgrounds</div>
-        <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">Our team includes active and retired military personnel and law enforcement officers who bring disciplined, professional instruction to every session.</p>
       </div>
-      <!-- Card 3 -->
-      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:36px 28px;text-align:center;transition:border-color .3s;">
-        <div style="width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <!-- Card 3 — Real-World -->
+      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:0;text-align:center;transition:border-color .3s;overflow:hidden;">
+        <img src="images/tactical-prone-barricade.jpg" alt="USS Academy Tactical Training" style="width:100%;height:200px;object-fit:cover;object-position:center;">
+        <div style="padding:24px 28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Real-World Experience</div>
+          <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">No textbook-only instructors here. Every member of our team has operational field experience — ensuring you learn practical skills that work in real situations.</p>
         </div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Real-World Experience</div>
-        <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">No textbook-only instructors here. Every member of our team has operational field experience — ensuring you learn practical skills that work in real situations.</p>
       </div>
     </div>
   </div>
@@ -898,6 +903,12 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
     <!-- TIER 5: NIGHT VISION — ELITE TACTICAL — $499 -->
     <div style="margin-bottom:12px;"><p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim);padding:8px 0;border-bottom:1px solid rgba(201,168,76,.15);">Tier 5 — Night Vision · Elite Tactical · $499 · All prices per person</p></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;border-radius:4px;overflow:hidden;" class="reveal">
+      <img src="images/nightvision-operators-dusk.jpg" alt="Night Vision Training" style="width:100%;height:140px;object-fit:cover;">
+      <img src="images/nightvision-closeup-nvg.jpg" alt="NVG Close-Up" style="width:100%;height:140px;object-fit:cover;">
+      <img src="images/thermal-vehicle.jpg" alt="Thermal Imaging" style="width:100%;height:140px;object-fit:cover;">
+      <img src="images/nightvision-suppressed-ar.jpg" alt="Night Vision Equipment" style="width:100%;height:140px;object-fit:cover;">
+    </div>
     <div class="programs-grid reveal" style="margin-bottom:40px;">
       <div class="program-card">
         <div class="program-num">15</div>
@@ -953,6 +964,11 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <h2>USS Academy <span style="color:#e8b4c8;">Ladies Day</span></h2>
     <p class="section-desc">USS Academy proudly hosts its Official Ladies Day event — an empowering, welcoming, exclusively women's firearms experience designed specifically to introduce women to responsible gun ownership and self-protection in a fun, safe, and supportive atmosphere.</p>
 
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:24px;border-radius:4px;overflow:hidden;" class="reveal">
+      <img src="images/women-group-range-selfie.jpg" alt="Women at USS Academy Range" style="width:100%;height:180px;object-fit:cover;">
+      <img src="images/female-shooter-rifle-bw.jpg" alt="Female Shooter" style="width:100%;height:180px;object-fit:cover;">
+      <img src="images/women-thumbsup-range.jpg" alt="Women at USS Academy" style="width:100%;height:180px;object-fit:cover;">
+    </div>
     <div class="ladies-hero reveal">
       <div>
         <div class="ladies-badge">⭐ Official USS Academy Event</div>
@@ -2141,6 +2157,38 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHOTO GALLERY ═══ -->
+<section style="background:var(--navy);padding:72px 40px;" id="gallery">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">USS Academy In Action</div>
+      <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);">Training <span style="color:var(--gold);">Gallery</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+      <img src="images/classroom-instructor-teaching.jpg" alt="Classroom instruction" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/operators-fistbump.jpg" alt="Team camaraderie" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/josh-training-gun-demo.jpg" alt="Instructor demonstration" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/tactical-seated-rifle.jpg" alt="Tactical rifle training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/classroom-students-diverse.jpg" alt="Diverse students in class" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/instructor-firing-ar-range.jpg" alt="Instructor at range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/dual-operators-firing.jpg" alt="Operators training together" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/vehicle-shooting-reddot.jpg" alt="Vehicle shooting training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/josh-pistol-demo.jpg" alt="Pistol demonstration" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/ar15-on-bench-golden.jpg" alt="AR-15 rifle" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/instructor-target-line.jpg" alt="Instructor at target line" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/edc-flatlay-gear.jpg" alt="Everyday carry gear" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/instructors-supervising-range.jpg" alt="Range supervision" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/outdoor-range-pistol-training.jpg" alt="Outdoor pistol training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/instructor-gesturing-class.jpg" alt="Instructor teaching" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/operator-hilltop-sunset.jpg" alt="Operator at sunset" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/glock-nvg-helmet-reddot.jpg" alt="Glock with red dot and NVG" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/team-outdoor-range-casual.jpg" alt="Team at outdoor range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/classic-rifle-bench.jpg" alt="Classic rifle at range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/target-results-patches.jpg" alt="Training results" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
     </div>
   </div>
 </section>
