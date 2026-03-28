@@ -97,7 +97,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:0;}
-.hero-bg{position:absolute;inset:0;background:url('images/hero-sunset-silhouette.jpg') center/cover no-repeat;}.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.75) 0%,rgba(10,22,40,0.6) 40%,rgba(15,34,68,0.7) 100%);}
+.hero-bg{position:absolute;inset:0;background:url('images/group-class-photo-outdoor.jpg') center/cover no-repeat;}.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.78) 0%,rgba(10,22,40,0.65) 40%,rgba(15,34,68,0.72) 100%);}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 60% 50%,black 20%,transparent 80%);}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:6px 14px;margin-bottom:28px;animation:fadeUp .8s ease both;}
@@ -625,7 +625,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       </div>
       <!-- Card 3 — Real-World -->
       <div style="background:var(--navy);border:1px solid rgba(201,168,76,.15);padding:0;text-align:center;transition:border-color .3s;overflow:hidden;">
-        <img src="images/tactical-prone-barricade.jpg" alt="USS Academy Tactical Training" style="width:100%;height:200px;object-fit:cover;object-position:center;">
+        <img src="images/josh-pistol-demo.jpg" alt="USS Academy Real-World Training" style="width:100%;height:200px;object-fit:cover;object-position:center top;">
         <div style="padding:24px 28px;">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Real-World Experience</div>
           <p style="font-size:13px;font-weight:300;color:var(--silver);line-height:1.6;">No textbook-only instructors here. Every member of our team has operational field experience — ensuring you learn practical skills that work in real situations.</p>
@@ -964,12 +964,8 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <h2>USS Academy <span style="color:#e8b4c8;">Ladies Day</span></h2>
     <p class="section-desc">USS Academy proudly hosts its Official Ladies Day event — an empowering, welcoming, exclusively women's firearms experience designed specifically to introduce women to responsible gun ownership and self-protection in a fun, safe, and supportive atmosphere.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:24px;border-radius:4px;overflow:hidden;" class="reveal">
-      <img src="images/women-group-range-selfie.jpg" alt="Women at USS Academy Range" style="width:100%;height:180px;object-fit:cover;">
-      <img src="images/female-shooter-rifle-bw.jpg" alt="Female Shooter" style="width:100%;height:180px;object-fit:cover;">
-      <img src="images/women-thumbsup-range.jpg" alt="Women at USS Academy" style="width:100%;height:180px;object-fit:cover;">
-    </div>
-    <div class="ladies-hero reveal">
+    <div class="ladies-hero reveal" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:url('images/female-shooter-rifle-bw.jpg') center/cover no-repeat;opacity:0.08;filter:grayscale(100%);pointer-events:none;"></div>
       <div>
         <div class="ladies-badge">⭐ Official USS Academy Event</div>
         <h3 style="font-family:'Cinzel',serif;font-size:26px;font-weight:700;color:var(--white);margin-bottom:14px;line-height:1.2;">An Event Built <span style="color:#e8b4c8;">For Women,<br>By Women</span></h3>
@@ -2169,26 +2165,76 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);">Training <span style="color:var(--gold);">Gallery</span></h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-      <img src="images/classroom-instructor-teaching.jpg" alt="Classroom instruction" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/operators-fistbump.jpg" alt="Team camaraderie" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <!-- Josh Rodriguez / Current Instructors -->
       <img src="images/josh-training-gun-demo.jpg" alt="Instructor demonstration" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/tactical-seated-rifle.jpg" alt="Tactical rifle training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/classroom-students-diverse.jpg" alt="Diverse students in class" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/josh-pistol-whiteboard.jpg" alt="Instructor at whiteboard" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/josh-dual-guns-teaching.jpg" alt="Training gun comparison" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
       <img src="images/instructor-firing-ar-range.jpg" alt="Instructor at range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/dual-operators-firing.jpg" alt="Operators training together" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/vehicle-shooting-reddot.jpg" alt="Vehicle shooting training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/josh-pistol-demo.jpg" alt="Pistol demonstration" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/ar15-on-bench-golden.jpg" alt="AR-15 rifle" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/instructor-target-line.jpg" alt="Instructor at target line" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/edc-flatlay-gear.jpg" alt="Everyday carry gear" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <!-- Students & Classes -->
+      <img src="images/classroom-students-diverse.jpg" alt="Diverse students in class" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/group-class-photo-outdoor.jpg" alt="Class group photo" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
       <img src="images/instructors-supervising-range.jpg" alt="Range supervision" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
       <img src="images/outdoor-range-pistol-training.jpg" alt="Outdoor pistol training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/instructor-gesturing-class.jpg" alt="Instructor teaching" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/operator-hilltop-sunset.jpg" alt="Operator at sunset" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <!-- Equipment & Gear -->
+      <img src="images/ar15-on-bench-golden.jpg" alt="AR-15 rifle" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/edc-flatlay-gear.jpg" alt="Everyday carry gear" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
       <img src="images/glock-nvg-helmet-reddot.jpg" alt="Glock with red dot and NVG" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
-      <img src="images/team-outdoor-range-casual.jpg" alt="Team at outdoor range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
       <img src="images/classic-rifle-bench.jpg" alt="Classic rifle at range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/vehicle-shooting-reddot.jpg" alt="Vehicle shooting" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
       <img src="images/target-results-patches.jpg" alt="Training results" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <!-- Tactical & Field (includes former instructors — gallery only) -->
+      <img src="images/hero-sunset-silhouette.jpg" alt="Sunset silhouette" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/team-ridge-silhouette.jpg" alt="Team silhouette" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/operators-fistbump.jpg" alt="Team camaraderie" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/tactical-seated-rifle.jpg" alt="Tactical rifle training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/tactical-prone-barricade.jpg" alt="Prone tactical position" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/dual-operators-firing.jpg" alt="Operators training" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/operator-hilltop-sunset.jpg" alt="Operator at sunset" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/classroom-instructor-teaching.jpg" alt="Classroom instruction" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/instructor-gesturing-class.jpg" alt="Instructor teaching" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/instructor-target-line.jpg" alt="Target line" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <!-- Ladies Day (moved from featured to gallery) -->
+      <img src="images/women-group-range-selfie.jpg" alt="Women at range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/women-thumbsup-range.jpg" alt="Women at USS Academy" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/female-shooter-rifle-bw.jpg" alt="Female shooter" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+      <img src="images/team-outdoor-range-casual.jpg" alt="Team at outdoor range" style="width:100%;height:180px;object-fit:cover;border-radius:2px;">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VIDEO GALLERY ═══ -->
+<section style="background:var(--navy-mid);padding:72px 40px;" id="videos">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">See It In Action</div>
+      <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);">Training <span style="color:var(--gold);">Videos</span></h2>
+      <p style="font-size:14px;font-weight:300;color:var(--silver);max-width:600px;margin:12px auto 0;line-height:1.6;">Watch real USS Academy training sessions, range footage, night vision operations, and tactical scenarios.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:20px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:8px;">🎯</div>
+        <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;">Range Training</div>
+        <div style="font-size:11px;color:var(--text-dim);">8 videos</div>
+      </div>
+      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:20px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:8px;">🌙</div>
+        <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;">Night Vision Ops</div>
+        <div style="font-size:11px;color:var(--text-dim);">5 videos</div>
+      </div>
+      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:20px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:8px;">⚡</div>
+        <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;">Tactical Scenarios</div>
+        <div style="font-size:11px;color:var(--text-dim);">7 videos</div>
+      </div>
+      <div style="background:var(--navy);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:20px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:8px;">🔫</div>
+        <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;">Competition & Drills</div>
+        <div style="font-size:11px;color:var(--text-dim);">12 videos</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <p style="font-size:13px;color:var(--silver);opacity:0.6;">32 training videos available — follow us on social media for the latest footage. Video hosting coming soon.</p>
+      <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:12px;font-size:12px;padding:10px 24px;">Request Video Access</a>
     </div>
   </div>
 </section>
