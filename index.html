@@ -2828,7 +2828,7 @@ function getBotReply(q){
 
 <!-- WAITLIST MODAL -->
 <div id="waitlist-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10000;align-items:center;justify-content:center;backdrop-filter:blur(4px);">
-  <div style="background:var(--navy);border:1px solid rgba(201,168,76,.4);border-radius:8px;padding:0;max-width:440px;width:90%;position:relative;overflow:hidden;">
+  <div style="background:var(--navy);border:1px solid rgba(201,168,76,.4);border-radius:0;padding:0;max-width:440px;width:90%;position:relative;overflow:hidden;">
     <div style="background:rgba(201,168,76,.08);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,.2);">
       <button onclick="document.getElementById('waitlist-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--silver);font-size:24px;cursor:pointer;" aria-label="Close">&times;</button>
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Get on the Waitlist</div>
@@ -2839,13 +2839,13 @@ function getBotReply(q){
       </div>
     </div>
     <div style="padding:20px 24px;">
-      <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:4px;padding:10px 14px;margin-bottom:16px;">
+      <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:0;padding:10px 14px;margin-bottom:16px;">
         <p style="font-size:11px;color:var(--silver);line-height:1.5;">All prices listed are per person. Available as Group, Semi-Private, or Private session. All sales are final and non-refundable. Contact us to confirm class location.</p>
       </div>
-      <input id="wl-name" type="text" placeholder="Full Name *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Full Name">
-      <input id="wl-email" type="email" placeholder="Email Address *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Email Address">
-      <input id="wl-phone" type="tel" placeholder="Phone Number *" required style="width:100%;padding:12px;margin-bottom:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Phone Number">
-      <button onclick="submitWaitlist()" style="width:100%;padding:14px;background:var(--gold);color:var(--navy);border:none;border-radius:4px;font-weight:700;font-size:15px;cursor:pointer;letter-spacing:.5px;">Submit — Get on the Waitlist</button>
+      <input id="wl-name" type="text" placeholder="Full Name *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:0;font-size:14px;" aria-label="Full Name">
+      <input id="wl-email" type="email" placeholder="Email Address *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:0;font-size:14px;" aria-label="Email Address">
+      <input id="wl-phone" type="tel" placeholder="Phone Number *" required style="width:100%;padding:12px;margin-bottom:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:0;font-size:14px;" aria-label="Phone Number">
+      <button onclick="submitWaitlist()" style="width:100%;padding:14px;background:var(--gold);color:var(--navy);border:none;border-radius:0;font-weight:700;font-size:15px;cursor:pointer;letter-spacing:.5px;">Submit — Get on the Waitlist</button>
     </div>
   </div>
 </div>
