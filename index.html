@@ -926,6 +926,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <h3>One-on-One Private Instruction</h3>
         <p>Personalized firearms training entirely focused on you. Expert guidance tailored to your skill level, goals, and needs — from beginner's first session to advanced technical refinement. A dedicated certified instructor whose full attention is on you. Sessions designed around your goals, your firearm, and your schedule.</p>
         <span class="program-tag">All Levels · Fully Custom</span>
+        <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get on the Waitlist</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
       <div class="program-card">
@@ -933,6 +934,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <h3>⬛ Black Box Modules</h3>
         <p>USS Academy's Black Box Modules are specialized, scenario-driven training programs conducted in a controlled, immersive environment — designed to stress-test decision-making under realistic, high-pressure conditions. These modules go beyond standard firearms training by placing students inside complex, dynamic scenarios that challenge situational awareness, threat assessment, use-of-force judgment, and tactical response. Black Box training is built on the principle that the most critical decisions happen in seconds — and that real preparation requires experiencing those scenarios before they happen in real life. Available for law enforcement, military, security professionals, and advanced civilian students. Contact us for curriculum details and scheduling.</p>
         <span class="program-tag">Advanced · Scenario-Based · LE · Military · Civilian</span>
+        <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get on the Waitlist</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
       <div class="program-card">
@@ -2178,11 +2180,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
             <div class="form-group" style="margin-top:12px;"><label>Guardian Electronic Signature</label><input type="text" id="w-guardian-sig" placeholder="Guardian's full legal name as signature" aria-label="Guardian's full legal name as signature"/></div>
           <div class="form-group" style="margin-top:16px;">
             <label style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:6px;display:block;">Instructor Name *</label>
-            <input type="text" id="waiver-instructor" placeholder="Instructor Name" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Instructor Name">
+            <input type="text" id="waiver-instructor" placeholder="Instructor Name" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:0;font-size:14px;" aria-label="Instructor Name">
           </div>
           <div class="form-group" style="margin-top:12px;">
             <label style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:6px;display:block;">Class Location *</label>
-            <input type="text" id="waiver-location" placeholder="Class Location" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Class Location">
+            <input type="text" id="waiver-location" placeholder="Class Location" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:0;font-size:14px;" aria-label="Class Location">
           </div>
           
           <input type="hidden" id="waiver-timestamp" value="">
@@ -2194,7 +2196,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           </div>
 
           <!-- Submit -->
-          <button onclick="submitWaiver()">Check In</button>
+          <button onclick="submitWaiver()" style="width:100%;padding:16px;background:#c9a84c;color:#0a1628;border:none;border-radius:0;font-family:Barlow Condensed,sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">CHECK IN</button>
 
           <div id="waiver-success" style="display:none;background:rgba(45,106,45,.15);border:1px solid rgba(45,106,45,.4);padding:20px 24px;text-align:center;">
             <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#90ee90;margin-bottom:8px;">✓ Registration &amp; Waiver Submitted</p>
@@ -2825,31 +2827,50 @@ function getBotReply(q){
 <!--/email_off-->
 
 <!-- WAITLIST MODAL -->
-<div id="waitlist-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;align-items:center;justify-content:center;">
-  <div style="background:var(--navy);border:1px solid var(--gold);border-radius:8px;padding:32px;max-width:400px;width:90%;position:relative;">
-    <button onclick="document.getElementById('waitlist-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--silver);font-size:24px;cursor:pointer;" aria-label="Close waitlist form">&times;</button>
-    <h3 style="font-family:'Cinzel',serif;font-size:18px;color:var(--white);margin-bottom:4px;">Get on the Waitlist</h3>
-    <p id="waitlist-class-name" style="font-size:12px;color:var(--gold);margin-bottom:16px;"></p>
-    <input id="wl-fname" type="text" placeholder="First Name" style="width:100%;padding:10px;margin-bottom:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;" aria-label="First Name">
-    <input id="wl-lname" type="text" placeholder="Last Name" style="width:100%;padding:10px;margin-bottom:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;" aria-label="Last Name">
-    <input id="wl-phone" type="tel" placeholder="Phone Number" style="width:100%;padding:10px;margin-bottom:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;" aria-label="Phone Number">
-    <input id="wl-email" type="email" placeholder="Email Address" style="width:100%;padding:10px;margin-bottom:16px;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;" aria-label="Email Address">
-    <button onclick="submitWaitlist()" style="width:100%;padding:12px;background:var(--gold);color:var(--navy);border:none;border-radius:4px;font-weight:700;font-size:14px;cursor:pointer;">Join Waitlist</button>
+<div id="waitlist-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10000;align-items:center;justify-content:center;backdrop-filter:blur(4px);">
+  <div style="background:var(--navy);border:1px solid rgba(201,168,76,.4);border-radius:8px;padding:0;max-width:440px;width:90%;position:relative;overflow:hidden;">
+    <div style="background:rgba(201,168,76,.08);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,.2);">
+      <button onclick="document.getElementById('waitlist-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--silver);font-size:24px;cursor:pointer;" aria-label="Close">&times;</button>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Get on the Waitlist</div>
+      <div id="wl-class-name" style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--white);"></div>
+      <div style="display:flex;gap:16px;margin-top:8px;">
+        <div id="wl-date" style="font-size:12px;color:var(--silver);"></div>
+        <div id="wl-price" style="font-size:12px;color:var(--gold);font-weight:700;"></div>
+      </div>
+    </div>
+    <div style="padding:20px 24px;">
+      <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:4px;padding:10px 14px;margin-bottom:16px;">
+        <p style="font-size:11px;color:var(--silver);line-height:1.5;">All prices listed are per person. Available as Group, Semi-Private, or Private session. All sales are final and non-refundable. Contact us to confirm class location.</p>
+      </div>
+      <input id="wl-name" type="text" placeholder="Full Name *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Full Name">
+      <input id="wl-email" type="email" placeholder="Email Address *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Email Address">
+      <input id="wl-phone" type="tel" placeholder="Phone Number *" required style="width:100%;padding:12px;margin-bottom:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:4px;font-size:14px;" aria-label="Phone Number">
+      <button onclick="submitWaitlist()" style="width:100%;padding:14px;background:var(--gold);color:var(--navy);border:none;border-radius:4px;font-weight:700;font-size:15px;cursor:pointer;letter-spacing:.5px;">Submit — Get on the Waitlist</button>
+    </div>
   </div>
 </div>
 <script>
 function openWaitlist(btn){
   var card=btn.closest('.program-card');
-  var className=card?card.querySelector('h3').textContent:'';
-  document.getElementById('waitlist-class-name').textContent=className;
+  var className=card?card.querySelector('h3').textContent:'USS Academy Class';
+  var tag=card?card.querySelector('.program-tag'):'';
+  var price='Call for Pricing';
+  if(tag){var t=tag.textContent;var m=t.match(/\$(\d+)/);if(m)price='$'+m[1];}
+  document.getElementById('wl-class-name').textContent=className;
+  document.getElementById('wl-date').textContent='Next Available Date';
+  document.getElementById('wl-price').textContent=price;
   document.getElementById('waitlist-modal').style.display='flex';
 }
 function submitWaitlist(){
-  var data={form_type:'waitlist',class_name:document.getElementById('waitlist-class-name').textContent,first_name:document.getElementById('wl-fname').value,last_name:document.getElementById('wl-lname').value,phone:document.getElementById('wl-phone').value,email:document.getElementById('wl-email').value,submitted_at:new Date().toISOString()};
-  console.log('Waitlist:',data);
+  var n=document.getElementById('wl-name').value.trim();
+  var e=document.getElementById('wl-email').value.trim();
+  var p=document.getElementById('wl-phone').value.trim();
+  if(!n||!e||!p){alert('Please fill in all fields.');return;}
+  var cls=document.getElementById('wl-class-name').textContent;
+  console.log('Waitlist:',{name:n,email:e,phone:p,class_name:cls,submitted:new Date().toISOString()});
   document.getElementById('waitlist-modal').style.display='none';
-  alert('You are on the waitlist for '+data.class_name+'! We will contact you when a spot opens.');
-  document.getElementById('wl-fname').value='';document.getElementById('wl-lname').value='';document.getElementById('wl-phone').value='';document.getElementById('wl-email').value='';
+  alert('You are on the waitlist for '+cls+'! We will contact you when the next class date is announced. Call 800-508-8772 for immediate assistance.');
+  document.getElementById('wl-name').value='';document.getElementById('wl-email').value='';document.getElementById('wl-phone').value='';
 }
 </script>
 
