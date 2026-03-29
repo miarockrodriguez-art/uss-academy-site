@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampa Bay Firearms Training | CWP Classes Tampa, St. Petersburg | USS Academy</title>
+    <meta name="description" content="Professional firearms training across Tampa Bay. CWP permit courses, tactical training, and self-defense classes in Tampa, St. Petersburg, Clearwater, Brandon, Lakeland, and Sarasota. Certified instructors, 29,000+ graduates.">
+    <meta name="keywords" content="firearms training Tampa, CWP class St Petersburg, concealed carry Tampa Bay, gun training Clearwater, shooting classes Lakeland, self-defense Sarasota, CCW permit Brandon">
+    <link rel="canonical" href="https://ussacademy.org/tampa-bay-firearms-training.html">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a1628;
+            --gold: #c9a84c;
+            --silver: #a0a8b8;
+            --white: #f0f0f0;
+            --navy-light: #111d33;
+            --navy-dark: #060f1c;
+            --gold-dark: #a8893e;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--white); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cinzel', serif; }
+        a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--white); }
+
+        .top-bar { background: var(--navy-dark); padding: 10px 0; border-bottom: 1px solid rgba(201,168,76,0.2); font-size: 0.85rem; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .top-bar a { color: var(--silver); }
+        .top-bar a:hover { color: var(--gold); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header { background: linear-gradient(135deg, var(--navy-dark), var(--navy), var(--navy-light)); padding: 20px 0; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 800; color: var(--gold); letter-spacing: 2px; }
+        .logo span { color: var(--white); font-weight: 400; font-size: 0.9rem; display: block; letter-spacing: 1px; }
+        nav a { color: var(--white); margin-left: 25px; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav a:hover { color: var(--gold); }
+
+        .hero { background: linear-gradient(160deg, var(--navy-dark) 0%, #0c1a30 40%, var(--navy-light) 100%); padding: 80px 0 60px; text-align: center; border-bottom: 1px solid rgba(201,168,76,0.15); }
+        .hero h1 { font-size: 2.8rem; color: var(--gold); margin-bottom: 20px; line-height: 1.2; }
+        .hero .subtitle { font-size: 1.2rem; color: var(--silver); max-width: 700px; margin: 0 auto 30px; }
+        .breadcrumb { font-size: 0.85rem; color: var(--silver); margin-bottom: 30px; }
+
+        .btn { display: inline-block; padding: 14px 32px; font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+        .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--navy); }
+        .btn-gold:hover { background: var(--white); color: var(--navy); }
+        .btn-outline { border: 2px solid var(--gold); color: var(--gold); background: transparent; }
+        .btn-outline:hover { background: var(--gold); color: var(--navy); }
+        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+
+        section { padding: 60px 0; }
+        section:nth-child(even) { background: var(--navy-light); }
+        .section-title { font-size: 2rem; color: var(--gold); text-align: center; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: var(--silver); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        .content-block { max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; }
+        .content-block p { margin-bottom: 18px; }
+
+        .cities-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .city-card { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); padding: 18px; text-align: center; font-family: 'Cinzel', serif; font-weight: 600; color: var(--gold); transition: all 0.3s; }
+        .city-card:hover { background: rgba(201,168,76,0.15); transform: translateY(-2px); }
+
+        .programs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
+        .program-card { background: var(--navy-dark); border: 1px solid rgba(201,168,76,0.2); padding: 30px; transition: all 0.3s; }
+        .program-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .program-card h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 8px; }
+        .program-card .price { font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+        .program-card p { color: var(--silver); font-size: 0.95rem; }
+        .tier-label { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--silver); border: 1px solid var(--silver); padding: 3px 10px; margin-bottom: 12px; }
+
+        .credentials-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .credential-item { display: flex; align-items: flex-start; gap: 15px; padding: 20px; background: rgba(201,168,76,0.05); border-left: 3px solid var(--gold); }
+        .credential-item .icon { font-size: 1.5rem; color: var(--gold); flex-shrink: 0; }
+        .credential-item h4 { color: var(--white); margin-bottom: 5px; font-size: 1rem; }
+        .credential-item p { color: var(--silver); font-size: 0.9rem; }
+
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+        .contact-card { padding: 30px; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15); }
+        .contact-card h4 { color: var(--gold); margin-bottom: 10px; }
+        .contact-card p { color: var(--silver); font-size: 0.95rem; }
+        .contact-card a { display: block; font-size: 1.15rem; font-weight: 600; margin-top: 8px; }
+
+        footer { background: var(--navy-dark); padding: 40px 0 20px; border-top: 2px solid var(--gold); text-align: center; }
+        footer p { color: var(--silver); font-size: 0.85rem; margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            nav { display: none; }
+            .header-inner { justify-content: center; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .top-bar .container { justify-content: center; text-align: center; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "USS Academy LLC - Tampa Bay Firearms Training",
+        "description": "Professional firearms training serving Tampa Bay including Tampa, St. Petersburg, Clearwater, Brandon, Sarasota, and Lakeland. Certified LE, USMC, NRA, and USCCA instructors.",
+        "url": "https://ussacademy.org/tampa-bay-firearms-training.html",
+        "telephone": "+1-800-508-8772",
+        "email": "support@ussacademy.org",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "450 S. Orange Ave., 3rd Floor",
+            "addressLocality": "Orlando",
+            "addressRegion": "FL",
+            "postalCode": "32801",
+            "addressCountry": "US"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Tampa"},
+            {"@type": "City", "name": "St. Petersburg"},
+            {"@type": "City", "name": "Clearwater"},
+            {"@type": "City", "name": "Brandon"},
+            {"@type": "City", "name": "Sarasota"},
+            {"@type": "City", "name": "Lakeland"}
+        ],
+        "priceRange": "$99 - $799+",
+        "sameAs": "https://ussacademy.org"
+    }
+    </script>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <span>Toll-Free: <a href="tel:8005088772">800-508-8772 (USSA)</a> | <a href="tel:4073058335">407-305-8335</a> | <a href="tel:3218788089">321-878-8089</a></span>
+            <span><a href="mailto:support@ussacademy.org">support@ussacademy.org</a> | <a href="https://ussacademy.org">ussacademy.org</a></span>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">USS ACADEMY<span>United Safety Solutions</span></div>
+            <nav>
+                <a href="https://ussacademy.org">Home</a>
+                <a href="https://ussacademy.org/index.html#programs">Programs</a>
+                <a href="https://ussacademy.org/index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="https://ussacademy.org">Home</a> / Tampa Bay Firearms Training</div>
+            <h1>Tampa Bay Firearms Training</h1>
+            <p class="subtitle">West Coast Expansion, East Coast Standards. USS Academy brings 27 years of Orlando-forged firearms expertise to every corner of the Tampa Bay metro.</p>
+            <div class="btn-group">
+                <a href="https://ussacademy.org/index.html#programs" class="btn btn-gold">View All Programs</a>
+                <a href="https://ussacademy.org/index.html#contact" class="btn btn-outline">Reserve Your Seat</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Bringing World-Class Training to Florida's Gulf Coast</h2>
+            <div class="content-block">
+                <p>The Tampa Bay area has exploded with new residents, new gun owners, and a growing demand for training that actually prepares people for reality. USS Academy recognized this shift years ago and began serving the west coast corridor with the same instructor-led, range-based programs that built our reputation in Orlando. Today, students from Tampa to Sarasota have direct access to a firearms education pipeline trusted by over 29,000 graduates.</p>
+
+                <p>Tampa Bay presents unique self-defense considerations. The region's dense urban core along the Hillsborough River corridor, the sprawling suburban communities of Brandon and Riverview, and the beach communities stretching from Clearwater south to Siesta Key each carry distinct security profiles. Our instructors tailor scenario discussions to reflect the environments where Tampa Bay residents actually live, work, and travel. A homeowner in Clearwater faces different considerations than someone commuting through downtown Tampa, and our training respects that difference.</p>
+
+                <p>For residents in the I-4 corridor cities like Lakeland, our Tampa Bay program is especially convenient. Sitting between Orlando and Tampa, Lakeland students can choose classes in either market. Our travel training model means certified instructors come to partner facilities across the region on a rotating schedule. St. Petersburg, often underserved by firearms educators who cluster in Hillsborough County, gets dedicated class dates because we believe geography should never be a barrier to competent self-defense preparation.</p>
+
+                <p>Sarasota's growing population of retirees and professionals has created demand for both entry-level CWP courses and the precision marksmanship programs that challenge experienced shooters. We schedule across skill levels specifically because Tampa Bay's firearms community is diverse in experience. Whether you purchased your first handgun last week or you have been shooting for thirty years and want to sharpen your low-light skills, our six-tier program structure ensures you start where you are and progress with purpose.</p>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 50px;">Cities We Serve</h3>
+            <p class="section-subtitle">Rotating class schedules at partner range facilities across the Tampa Bay metro</p>
+            <div class="cities-grid">
+                <div class="city-card">Tampa</div>
+                <div class="city-card">St. Petersburg</div>
+                <div class="city-card">Clearwater</div>
+                <div class="city-card">Brandon</div>
+                <div class="city-card">Sarasota</div>
+                <div class="city-card">Lakeland</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Programs Available in Tampa Bay</h2>
+            <p class="section-subtitle">Full curriculum from beginner to professional development, scheduled on a rotating basis at Tampa Bay partner ranges</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <span class="tier-label">Beginner Tier</span>
+                    <h3>CWP Permit &amp; Handgun Basics</h3>
+                    <div class="price">$99 - $179</div>
+                    <p>Florida Concealed Weapon Permit preparation, safe handling, storage, basic marksmanship, and the legal framework every gun owner must understand before carrying.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Skill Tier</span>
+                    <h3>Defensive Pistol &amp; Situational Skills</h3>
+                    <div class="price">$279</div>
+                    <p>Draw techniques, shooting under time pressure, malfunction clearing, and the cognitive framework for making split-second decisions in defensive encounters.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Tactical Tier</span>
+                    <h3>Tactical Response Training</h3>
+                    <div class="price">$349</div>
+                    <p>Dynamic movement with a loaded firearm, cover and concealment utilization, team communication under stress, and scenario-based force-on-force concepts.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Precision Tier</span>
+                    <h3>Long-Range &amp; Precision Shooting</h3>
+                    <div class="price">$399</div>
+                    <p>Extended distance engagement, ballistic coefficient calculation, environmental factor adjustment, and the mental discipline required for consistent accuracy at distance.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Night Vision Tier</span>
+                    <h3>Night Vision &amp; Low-Light Tactics</h3>
+                    <div class="price">$499</div>
+                    <p>Operations with night vision devices, IR aiming systems, flashlight techniques, target PID in darkness, and transitioning between illuminated and non-illuminated environments.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Pro Development</span>
+                    <h3>LE &amp; Security Professional Courses</h3>
+                    <div class="price">$799+</div>
+                    <p>Continuing education for law enforcement, armed security K License qualification, instructor development tracks, and agency-specific curriculum fulfillment.</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a href="https://ussacademy.org/index.html#programs" class="btn btn-gold">Full Program Details</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Instructor Credentials</h2>
+            <p class="section-subtitle">Every instructor serving Tampa Bay holds the same certifications as our Orlando-based team</p>
+            <div class="credentials-list">
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>LE Firearms Instructor Certified</h4>
+                        <p>Trained and certified to instruct law enforcement officers in firearms proficiency and qualification.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>USMC Trained</h4>
+                        <p>Marine Corps marksmanship doctrine applied to structured civilian and professional training environments.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>NRA Certified</h4>
+                        <p>Multi-discipline NRA instructor certifications covering pistol, rifle, shotgun, and personal protection.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>USCCA Training Counselor</h4>
+                        <p>Certified by the United States Concealed Carry Association for responsible armed citizen education.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>FL K License Instructor</h4>
+                        <p>State-authorized to certify armed security professionals under Florida's Division of Licensing.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>29,000+ Graduates</h4>
+                        <p>Three decades of results across all skill levels, from first-time shooters to experienced professionals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Contact USS Academy</h2>
+            <p class="section-subtitle">Call, text, or email to check upcoming Tampa Bay class dates and reserve your spot.</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Toll-Free</h4>
+                    <p>Nationwide</p>
+                    <a href="tel:8005088772">800-508-8772 (USSA)</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Direct Line</h4>
+                    <p>Orlando Office</p>
+                    <a href="tel:4073058335">407-305-8335</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Call or Text</h4>
+                    <p>Quick Response</p>
+                    <a href="tel:3218788089">321-878-8089</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Email</h4>
+                    <p>Enrollment &amp; Questions</p>
+                    <a href="mailto:support@ussacademy.org">support@ussacademy.org</a>
+                </div>
+            </div>
+            <div class="btn-group" style="margin-top: 40px;">
+                <a href="https://ussacademy.org/index.html#contact" class="btn btn-gold">Enroll Now</a>
+                <a href="https://ussacademy.org" class="btn btn-outline">Visit Main Site</a>
+            </div>
+            <p style="text-align:center; color:var(--silver); margin-top:20px; font-size:0.9rem;">Corporate Office: 450 S. Orange Ave., 3rd Floor, Orlando, FL 32801<br><em>Note: Classes are held at partner range facilities, not at the corporate office.</em></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.1rem; margin-bottom:15px;">USS ACADEMY LLC</p>
+            <p>&copy; 2026 USS Academy LLC. All rights reserved. | <a href="https://ussacademy.org">ussacademy.org</a></p>
+            <p>Firearms training held at partner range facilities throughout the Tampa Bay area.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

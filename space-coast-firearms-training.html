@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Coast Firearms Training | Melbourne, Titusville CWP Classes | USS Academy</title>
+    <meta name="description" content="Top-rated firearms training on Florida's Space Coast. CWP permit classes, self-defense courses, and advanced tactical training in Melbourne, Titusville, Cocoa, Palm Bay, Cape Canaveral, and Viera. Close to our Orlando headquarters.">
+    <meta name="keywords" content="firearms training Melbourne FL, CWP class Titusville, concealed carry Space Coast, gun training Palm Bay, shooting classes Cocoa, self-defense Cape Canaveral, CCW permit Brevard County, firearms Viera">
+    <link rel="canonical" href="https://ussacademy.org/space-coast-firearms-training.html">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a1628;
+            --gold: #c9a84c;
+            --silver: #a0a8b8;
+            --white: #f0f0f0;
+            --navy-light: #111d33;
+            --navy-dark: #060f1c;
+            --gold-dark: #a8893e;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--white); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cinzel', serif; }
+        a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--white); }
+
+        .top-bar { background: var(--navy-dark); padding: 10px 0; border-bottom: 1px solid rgba(201,168,76,0.2); font-size: 0.85rem; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .top-bar a { color: var(--silver); }
+        .top-bar a:hover { color: var(--gold); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header { background: linear-gradient(135deg, var(--navy-dark), var(--navy), var(--navy-light)); padding: 20px 0; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 800; color: var(--gold); letter-spacing: 2px; }
+        .logo span { color: var(--white); font-weight: 400; font-size: 0.9rem; display: block; letter-spacing: 1px; }
+        nav a { color: var(--white); margin-left: 25px; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav a:hover { color: var(--gold); }
+
+        .hero { background: linear-gradient(160deg, #081320 0%, var(--navy) 50%, #0d1d35 100%); padding: 80px 0 60px; text-align: center; border-bottom: 1px solid rgba(201,168,76,0.15); }
+        .hero h1 { font-size: 2.8rem; color: var(--gold); margin-bottom: 20px; line-height: 1.2; }
+        .hero .subtitle { font-size: 1.2rem; color: var(--silver); max-width: 700px; margin: 0 auto 30px; }
+        .breadcrumb { font-size: 0.85rem; color: var(--silver); margin-bottom: 30px; }
+
+        .btn { display: inline-block; padding: 14px 32px; font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+        .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--navy); }
+        .btn-gold:hover { background: var(--white); color: var(--navy); }
+        .btn-outline { border: 2px solid var(--gold); color: var(--gold); background: transparent; }
+        .btn-outline:hover { background: var(--gold); color: var(--navy); }
+        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+
+        section { padding: 60px 0; }
+        section:nth-child(even) { background: var(--navy-light); }
+        .section-title { font-size: 2rem; color: var(--gold); text-align: center; margin-bottom: 15px; }
+        .section-subtitle { text-align: center; color: var(--silver); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        .content-block { max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; }
+        .content-block p { margin-bottom: 18px; }
+
+        .cities-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .city-card { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); padding: 18px; text-align: center; font-family: 'Cinzel', serif; font-weight: 600; color: var(--gold); transition: all 0.3s; }
+        .city-card:hover { background: rgba(201,168,76,0.15); transform: translateY(-2px); }
+
+        .programs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
+        .program-card { background: var(--navy-dark); border: 1px solid rgba(201,168,76,0.2); padding: 30px; transition: all 0.3s; }
+        .program-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+        .program-card h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 8px; }
+        .program-card .price { font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+        .program-card p { color: var(--silver); font-size: 0.95rem; }
+        .tier-label { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--silver); border: 1px solid var(--silver); padding: 3px 10px; margin-bottom: 12px; }
+
+        .credentials-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .credential-item { display: flex; align-items: flex-start; gap: 15px; padding: 20px; background: rgba(201,168,76,0.05); border-left: 3px solid var(--gold); }
+        .credential-item .icon { font-size: 1.5rem; color: var(--gold); flex-shrink: 0; }
+        .credential-item h4 { color: var(--white); margin-bottom: 5px; font-size: 1rem; }
+        .credential-item p { color: var(--silver); font-size: 0.9rem; }
+
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+        .contact-card { padding: 30px; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.15); }
+        .contact-card h4 { color: var(--gold); margin-bottom: 10px; }
+        .contact-card p { color: var(--silver); font-size: 0.95rem; }
+        .contact-card a { display: block; font-size: 1.15rem; font-weight: 600; margin-top: 8px; }
+
+        footer { background: var(--navy-dark); padding: 40px 0 20px; border-top: 2px solid var(--gold); text-align: center; }
+        footer p { color: var(--silver); font-size: 0.85rem; margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            nav { display: none; }
+            .header-inner { justify-content: center; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .top-bar .container { justify-content: center; text-align: center; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "USS Academy LLC - Space Coast Firearms Training",
+        "description": "Top-rated firearms training on Florida's Space Coast serving Melbourne, Titusville, Cocoa, Palm Bay, Cape Canaveral, and Viera. Convenient access from our Orlando base with frequent class schedules.",
+        "url": "https://ussacademy.org/space-coast-firearms-training.html",
+        "telephone": "+1-800-508-8772",
+        "email": "support@ussacademy.org",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "450 S. Orange Ave., 3rd Floor",
+            "addressLocality": "Orlando",
+            "addressRegion": "FL",
+            "postalCode": "32801",
+            "addressCountry": "US"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Melbourne"},
+            {"@type": "City", "name": "Titusville"},
+            {"@type": "City", "name": "Cocoa"},
+            {"@type": "City", "name": "Palm Bay"},
+            {"@type": "City", "name": "Cape Canaveral"},
+            {"@type": "City", "name": "Viera"}
+        ],
+        "priceRange": "$99 - $799+",
+        "sameAs": "https://ussacademy.org"
+    }
+    </script>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <span>Toll-Free: <a href="tel:8005088772">800-508-8772 (USSA)</a> | <a href="tel:4073058335">407-305-8335</a> | <a href="tel:3218788089">321-878-8089</a></span>
+            <span><a href="mailto:support@ussacademy.org">support@ussacademy.org</a> | <a href="https://ussacademy.org">ussacademy.org</a></span>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">USS ACADEMY<span>United Safety Solutions</span></div>
+            <nav>
+                <a href="https://ussacademy.org">Home</a>
+                <a href="https://ussacademy.org/index.html#programs">Programs</a>
+                <a href="https://ussacademy.org/index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="https://ussacademy.org">Home</a> / Space Coast Firearms Training</div>
+            <h1>Space Coast Firearms Training</h1>
+            <p class="subtitle">Precision Training for a Precision Community. Brevard County's aerospace engineers, defense contractors, and families trust USS Academy for firearms education that matches their standards.</p>
+            <div class="btn-group">
+                <a href="https://ussacademy.org/index.html#programs" class="btn btn-gold">View All Programs</a>
+                <a href="https://ussacademy.org/index.html#contact" class="btn btn-outline">Book Your Class</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Where Rocket Scientists Learn to Shoot</h2>
+            <div class="content-block">
+                <p>Brevard County is unlike anywhere else in Florida. The people who live and work along the Space Coast are engineers, physicists, defense industry professionals, and the support community that keeps America's launch infrastructure running. They approach every decision with analytical rigor, and firearms training is no exception. When a propulsion engineer from Kennedy Space Center or a software developer from L3Harris walks into one of our courses, they expect data-driven instruction, clear methodology, and measurable skill progression. USS Academy was built for exactly this kind of student.</p>
+
+                <p>Our proximity to the Space Coast from our Orlando headquarters makes Brevard County one of the most frequently served regions in our network. The drive from our corporate office to partner ranges in Melbourne, Titusville, and Cocoa is under an hour, which means we can schedule Space Coast classes with regularity that rivals our Central Florida home base. Palm Bay and Viera residents in the southern part of the county benefit especially, as the growing population there has created demand that local providers have struggled to fill with anything beyond basic permit courses.</p>
+
+                <p>Cape Canaveral and the barrier island communities present specific security considerations tied to their geography. Isolated by water on multiple sides, with limited egress routes and seasonal tourist surges, residents of the Cape and surrounding areas think about personal safety differently than someone in a landlocked suburb. Our instructors address these realities in classroom discussion, covering topics like home defense in hurricane-prone construction, situational awareness in tourist-heavy zones, and the particular legal nuances of carrying in areas that overlap with federal facilities and restricted zones.</p>
+
+                <p>The Space Coast also has a strong veteran and active-duty population tied to Patrick Space Force Base and the broader defense sector. These students often arrive with significant firearms experience but have never received structured civilian defensive training. Military marksmanship and civilian self-defense operate under different rules of engagement, different legal frameworks, and different ethical expectations. Our courses bridge that gap intentionally, helping service members and veterans translate their existing skills into the civilian context where the consequences of every trigger pull are evaluated through a different lens. Brevard County residents at every skill level find their place in our six-tier system, and the short distance from Orlando means waitlists stay short and class dates stay frequent.</p>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 50px;">Cities We Serve</h3>
+            <p class="section-subtitle">Frequent class scheduling at Brevard County partner ranges, just a short drive from our Orlando base</p>
+            <div class="cities-grid">
+                <div class="city-card">Melbourne</div>
+                <div class="city-card">Titusville</div>
+                <div class="city-card">Cocoa</div>
+                <div class="city-card">Palm Bay</div>
+                <div class="city-card">Cape Canaveral</div>
+                <div class="city-card">Viera</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Programs Available on the Space Coast</h2>
+            <p class="section-subtitle">Complete training pipeline from permit acquisition to professional certification, with frequent Brevard County scheduling</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <span class="tier-label">Beginner Tier</span>
+                    <h3>Florida CWP &amp; Responsible Ownership</h3>
+                    <div class="price">$99 - $179</div>
+                    <p>Concealed weapon permit fulfillment, firearm safety protocols, foundational marksmanship, and Florida carry law education for new and first-time gun owners on the Space Coast.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Skill Tier</span>
+                    <h3>Applied Defensive Marksmanship</h3>
+                    <div class="price">$279</div>
+                    <p>Holster presentation, cadence drills, shooting from retention, and building the automatic motor patterns that enable reliable performance under the stress of a defensive encounter.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Tactical Tier</span>
+                    <h3>Tactical Problem Solving</h3>
+                    <div class="price">$349</div>
+                    <p>Dynamic entry concepts, improvised cover use, threat prioritization, and multi-dimensional problem solving that goes beyond flat-range marksmanship into real-world application.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Precision Tier</span>
+                    <h3>Precision Rifle &amp; Ballistic Analysis</h3>
+                    <div class="price">$399</div>
+                    <p>The science of long-range accuracy: external ballistics, atmospherics, rifle system optimization, DOPE card development, and the patient methodology of achieving first-round impacts.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Night Vision Tier</span>
+                    <h3>Night Vision Equipment &amp; Low-Light Ops</h3>
+                    <div class="price">$499</div>
+                    <p>Hands-on training with night vision devices, IR and visible laser systems, light discipline, target discrimination in darkness, and the unique motor skills required for NVG marksmanship.</p>
+                </div>
+                <div class="program-card">
+                    <span class="tier-label">Pro Development</span>
+                    <h3>Defense Industry &amp; LE Professional Programs</h3>
+                    <div class="price">$799+</div>
+                    <p>Tailored for Brevard County's defense sector professionals, law enforcement officers, and security personnel. Includes K License tracks, instructor development, and agency qualification support.</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a href="https://ussacademy.org/index.html#programs" class="btn btn-gold">Full Program Details</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Instructor Credentials</h2>
+            <p class="section-subtitle">Our Space Coast instructors bring the same verified credentials trusted by law enforcement and military professionals</p>
+            <div class="credentials-list">
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>Law Enforcement Firearms Qualified</h4>
+                        <p>Certified to train and qualify sworn officers, with curriculum expertise in defensive tactics and firearms proficiency standards.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>USMC Training Lineage</h4>
+                        <p>Marine Corps marksmanship fundamentals form the backbone of our teaching methodology, from trigger control to windage estimation.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>NRA Certified Across Platforms</h4>
+                        <p>Pistol, rifle, shotgun, and home defense instructor certifications through the National Rifle Association training division.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>USCCA Armed Citizen Educators</h4>
+                        <p>Specialized in the legal, ethical, and practical dimensions of concealed carry and civilian self-defense preparedness.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>Florida K License Certified</h4>
+                        <p>Authorized to conduct armed security certification training per Florida Division of Licensing Chapter 493 standards.</p>
+                    </div>
+                </div>
+                <div class="credential-item">
+                    <div class="icon">&#9733;</div>
+                    <div>
+                        <h4>27 Years, 29,000+ Graduates</h4>
+                        <p>A proven track record spanning nearly three decades, with more graduates than any comparable training provider in the region.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Contact USS Academy</h2>
+            <p class="section-subtitle">Space Coast classes fill quickly due to proximity to our base. Contact us early to lock in your preferred date.</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Toll-Free</h4>
+                    <p>Nationwide</p>
+                    <a href="tel:8005088772">800-508-8772 (USSA)</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Direct Line</h4>
+                    <p>Orlando Office</p>
+                    <a href="tel:4073058335">407-305-8335</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Call or Text</h4>
+                    <p>Quick Response</p>
+                    <a href="tel:3218788089">321-878-8089</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Email</h4>
+                    <p>Enrollment &amp; Questions</p>
+                    <a href="mailto:support@ussacademy.org">support@ussacademy.org</a>
+                </div>
+            </div>
+            <div class="btn-group" style="margin-top: 40px;">
+                <a href="https://ussacademy.org/index.html#contact" class="btn btn-gold">Enroll Now</a>
+                <a href="https://ussacademy.org" class="btn btn-outline">Visit Main Site</a>
+            </div>
+            <p style="text-align:center; color:var(--silver); margin-top:20px; font-size:0.9rem;">Corporate Office: 450 S. Orange Ave., 3rd Floor, Orlando, FL 32801<br><em>Note: Classes are held at partner range facilities, not at the corporate office.</em></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.1rem; margin-bottom:15px;">USS ACADEMY LLC</p>
+            <p>&copy; 2026 USS Academy LLC. All rights reserved. | <a href="https://ussacademy.org">ussacademy.org</a></p>
+            <p>Space Coast training conducted at partner range facilities in Brevard County, FL.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
