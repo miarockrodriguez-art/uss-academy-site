@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0a1628">
 <!-- Google Analytics — Replace GA_MEASUREMENT_ID with your actual ID from analytics.google.com -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
@@ -28,6 +29,10 @@
   .video-placeholder{padding:60px 20px;text-align:center;}
   @media(max-width:1024px){.photo-grid{grid-template-columns:repeat(4,1fr);}}
   @media(max-width:600px){.photo-grid{grid-template-columns:repeat(2,1fr);}.header{flex-direction:column;gap:12px;text-align:center;}}
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+@media(prefers-reduced-motion:reduce){.hero-slide{transition:none !important;}}
 </style>
 </head>
 <body>

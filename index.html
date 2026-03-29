@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<meta name="theme-color" content="#0a1628"/>
 <!--email_off-->
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>USS Academy | Florida CWP Permit Class · Concealed Carry · CWP · Gun Safety | Orlando, FL | Southeast's #1 Firearms Academy</title>
@@ -55,6 +56,7 @@
 }
 </script>
 
+<link rel="preload" href="images/group-class-photo-outdoor.jpg" as="image">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 
@@ -68,7 +70,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.65;}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:80px;background:rgba(10,22,40,.97);border-bottom:1px solid rgba(201,168,76,.25);backdrop-filter:blur(12px);}
@@ -99,7 +101,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:120px;}
 .hero-bg{position:absolute;inset:0;overflow:hidden;}
-.hero-bg .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease-in-out;}
+.hero-bg .hero-slide{will-change:opacity;position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease-in-out;}
 .hero-bg .hero-slide.active{opacity:1;}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.78) 0%,rgba(10,22,40,0.65) 40%,rgba(15,34,68,0.72) 100%);z-index:1;}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 60% 50%,black 20%,transparent 80%);}
@@ -303,8 +305,8 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 .social-icon{width:34px;height:34px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);text-decoration:none;transition:background .2s;}
 .social-icon:hover{background:rgba(201,168,76,.25);}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.footer-bottom p{font-size:12px;color:var(--silver);opacity:.4;}
-.footer-license{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--silver);opacity:.4;}
+.footer-bottom p{font-size:12px;color:var(--silver);opacity:.6;}
+.footer-license{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--silver);opacity:.6;}
 
 /* ── MODAL ── */
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:3000;align-items:center;justify-content:center;padding:20px;}
@@ -378,6 +380,10 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
   nav{padding:0 20px;}
   .section-inner{padding:60px 24px;}
 }
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+@media(prefers-reduced-motion:reduce){.hero-slide{will-change:opacity;transition:none !important;}}
 </style>
 </head>
 <body>
@@ -388,7 +394,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
   <a href="#" class="nav-logo">
     <div style="display:flex;align-items:center;gap:12px;">
       <!-- Nav Shield Logo -->
-      <svg width="44" height="50" viewBox="0 0 52 58" fill="none">
+      <svg role="img" aria-hidden="true"  width="44" height="50" viewBox="0 0 52 58" fill="none">
         <!-- Shield body -->
         <path d="M26 2L4 11V30C4 42.5 14 53 26 56C38 53 48 42.5 48 30V11L26 2Z" fill="#0a1628" stroke="#c9a84c" stroke-width="1.5"/>
         <!-- Inner shield border -->
@@ -455,13 +461,13 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
 <!-- ── CRM STATUS BAR — visible only when CRM.LIVE = true ── -->
 <div id="crm-status-bar" style="display:none;background:rgba(45,106,45,.2);border-bottom:1px solid rgba(144,238,144,.3);padding:8px 48px;align-items:center;justify-content:center;gap:10px;">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#90ee90" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+  <svg role="img" aria-hidden="true"  width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#90ee90" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
   <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#90ee90;">CRM Connected — All form submissions are being sent to your CRM in real time</span>
 </div>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero" role="banner" aria-label="USS Academy hero section">
-  <div class="hero-bg">
+  <div class="hero-bg" role="region" aria-label="Hero image carousel">
     <div class="hero-slide active" style="background-image:url('images/1120-USS-Agency-ranch-shooting-_ArtzPhoto_11212016.jpg')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_8887.JPG')"></div>
     <div class="hero-slide" style="background-image:url('images/_ART4245.jpg')"></div>
@@ -491,16 +497,16 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
         <!-- USS ACADEMY wordmark — HTML, same font as nav header -->
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-          <div style="width:36px;height:1px;background:var(--gold);opacity:.5;"></div>
+          <div style="width:36px;height:1px;background:var(--gold);opacity:.65;"></div>
           <div style="text-align:center;">
             <div style="font-family:'Cinzel',serif;font-weight:900;font-size:28px;color:var(--gold);letter-spacing:.22em;line-height:1;">USS</div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.42em;color:var(--silver);text-transform:uppercase;margin-top:3px;">ACADEMY</div>
           </div>
-          <div style="width:36px;height:1px;background:var(--gold);opacity:.5;"></div>
+          <div style="width:36px;height:1px;background:var(--gold);opacity:.65;"></div>
         </div>
 
         <!-- Shield SVG — no text inside, clean shield + eagle + crosshair only -->
-        <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:320px;height:320px;">
+        <svg role="img" aria-hidden="true"  viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:320px;height:320px;">
           <!-- Outer decorative rings — centered on shield -->
           <circle cx="140" cy="135" r="132" stroke="rgba(201,168,76,.07)" stroke-width="1"/>
           <circle cx="140" cy="135" r="120" stroke="rgba(201,168,76,.1)" stroke-width=".5"/>
@@ -567,7 +573,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 </section>
 
 <!-- ═══ STATS BAR ═══ -->
-<div class="stats-bar">
+<div class="stats-bar" aria-label="USS Academy statistics">
   <div class="stats-inner">
     <div class="stat-item"><span class="stat-number">29,000+</span><span class="stat-label">Students Trained</span></div>
     <div class="stat-item"><span class="stat-number">#1</span><span class="stat-label">Largest in Southeast</span></div>
@@ -717,7 +723,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
 <!-- ═══ PROGRAMS ═══ -->
 <a id="main-content"></a>
-<section class="programs-section" id="programs" style="background:var(--navy);">
+<section class="programs-section" id="programs" style="background:var(--navy);" aria-label="Training programs and courses">
   <div class="section-inner">
     <div class="section-label">All Training Programs</div>
     <h2>Florida Concealed Carry &amp; <span class="gold">Every Discipline</span></h2>
@@ -1169,7 +1175,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#e8b4c8;margin-bottom:10px;">Stay Notified</p>
           <p style="font-size:13px;font-weight:300;color:var(--silver);margin-bottom:14px;">Enter your email to be notified when the next Ladies Day date is announced.</p>
           <div style="display:flex;gap:8px;">
-            <input type="email" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(232,180,200,.25);color:var(--white);padding:10px 12px;font-size:13px;font-family:'Barlow',sans-serif;" id="ladies-email"/>
+            <input type="email" placeholder="your@email.com" aria-label="your@email.com" aria-label="your@email.com" aria-label="your@email.com" aria-label="your@email.com" aria-label="your@email.com" style="flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(232,180,200,.25);color:var(--white);padding:10px 12px;font-size:13px;font-family:'Barlow',sans-serif;" id="ladies-email"/>
             <button onclick="ladiesSignup()" style="background:#e8b4c8;color:#1a0a14;border:none;padding:10px 16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;cursor:pointer;">NOTIFY ME</button>
           </div>
           <p id="ladies-success" style="display:none;margin-top:10px;font-size:12px;color:#90ee90;font-weight:600;">✓ You'll be notified when the next Ladies Day is scheduled!</p>
@@ -1180,7 +1186,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 </section>
 
 <!-- ═══ REVIEWS ═══ -->
-<section class="reviews-section" id="reviews">
+<section class="reviews-section" id="reviews" aria-label="Student reviews">
   <div class="section-inner">
     <div class="section-label">Student Reviews</div>
     <h2>What Our Students <span class="gold">Are Saying</span></h2>
@@ -1233,7 +1239,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 </section>
 
 <!-- ═══ TESTIMONIALS ═══ -->
-<section class="testimonials-section" id="testimonials">
+<section class="testimonials-section" id="testimonials" aria-label="Student testimonials">
   <div class="section-inner">
     <div class="section-label">Student Testimonials</div>
     <h2>Stories From Our <span class="gold">Students</span></h2>
@@ -1314,7 +1320,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <!-- Tactical Games spotlight -->
     <div style="background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.2);padding:28px 32px;display:flex;align-items:flex-start;gap:24px;" class="reveal">
       <div style="flex-shrink:0;width:48px;height:48px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg role="img" aria-hidden="true"  width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       </div>
       <div>
         <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">Tactical Games Preparation — 2027 &amp; 2028</h4>
@@ -1344,7 +1350,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           <!-- Team logo placeholder -->
           <div style="background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.15);padding:32px;text-align:center;margin-bottom:16px;">
             <div style="width:120px;height:120px;margin:0 auto 16px;border-radius:50%;background:rgba(201,168,76,.08);border:2px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg role="img" aria-hidden="true"  width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.6;">Team Logo — Coming Soon</div>
           </div>
@@ -1419,16 +1425,16 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
         <div style="display:flex;flex-direction:column;gap:14px;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-            <div class="form-group"><label>Range / Facility Name *</label><input type="text" id="rp-name" placeholder="Range name"/></div>
-            <div class="form-group"><label>Contact Name *</label><input type="text" id="rp-contact" placeholder="Your name"/></div>
+            <div class="form-group"><label>Range / Facility Name *</label><input type="text" id="rp-name" placeholder="Range name" aria-label="Range name"/></div>
+            <div class="form-group"><label>Contact Name *</label><input type="text" id="rp-contact" placeholder="Your name" aria-label="Your name"/></div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
             <div class="form-group"><label>Email *</label><input type="email" id="rp-email" placeholder="your@email.com"/></div>
-            <div class="form-group"><label>Phone *</label><input type="tel" id="rp-phone" placeholder="(xxx) xxx-xxxx"/></div>
+            <div class="form-group"><label>Phone *</label><input type="tel" id="rp-phone" placeholder="(xxx) xxx-xxxx" aria-label="(xxx) xxx-xxxx" aria-label="(xxx) xxx-xxxx" aria-label="(xxx) xxx-xxxx"/></div>
           </div>
           <div class="form-group">
             <label>Range Type *</label>
-            <select id="rp-type" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
+            <select id="rp-type" aria-label="Rp Type" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
               <option value="">— Select range type —</option>
               <option>Indoor Range</option>
               <option>Outdoor Range</option>
@@ -1439,11 +1445,11 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div class="form-group">
             <label>Location (City, State) *</label>
-            <input type="text" id="rp-location" placeholder="e.g. Orlando, FL"/>
+            <input type="text" id="rp-location" placeholder="e.g. Orlando, FL" aria-label="e.g. Orlando, FL"/>
           </div>
           <div class="form-group">
             <label>Courses You're Interested In *</label>
-            <select id="rp-course" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
+            <select id="rp-course" aria-label="Rp Course" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
               <option value="">— Select primary interest —</option>
               <option>Moving &amp; Shooting</option>
               <option>Low Light / No Light Training</option>
@@ -1458,7 +1464,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div class="form-group">
             <label>Estimated Group Size</label>
-            <select id="rp-size" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
+            <select id="rp-size" aria-label="Rp Size" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
               <option value="">— Approximate attendees —</option>
               <option>5 – 10</option>
               <option>11 – 25</option>
@@ -1495,7 +1501,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
         <div class="alumni-community-card">
           <!-- Alumni shield icon -->
           <div class="alumni-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg role="img" aria-hidden="true"  width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
               <circle cx="9" cy="7" r="4"/>
               <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
@@ -1528,7 +1534,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
         <div class="alumni-benefits">
           <div class="alumni-benefit">
             <div class="alumni-benefit-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <svg role="img" aria-hidden="true"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div class="alumni-benefit-text">
               <h4>Exclusive Alumni Events</h4>
@@ -1537,7 +1543,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div class="alumni-benefit">
             <div class="alumni-benefit-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              <svg role="img" aria-hidden="true"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             </div>
             <div class="alumni-benefit-text">
               <h4>Continued Education Discounts</h4>
@@ -1546,7 +1552,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div class="alumni-benefit">
             <div class="alumni-benefit-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              <svg role="img" aria-hidden="true"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
             </div>
             <div class="alumni-benefit-text">
               <h4>Alumni Network Access</h4>
@@ -1555,7 +1561,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div class="alumni-benefit">
             <div class="alumni-benefit-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg role="img" aria-hidden="true"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <div class="alumni-benefit-text">
               <h4>Alumni Recognition</h4>
@@ -1564,7 +1570,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div class="alumni-benefit">
             <div class="alumni-benefit-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg role="img" aria-hidden="true"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div class="alumni-benefit-text">
               <h4>Referral &amp; Instructor Pipeline</h4>
@@ -1589,7 +1595,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       <!-- CARD 1: Become an Instructor -->
       <div class="apply-card">
         <div class="apply-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <svg role="img" aria-hidden="true"  width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
         </div>
@@ -1608,7 +1614,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       <!-- CARD 2: Instructor Mentorship / Open Your Own Academy -->
       <div class="apply-card">
         <div class="apply-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <svg role="img" aria-hidden="true"  width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <circle cx="12" cy="8" r="4"/>
             <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
             <line x1="12" y1="14" x2="12" y2="20"/>
@@ -1630,7 +1636,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       <!-- CARD 3: Media — Photography & Videography -->
       <div class="apply-card">
         <div class="apply-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <svg role="img" aria-hidden="true"  width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M23 7l-7 5 7 5V7z"/>
             <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
           </svg>
@@ -1652,7 +1658,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <!-- GENERAL APPLICATION NOTE -->
     <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:28px 32px;margin-top:32px;display:flex;align-items:flex-start;gap:20px;" class="reveal">
       <div style="flex-shrink:0;color:var(--gold);margin-top:2px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <svg role="img" aria-hidden="true"  width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       </div>
       <div>
         <h4 style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:8px;">How to Apply</h4>
@@ -1731,7 +1737,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       </div>
       <div class="partner-card">
         <div class="partner-logo">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <svg role="img" aria-hidden="true"  width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <div class="partner-name">Partner Ranges</div>
         <p class="partner-desc">We train where YOU are. USS Academy partners with professional ranges across Florida and the Southeast — contact us to find a class near you.</p>
@@ -1756,8 +1762,8 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       <div class="reveal">
         <div class="contact-form">
           <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" placeholder="First name"/></div>
-            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name"/></div>
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="First name" aria-label="First name" aria-label="First name"/></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name" aria-label="Last name" aria-label="Last name"/></div>
           </div>
           <div class="form-row">
             <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
@@ -1830,42 +1836,42 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
         <div class="contact-info-block">
           <h3>Reach Our Team</h3>
           <div class="contact-detail">
-            <svg class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg role="img" aria-hidden="true"  class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div class="contact-detail-text">
               <strong>Phone (Toll-Free)</strong>
               <a href="tel:8005088772" aria-label="Call USS Academy at 800-508-8772">800-508-8772 (USSA)</a>
             </div>
           </div>
           <div class="contact-detail">
-            <svg class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg role="img" aria-hidden="true"  class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div class="contact-detail-text">
               <strong>Local Phone</strong>
               <a href="tel:4073058335" aria-label="Call USS Academy at 407-305-8335">407-305-8335</a>
             </div>
           </div>
           <div class="contact-detail">
-            <svg class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg role="img" aria-hidden="true"  class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <div class="contact-detail-text">
               <strong>Email</strong>
               <a href="mailto:support@ussacademy.org">support@ussacademy.org</a>
             </div>
           </div>
           <div class="contact-detail">
-            <svg class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg role="img" aria-hidden="true"  class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <div class="contact-detail-text">
               <strong>Corporate Office (Admin Only)</strong>
               450 S. Orange Ave., 3rd Floor<br>Orlando, FL 32801<br><em style="font-size:11px;color:rgba(176,190,197,.6);">⚠ Classes NOT held at this address — contact us for class location</em>
             </div>
           </div>
           <div class="contact-detail">
-            <svg class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg role="img" aria-hidden="true"  class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div class="contact-detail-text">
               <strong>Classes &amp; Delivery</strong>
               In-Person (Partner Ranges) · Online / Virtual · National Training
             </div>
           </div>
           <div class="contact-detail">
-            <svg class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <svg role="img" aria-hidden="true"  class="contact-detail-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             <div class="contact-detail-text">
               <strong>FL License</strong>
               NRA · USCCA Certified · Licensed &amp; Insured
@@ -1891,27 +1897,27 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <span class="social-bar-label">Follow USS Academy</span>
     <div class="social-bar-icons">
       <a href="https://www.facebook.com/ussacademy" target="_blank" rel="noopener" class="social-bar-icon" title="Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <svg role="img" aria-hidden="true"  width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         Facebook
       </a>
       <a href="https://www.instagram.com/ussacademy" target="_blank" rel="noopener" class="social-bar-icon" title="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        <svg role="img" aria-hidden="true"  width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
         Instagram
       </a>
       <a href="https://www.tiktok.com/@ussacademy" target="_blank" rel="noopener" class="social-bar-icon" title="TikTok">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+        <svg role="img" aria-hidden="true"  width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
         TikTok
       </a>
       <a href="https://twitter.com/ussacademy" target="_blank" rel="noopener" class="social-bar-icon" title="X / Twitter">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <svg role="img" aria-hidden="true"  width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         X
       </a>
       <a href="https://www.youtube.com/@ussacademy" target="_blank" rel="noopener" class="social-bar-icon" title="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58a2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        <svg role="img" aria-hidden="true"  width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58a2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
         YouTube
       </a>
     </div>
-    <span class="social-bar-label" style="font-size:10px;opacity:.5;">Update URLs in HTML when handles confirmed</span>
+    <span class="social-bar-label" style="font-size:10px;opacity:.65;">Update URLs in HTML when handles confirmed</span>
   </div>
 </div>
 
@@ -1958,7 +1964,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
             <div class="form-group"><label>Today's Date *</label><input type="text" id="w-today" readonly style="background:rgba(255,255,255,.03);cursor:default;opacity:.7;"/></div>
             <div class="form-group"><label>Gender <span style="font-weight:300;opacity:.6;">— optional</span></label>
-              <select id="w-gender" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
+              <select id="w-gender" aria-label="W Gender" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
                 <option value="">— Prefer not to say —</option>
                 <option>Male</option>
                 <option>Female</option>
@@ -1973,22 +1979,22 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
             <div class="form-group"><label>Date of Birth *</label><input type="date" id="w-dob" required/></div>
-            <div class="form-group"><label>Age *</label><input type="number" id="w-age" placeholder="Your age" min="18" required/></div>
+            <div class="form-group"><label>Age *</label><input type="number" id="w-age" placeholder="Your age" aria-label="Your age" min="18" required/></div>
           </div>
-          <div class="form-group"><label>State Issued ID Number *</label><input type="text" id="w-id" placeholder="e.g. S000-000-00-000-0" required/></div>
+          <div class="form-group"><label>State Issued ID Number *</label><input type="text" id="w-id" placeholder="e.g. S000-000-00-000-0" aria-label="e.g. S000-000-00-000-0" required/></div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
             <div class="form-group"><label>Mobile Number *</label><input type="tel" id="w-phone" placeholder="(xxx) xxx-xxxx" required/></div>
             <div class="form-group"><label>Email Address *</label><input type="email" id="w-email" placeholder="your@email.com" required/></div>
           </div>
-          <div class="form-group"><label>Mailing Address *</label><input type="text" id="w-addr" placeholder="Street address" required/></div>
+          <div class="form-group"><label>Mailing Address *</label><input type="text" id="w-addr" placeholder="Street address" aria-label="Street address" required/></div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-            <div class="form-group"><label>City *</label><input type="text" id="w-city" placeholder="City" required/></div>
-            <div class="form-group"><label>State *</label><input type="text" id="w-state" placeholder="FL" required/></div>
-            <div class="form-group"><label>ZIP *</label><input type="text" id="w-zip" placeholder="XXXXX" required/></div>
+            <div class="form-group"><label>City *</label><input type="text" id="w-city" placeholder="City" aria-label="City" required/></div>
+            <div class="form-group"><label>State *</label><input type="text" id="w-state" placeholder="FL" aria-label="FL" required/></div>
+            <div class="form-group"><label>ZIP *</label><input type="text" id="w-zip" placeholder="XXXXX" aria-label="XXXXX" required/></div>
           </div>
           <div class="form-group">
             <label>Course / Program *</label>
-            <select id="w-course" required style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
+            <select id="w-course" aria-label="W Course" required style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;">
               <option value="">— Select your program —</option>
               <option>Entry-Level Beginner Course</option>
               <option>Basic Firearm Safety Course</option>
@@ -2155,25 +2161,25 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
 
           <div class="form-group">
             <label>Electronic Signature — Type your full legal name *</label>
-            <input type="text" id="w-sig" placeholder="Type your full legal name as your electronic signature" required/>
+            <input type="text" id="w-sig" placeholder="Type your full legal name as your electronic signature" aria-label="Type your full legal name as your electronic signature" required/>
             <p style="font-size:11px;font-weight:300;color:var(--silver);margin-top:5px;opacity:.7;">By typing your name you are providing a legally binding electronic signature under the E-SIGN Act. This confirms you have read and agree to all sections of this registration and waiver.</p>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
             <div class="form-group"><label>Date Signed</label><input type="text" id="w-date" readonly style="background:rgba(255,255,255,.03);opacity:.6;cursor:default;"/></div>
-            <div class="form-group"><label>Print Name *</label><input type="text" id="w-print" placeholder="Print your full name" required/></div>
+            <div class="form-group"><label>Print Name *</label><input type="text" id="w-print" placeholder="Print your full name" aria-label="Print your full name" required/></div>
           </div>
 
           <!-- Minor section -->
           <div style="background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.1);padding:18px 20px;">
             <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--silver);margin-bottom:12px;">If Completing for a Minor Child — optional</p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-              <div class="form-group"><label>Name of Minor</label><input type="text" id="w-minor-name" placeholder="Minor's full name"/></div>
-              <div class="form-group"><label>Name of Guardian</label><input type="text" id="w-guardian-name" placeholder="Guardian's full name"/></div>
+              <div class="form-group"><label>Name of Minor</label><input type="text" id="w-minor-name" placeholder="Minor's full name" aria-label="Minor's full name"/></div>
+              <div class="form-group"><label>Name of Guardian</label><input type="text" id="w-guardian-name" placeholder="Guardian's full name" aria-label="Guardian's full name"/></div>
             </div>
-            <div class="form-group" style="margin-top:12px;"><label>Guardian Electronic Signature</label><input type="text" id="w-guardian-sig" placeholder="Guardian's full legal name as signature"/></div>
+            <div class="form-group" style="margin-top:12px;"><label>Guardian Electronic Signature</label><input type="text" id="w-guardian-sig" placeholder="Guardian's full legal name as signature" aria-label="Guardian's full legal name as signature"/></div>
           <div class="form-group" style="margin-top:16px;">
             <label style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:6px;display:block;">Instructor Name *</label>
-            <select id="waiver-instructor" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;">
+            <select id="waiver-instructor" aria-label="Waiver Instructor" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;">
               <option value="">Select Instructor</option>
               <option>Josh Rodriguez</option>
               <option>Other</option>
@@ -2181,7 +2187,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
           </div>
           <div class="form-group" style="margin-top:12px;">
             <label style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:6px;display:block;">Class Location *</label>
-            <select id="waiver-location" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;">
+            <select id="waiver-location" aria-label="Waiver Location" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;">
               <option value="">Select Location</option>
               <option>Partner Range — Orlando</option>
               <option>Partner Hotel — Orlando</option>
@@ -2224,7 +2230,7 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <div class="footer-grid">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="36" height="42" viewBox="0 0 52 58" fill="none">
+          <svg role="img" aria-hidden="true"  width="36" height="42" viewBox="0 0 52 58" fill="none">
         <!-- Shield body -->
         <path d="M26 2L4 11V30C4 42.5 14 53 26 56C38 53 48 42.5 48 30V11L26 2Z" fill="rgba(201,168,76,.08)" stroke="#c9a84c" stroke-width="1.5"/>
         <!-- Inner shield border -->
@@ -2275,19 +2281,19 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
         <!-- Social Icons -->
         <div class="footer-social">
           <a href="https://www.facebook.com/ussacademy" target="_blank" rel="noopener" class="social-icon" title="Facebook">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg role="img" aria-hidden="true"  width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
           <a href="https://www.instagram.com/ussacademy" target="_blank" rel="noopener" class="social-icon" title="Instagram">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <svg role="img" aria-hidden="true"  width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
           </a>
           <a href="https://twitter.com/ussacademy" target="_blank" rel="noopener" class="social-icon" title="Twitter / X">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <svg role="img" aria-hidden="true"  width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
           <a href="https://www.tiktok.com/@ussacademy" target="_blank" rel="noopener" class="social-icon" title="TikTok">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+            <svg role="img" aria-hidden="true"  width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
           </a>
           <a href="https://www.youtube.com/@ussacademy" target="_blank" rel="noopener" class="social-icon" title="YouTube">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58a2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            <svg role="img" aria-hidden="true"  width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58a2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
           </a>
         </div>
       </div>
@@ -2376,12 +2382,12 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
       <button onclick="quickQ('What is the phone number?')">Contact Info</button>
     </div>
     <div class="chatbot-input-row">
-      <input type="text" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendChat()"/>
+      <input type="text" id="chatInput" placeholder="Type your question..." aria-label="Type your question..." onkeydown="if(event.key==='Enter')sendChat()"/>
       <button onclick="sendChat()">SEND</button>
     </div>
   </div>
   <button class="chatbot-btn" onclick="toggleChat()" title="Chat with USS Academy">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg role="img" aria-hidden="true"  width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
   </button>
 </div>
 
@@ -2393,9 +2399,9 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
     <p style="font-size:13px;font-weight:300;color:var(--silver);margin:12px 0 20px;">Class: <strong id="pay-class" style="color:var(--white);"></strong><br>Date: <strong id="pay-date" style="color:var(--white);"></strong><br>Price: <strong id="pay-amount" style="color:var(--gold);"></strong></p>
     <div style="background:rgba(201,168,76,.06);border-left:3px solid var(--gold);padding:14px 16px;margin-bottom:20px;font-size:13px;font-weight:300;color:var(--silver);">⚠ All sales are final and non-refundable. A secure payment link will be sent to your email. Contact us at <strong style="color:var(--white);">800-508-8772 (USSA)</strong> or <strong style="color:var(--white);">407-305-8335</strong> to confirm your class location.</div>
     <div style="display:flex;flex-direction:column;gap:10px;">
-      <input type="text" id="reg-name" placeholder="Full Name" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
-      <input type="email" id="reg-email" placeholder="Email Address" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
-      <input type="tel" id="reg-phone" placeholder="Phone Number" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
+      <input type="text" id="reg-name" placeholder="Full Name" aria-label="Full Name" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
+      <input type="email" id="reg-email" placeholder="Email Address" aria-label="Email Address" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
+      <input type="tel" id="reg-phone" placeholder="Phone Number" aria-label="Phone Number" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
     </div>
     <button onclick="submitRegistration()" class="btn-primary" style="width:100%;border:none;cursor:pointer;margin-top:16px;font-size:13px;padding:15px;">Submit Registration</button>
   </div>
