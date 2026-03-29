@@ -759,7 +759,12 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
         </div>
         <span class="program-tag">Self-Defense · Legal Education · FL 790 &amp; 776</span>
         <a href="https://book.stripe.com/cNi9ATgpBgUZc4q3us8Vi0M" target="_blank" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;">Register &amp; Pay</a>
-        <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
+        <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a>
+        <div style="margin-top:14px;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:0.5px;">Required reading for this class. Keep this tab open during your session.</div>
+        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;">
+          <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0790/0790.htm" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--gold);text-decoration:none;font-size:12px;font-weight:600;transition:background 0.2s;" onmouseover="this.style.background='rgba(201,168,76,0.15)'" onmouseout="this.style.background='rgba(201,168,76,0.08)'">FL Statute 790 — Weapons &amp; Firearms Law &rarr;</a>
+          <a href="https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799/0776/0776.htm" target="_blank" rel="noopener" style="display:inline-block;padding:10px 16px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--gold);text-decoration:none;font-size:12px;font-weight:600;transition:background 0.2s;" onmouseover="this.style.background='rgba(201,168,76,0.15)'" onmouseout="this.style.background='rgba(201,168,76,0.08)'">FL Statute 776 — Justifiable Use of Force &rarr;</a>
+        </div></div>
       </div>
       <div class="program-card">
         <div class="program-num">05</div>
@@ -2143,6 +2148,35 @@ footer{background:linear-gradient(180deg,var(--navy-mid) 0%,#060e1a 100%);border
               <div class="form-group"><label>Name of Guardian</label><input type="text" id="w-guardian-name" placeholder="Guardian's full name"/></div>
             </div>
             <div class="form-group" style="margin-top:12px;"><label>Guardian Electronic Signature</label><input type="text" id="w-guardian-sig" placeholder="Guardian's full legal name as signature"/></div>
+          <div class="form-group" style="margin-top:16px;">
+            <label style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:6px;display:block;">Instructor Name *</label>
+            <select id="waiver-instructor" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;">
+              <option value="">Select Instructor</option>
+              <option>Josh Rodriguez</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-top:12px;">
+            <label style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:6px;display:block;">Class Location *</label>
+            <select id="waiver-location" required style="width:100%;padding:12px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:14px;">
+              <option value="">Select Location</option>
+              <option>Partner Range — Orlando</option>
+              <option>Partner Hotel — Orlando</option>
+              <option>Online/Virtual</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-top:12px;">
+            <label style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:6px;display:block;">Selfie Photo — Attendance Verification *</label>
+            <p style="font-size:11px;color:var(--silver);margin-bottom:8px;line-height:1.5;">Your photo must show you at the USS Academy class location. Photos taken elsewhere will not be accepted for attendance verification.</p>
+            <input type="file" id="waiver-selfie" accept="image/*" capture="user" required style="width:100%;padding:10px;background:var(--navy);border:1px solid rgba(201,168,76,.3);color:var(--white);border-radius:4px;font-size:13px;">
+          </div>
+          <input type="hidden" id="waiver-timestamp" value="">
+          <input type="hidden" id="waiver-gps" value="">
+          <script>
+          document.getElementById('waiver-timestamp').value = new Date().toISOString();
+          if(navigator.geolocation){navigator.geolocation.getCurrentPosition(function(p){document.getElementById('waiver-gps').value=p.coords.latitude+','+p.coords.longitude;});}
+          </script>
           </div>
 
           <!-- Submit -->
