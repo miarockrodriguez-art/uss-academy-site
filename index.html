@@ -740,7 +740,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <!-- TIER 1: BEGINNER & CORE SAFETY — $99–$179 -->
     <div style="margin-bottom:12px;"><p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim);padding:8px 0;border-bottom:1px solid rgba(201,168,76,.15);">Tier 1 — Beginner &amp; Core Safety · $99–$179 · All prices per person</p></div>
     <div class="programs-grid reveal" style="margin-bottom:40px;">
-      <div class="program-card">
+      <div class="program-card" id="entry-level">
         <div class="program-num">01</div>
         <h3>Entry-Level Beginner Course</h3>
         <p>Never held a firearm? This is where your self-protection journey begins. USS Academy's entry-level beginner course is designed for complete first-timers — a safe, welcoming, pressure-free introduction. Learn safe handling, storage, mechanics, and responsible ownership. Our instructors have guided thousands of first-timers across 27 years.</p>
@@ -756,7 +756,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="cwp-course">
         <div class="program-num">03</div>
         <h3>Florida CWP / CCW Permit Class</h3>
         <p>Florida's #1 concealed carry permit class. USS Academy's state-approved CWP (Concealed Carry Weapon) / CWP (Concealed Weapons Permit) course covers Florida Statute 790 (firearms laws), Florida Statute 776 (justifiable use of force/self-defense), plus live-fire qualifying exam. Carry to conceal with full legal knowledge. 29,000+ graduates. Weekly classes. Online &amp; in-person.</p>
@@ -764,7 +764,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="self-defense">
         <div class="program-num">04</div>
         <h3>Self-Defense Seminar (FL 790 &amp; 776)</h3>
         <p>Know your rights. Know your law. Know your firearm. USS Academy's self-defense seminar covers Florida Statute 790 (weapons &amp; firearms law) and Florida Statute 776 (justifiable use of force, Stand Your Ground, Castle Doctrine). Gun protection — know when and how you may lawfully use a firearm to protect yourself or your family under Florida law.</p>
@@ -777,7 +777,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a>
         </div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="court-ordered">
         <div class="program-num">05</div>
         <h3>Court-Ordered Firearm Safety Course</h3>
         <p>Court-ordered firearm safety completed with dignity and professionalism. USS Academy's court-mandated training program covers firearm safety, legal responsibilities, and safe handling in a state-compliant format. Certificate of completion satisfies court obligations. Flexible scheduling. Fully confidential and professionally delivered.</p>
@@ -785,7 +785,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="open-carry">
         <div class="program-num">06</div>
         <h3>Florida Open Carry Navigation Course</h3>
         <p>Florida's open carry law is new — navigating it correctly matters for your safety and legal standing. This course provides a clear, accurate, practical understanding of open carry rights and responsibilities under Florida Statute 790, covering when open carry is and is not advisable in real-world situations.</p>
@@ -878,7 +878,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <!-- TIER 3: TACTICAL, SPECIALIZED & PROFESSIONAL — $349 -->
     <div style="margin-bottom:12px;"><p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim);padding:8px 0;border-bottom:1px solid rgba(201,168,76,.15);">Tier 3 — Tactical, Specialized &amp; Professional · $349 · All prices per person</p></div>
     <div class="programs-grid reveal" style="margin-bottom:40px;">
-      <div class="program-card">
+      <div class="program-card" id="law-enforcement">
         <div class="program-num">16</div>
         <h3>Law Enforcement Training</h3>
         <p>Designed by active and former law enforcement professionals for sworn officers and departments. Advanced defensive tactics, force-on-force training, active shooter response, stress-inoculated qualification, and scenario-based training that mirrors real operational demands. Custom department packages available. Call 800-508-8772 (USSA).</p>
@@ -886,7 +886,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="military-training">
         <div class="program-num">17</div>
         <h3>Military Combat Marksmanship</h3>
         <p>Advanced training techniques for active or former military members to enhance marksmanship and tactical skills. Scenario-based exercises and stress-testing drills designed to simulate real-world combat conditions. Built by veterans, for veterans and active service members with real operational experience behind every session.</p>
@@ -918,7 +918,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="womens-training">
         <div class="program-num">21</div>
         <h3>Women's Firearms Training</h3>
         <p>Women-only firearms training sessions in a comfortable, supportive environment. Building confidence and competence in firearm handling, self-protection, and safe gun ownership. Led by experienced instructors who understand that the first experience matters most — creating the most welcoming, empowering introduction to firearms and self-protection possible.</p>
@@ -934,7 +934,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="black-box">
         <div class="program-num">23</div>
         <h3>⬛ Black Box Modules</h3>
         <p>USS Academy's Black Box Modules are specialized, scenario-driven training programs conducted in a controlled, immersive environment — designed to stress-test decision-making under realistic, high-pressure conditions. These modules go beyond standard firearms training by placing students inside complex, dynamic scenarios that challenge situational awareness, threat assessment, use-of-force judgment, and tactical response. Black Box training is built on the principle that the most critical decisions happen in seconds — and that real preparation requires experiencing those scenarios before they happen in real life. Available for law enforcement, military, security professionals, and advanced civilian students. Contact us for curriculum details and scheduling.</p>
@@ -950,7 +950,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="pcc">
         <div class="program-num">25</div>
         <h3>PPC — Pistol Caliber Carbine</h3>
         <p>Master the pistol caliber carbine platform in this dynamic course built for civilian shooters. Covers fundamentals, zeroing, target transitions, and precision shooting at distances up to 100 meters. The PPC platform combines the handling of a rifle with pistol caliber ammunition — making it ideal for home defense, competition, and skill development. Taught by certified law enforcement firearms instructors.</p>
@@ -966,7 +966,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <!-- TIER 4: PRECISION & SCIENCE — $399 -->
     <div style="margin-bottom:12px;"><p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim);padding:8px 0;border-bottom:1px solid rgba(201,168,76,.15);">Tier 4 — Precision &amp; Science · $399 · All prices per person</p></div>
     <div class="programs-grid reveal" style="margin-bottom:40px;">
-      <div class="program-card">
+      <div class="program-card" id="precision">
         <div class="program-num">26</div>
         <h3>The Science of the Shot — Respiratory Pause, Trigger Control &amp; Precision Marksmanship</h3>
         <p>True precision shooting begins where most training stops. USS Academy's Precision Marksmanship course teaches the science behind every accurate shot — including the <strong style="color:var(--white);">respiratory pause</strong>, the brief moment of natural stillness between exhale and inhale when the body is most stable and the shot breaks cleanest. This course covers the full fundamentals of precision: respiratory control and the natural pause cycle, trigger discipline and break timing, natural point of aim (NPOA), follow-through, and reading your own body's mechanics to eliminate error at the source. Applicable to pistol, rifle, and long-range platforms. Ideal for competitive shooters, law enforcement precision teams, military marksmen, and any student who wants to understand not just how to shoot — but why a shot is accurate. This is the science behind the shot.</p>
@@ -974,7 +974,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <button onclick="openWaitlist(this)" class="btn-primary" style="display:inline-block;margin-top:14px;font-size:12px;padding:10px 20px;border:none;cursor:pointer;">Get Information</button>
         <div style="font-size:11px;font-weight:300;color:var(--silver);opacity:0.7;line-height:1.5;margin-top:10px;">All prices listed are per person. Available as Group, Semi-Private, or Private session. Contact us — <a href="tel:8005088772" style="color:var(--gold);text-decoration:none">800-508-8772</a> or <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none">support@ussacademy.org</a></div>
       </div>
-      <div class="program-card">
+      <div class="program-card" id="zero-to-accurate">
         <div class="program-num">27</div>
         <h3>Zero to Accurate — Sight Alignment, Sight Picture &amp; Zeroing Fundamentals</h3>
         <p>Before you can shoot accurately, your firearm has to be set up accurately. USS Academy's Zero to Accurate course teaches students how to properly align their sights and zero their firearm so that point of aim equals point of impact — the foundation of every accurate shot. This course covers the two critical fundamentals: <strong style="color:var(--white);">sight alignment</strong> (the correct relationship between front and rear sights) and <strong style="color:var(--white);">sight picture</strong> (placing that aligned sight on the target correctly). Students then learn zeroing procedures for iron sights, red dot optics, and magnified scopes — including proper distance selection, adjustments, and confirmation drills. Whether you're mounting your first optic, setting up a new rifle, or correcting an existing zero, this course ensures your equipment is performing exactly as it should before you ever engage a target. Applicable to pistols, rifles, and shotguns across all optic platforms.</p>
@@ -997,7 +997,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     </div>
     <!-- ROW 2: Class card left, truck panoramic right — same height -->
     <div style="display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-bottom:24px;align-items:stretch;" class="reveal">
-      <div class="program-card" style="margin:0;display:flex;flex-direction:column;justify-content:center;">
+      <div class="program-card" id="night-vision" style="margin:0;display:flex;flex-direction:column;justify-content:center;">
         <div class="program-num">28</div>
         <h3>🌙 Night Vision Course</h3>
         <p style="font-size:12px;">USS Academy offers dedicated Night Vision firearms training — one of the most advanced tactical training experiences in Florida. NVD operation, weapon mounting, zero procedures, transitional shooting, and low-light engagement. For law enforcement, military, security professionals, and qualified civilians.</p>
@@ -1058,7 +1058,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <!-- BALLISTICS & EXPERT WITNESS -->
     <div style="margin-bottom:12px;"><p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim);padding:8px 0;border-bottom:1px solid rgba(201,168,76,.15);">Expert Services</p></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px;" class="reveal">
-      <div class="ballistics-card">
+      <div class="ballistics-card" id="ballistics">
         <img loading="lazy" src="images/ballistics-expert-witness-firearms-training-orlando.jpg" alt="Ballistics expert witness and firearms training — USS Academy Orlando" style="width:100%;border-radius:4px;margin-bottom:16px;border:1px solid rgba(139,26,26,.25);">
         <span class="ballistics-tag">Expert Service</span>
         <h3 style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:10px;">Ballistics Testing &amp; Expert Witness</h3>
@@ -1876,7 +1876,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           </div>
         </div>
         <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:26px;">
-          <div class="section-label" style="margin-bottom:10px;">Online &amp; National Training</div>
+          <div class="section-label" style="margin-bottom:10px;" id="virtual-online">Online &amp; National Training</div>
           <p style="font-size:14px;font-weight:300;color:var(--silver);line-height:1.8;">USS Academy offers virtual online training and trains students nationally. Whether you're in Florida or anywhere in the US — contact us to discuss your options.</p>
           <div style="margin-top:18px;padding-top:18px;border-top:1px solid rgba(201,168,76,.1);">
             <a href="tel:8005088772" class="btn-primary" style="display:inline-block;font-size:12px;padding:12px 24px;">📞 800-508-8772 (USSA)</a>
@@ -2292,21 +2292,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="footer-col">
         <h4>Programs</h4>
         <ul>
-          <li><a href="#programs">Entry-Level Beginner Course</a></li>
-          <li><a href="#programs">CWP / CCW Permit Class</a></li>
-          <li><a href="#programs">Self-Defense (FL 790 &amp; 776)</a></li>
-          <li><a href="#programs">Open Carry Navigation</a></li>
-          <li><a href="#programs">Court-Ordered Course</a></li>
-          <li><a href="#programs">Night Vision Training</a></li>
-          <li><a href="#programs">Black Box Modules</a></li>
-          <li><a href="#programs">Precision &amp; Respiratory Pause</a></li>
-          <li><a href="#programs">Zero to Accurate</a></li>
-          <li><a href="#programs">Law Enforcement</a></li>
-          <li><a href="#programs">Military Training</a></li>
+          <li><a href="#entry-level">Entry-Level Beginner Course</a></li>
+          <li><a href="#cwp-course">CWP / CCW Permit Class</a></li>
+          <li><a href="#self-defense">Self-Defense (FL 790 &amp; 776)</a></li>
+          <li><a href="#open-carry">Open Carry Navigation</a></li>
+          <li><a href="#court-ordered">Court-Ordered Course</a></li>
+          <li><a href="#night-vision">Night Vision Training</a></li>
+          <li><a href="#black-box">Black Box Modules</a></li>
+          <li><a href="#precision">Precision &amp; Respiratory Pause</a></li>
+          <li><a href="#zero-to-accurate">Zero to Accurate</a></li>
+          <li><a href="#law-enforcement">Law Enforcement</a></li>
+          <li><a href="#military-training">Military Training</a></li>
           <li><a href="#programs">G-Qualification</a></li>
-          <li><a href="#programs">Women's Training</a></li>
-          <li><a href="#programs">Ballistics / Expert Witness</a></li>
-          <li><a href="#programs">Virtual / Online Training</a></li>
+          <li><a href="#womens-training">Women's Training</a></li>
+          <li><a href="#ballistics">Ballistics / Expert Witness</a></li>
+          <li><a href="#virtual-online">Virtual / Online Training</a></li>
         </ul>
       </div>
 
