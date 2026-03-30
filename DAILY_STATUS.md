@@ -1,64 +1,69 @@
 # MFS Empire — Daily Status
-**Date:** 2026-03-29  
-**Compiled by:** POLY, Chief of Staff
+**Date:** 2026-03-30
+**Reported by:** POLY, Chief of Staff
 
 ---
 
-## USS Academy Site
+## USS Academy (`uss-academy-site`)
 
-**Status: ACTIVE — Polish & labeling day**
-
-### Recent Commits (today, 5 total)
-| Time (UTC) | Summary |
-|------------|---------|
-| 11:11 | Remove tactical gear image between Classes 24–25 |
-| 11:09 | Footer: Student Check-In link — remove emoji, match link styles |
-| 09:51 | Layout fixes: Classes 25, 27, 29 — images span all available slots |
-| 09:48 | Fix social bar: remove internal note, add "Follow USS Academy" both sides |
-| 09:44 | Heading → "Student Information & Check-In", nav + chatbot updated |
-
-### Structure Check
-- `index.html` — ✅ Present, valid (`<!DOCTYPE html>` + `</html>`, 2,881 lines / ~272KB)
-- All linked pages — ✅ `compete.html`, `host-a-class.html`, `waivers.html`, `gallery.html`, `service-areas.html`, `ember-iron.html` all exist
-- Images directory — ✅ 233 images present; all 13 refs in index.html verified ✓
-- `netlify.toml` + `_redirects` — ✅ Present
-
-### Flags
-- `ember-iron.html` is still a **placeholder** (2KB). Build out when Ember & Iron event is confirmed.
-- Videos section remains **placeholder** — real YouTube links pending upload.
-- Commit note: `IMG_1125 not found` — Class 27 layout used `class-session-8964` as substitute. Monitor if original photo surfaces.
+### Commits Today (5)
+| Time | Summary |
+|------|---------|
+| 11:10 | Sitemap expanded to 21 URLs + `submit-photo.html` added |
+| 10:45 | Google Search Console verification file added |
+| 10:43 | Rich results schema — Organization, 10 Courses, 10 FAQs, Event |
+| 10:34 | Favicon fixed — clean `.ico` at root + SVG shield |
+| 09:59 | Homepage SEO: title, meta description, OG tags updated |
 
 ### Issues / PRs
-- Issues: None open
-- PRs: None open
+- **Issues open:** 0
+- **PRs open:** 0
+
+### index.html
+- Status: **VALID** (278KB, DOCTYPE, title, meta description, canonical all present)
+- Title: `Firearm Training Classes in Central Florida | USS Academy`
+- Canonical: `https://www.ussacademy.org/`
+
+### Nav Links — All Pages Present
+| Page | Status |
+|------|--------|
+| waivers.html | ✓ |
+| compete.html | ✓ |
+| host-a-class.html | ✓ |
+| gallery.html | ✓ |
+| service-areas.html | ✓ |
+| submit-photo.html | ✓ (NEW today) |
+
+### Images Referenced in index.html — All Present
+`group-class-photo-outdoor.jpg` · `uss-academy-night-vision-training-ca46fc45.jpg` · `team-ridge-silhouette.jpg` · `central-florida-range-training-0665.jpg` · `orlando-outdoor-range-shooting-1014.jpg` · `uss-academy-class-session-8964.jpg` · `nightvision-operators-dusk.jpg` · `nightvision-closeup-nvg.jpg` · `nightvision-suppressed-ar.jpg`
+
+### Action Items
+- [ ] **`submit-photo.html` GHL webhook is a placeholder** — replace with real endpoint before promoting the page
 
 ---
 
-## CityOne Transportation Site
+## CityOne Transportation (`cityone-transportation-site`)
 
-**Status: STABLE — No commits today**
+### Last Commits (2026-03-28, 5 commits)
+- Slogan rollout across all 8 pages, hero styling, HTML corruption fix, Phoenix Blueprint footer credit
 
-### Recent Commits (last 24h)
-| Date | Summary |
-|------|---------|
-| 2026-03-28 21:16 | Add "Powered by Phoenix Blueprint" footer credit (subtle, 10px) |
+### Issues / PRs
+- **Issues open:** 0
+- **PRs open:** 1 — **NEEDS DECISION**
 
-### Structure Check
-- `index.html` — ✅ Present, valid (`<!DOCTYPE html>` + `</html>`, 1,607 lines / ~301KB)
-- Single-file site — logo and assets are inline base64; no local file dependencies, no broken image risk
+> **PR #1** — *"Add Cloudflare Workers configuration"* (opened by Cloudflare bot 2026-03-26)
+> Adds `wrangler.jsonc` for static Workers deployment. Merge to enable Cloudflare versioned deploys; close to keep current setup.
 
-### Flags
-- **Open PR #1** (open since 2026-03-26, updated 2026-03-28) — Cloudflare Workers autoconfig bot
-  - Adds `wrangler.jsonc` for Workers deployment
-  - **Action needed:** Merge if moving to Workers; close if staying on Cloudflare Pages static.
+### index.html
+- Status: **VALID** (single-page tab app, hero image base64-embedded, no broken local links)
+- No separate HTML files referenced — all tabs render in-page
 
-### Issues
-- Issues: None open
+### Action Items
+- [ ] **Decide on Cloudflare Workers PR #1** — merge or close
 
 ---
 
-## Action Items
-1. [ ] **CityOne PR #1** — Decide: merge or close Cloudflare Workers autoconfig PR
-2. [ ] **USS Academy** — Upload YouTube videos; replace placeholder video cards
-3. [ ] **USS Academy** — Build out `ember-iron.html` once Ember & Iron details are confirmed
-4. [ ] **USS Academy** — Locate `IMG_1125` if it exists; optionally replace Class 27 substitute image
+## Summary
+- USS Academy had a heavy SEO + content day. All files intact, no broken links.
+- CityOne is stable. One bot PR pending decision.
+- No open issues on either repo.
