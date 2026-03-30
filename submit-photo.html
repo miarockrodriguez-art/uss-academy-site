@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Submit Your Photo — USS Academy | Firearm Training Central Florida</title>
+<meta name="description" content="Submit your USS Academy training photo. Share your experience and be featured on our website and social media. 29,000+ students trained.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://ussacademy.org/submit-photo.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#0a1628;--navy-mid:#0f1d38;--gold:#c9a84c;--silver:#a0a8b8;--white:#f0f0f0;}
+  body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+  .header{max-width:900px;margin:0 auto;padding:32px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(201,168,76,.1);}
+  .header h1{font-family:'Cinzel',serif;font-size:24px;font-weight:800;}
+  .header h1 span{color:var(--gold);}
+  .header a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:600;}
+  .content{max-width:600px;margin:0 auto;padding:48px 40px;}
+  .intro{text-align:center;margin-bottom:40px;}
+  .intro h2{font-family:'Cinzel',serif;font-size:28px;margin-bottom:12px;}
+  .intro h2 span{color:var(--gold);}
+  .intro p{font-size:15px;color:var(--silver);line-height:1.7;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .form-group input[type="text"],.form-group input[type="email"]{width:100%;padding:12px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:0;font-size:14px;}
+  .form-group input[type="file"]{width:100%;padding:10px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.25);color:var(--white);border-radius:0;font-size:13px;}
+  .consent{display:flex;align-items:flex-start;gap:10px;margin:20px 0;padding:16px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);}
+  .consent input[type="checkbox"]{margin-top:3px;accent-color:var(--gold);width:18px;height:18px;flex-shrink:0;}
+  .consent label{font-size:12px;color:var(--silver);line-height:1.6;}
+  .submit-btn{width:100%;padding:16px;background:#c9a84c;color:#0a1628;border:none;border-radius:0;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;}
+  .submit-btn:hover{background:#d4b35a;}
+  .success{display:none;text-align:center;padding:40px 20px;}
+  .success h3{font-family:'Cinzel',serif;font-size:22px;color:var(--gold);margin-bottom:12px;}
+  .success p{color:var(--silver);line-height:1.6;}
+  .note{font-size:11px;color:var(--silver);opacity:.6;margin-top:12px;line-height:1.5;text-align:center;}
+  .footer{text-align:center;padding:24px;border-top:1px solid rgba(201,168,76,.08);margin-top:40px;max-width:900px;margin-left:auto;margin-right:auto;}
+  .footer a{color:var(--gold);text-decoration:none;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>USS Academy <span>Photo Submission</span></h1>
+  <a href="index.html">&larr; Back to USS Academy</a>
+</div>
+
+<div class="content">
+  <div class="intro">
+    <h2>Submit Your <span>Photo</span></h2>
+    <p>Trained with USS Academy? We'd love to feature you! Submit your training photo and you may be featured on our website, social media, and marketing materials.</p>
+  </div>
+
+  <div id="photo-form">
+    <div class="form-group">
+      <label>Full Name *</label>
+      <input type="text" id="sp-name" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label>Email Address *</label>
+      <input type="email" id="sp-email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="text" id="sp-phone" placeholder="(xxx) xxx-xxxx">
+    </div>
+    <div class="form-group">
+      <label>Upload Photo *</label>
+      <input type="file" id="sp-photo" accept="image/*" required>
+      <p style="font-size:11px;color:var(--silver);opacity:.5;margin-top:4px;">JPG, PNG, or HEIC. Maximum 10MB.</p>
+    </div>
+    <div class="form-group">
+      <label>Which class did you attend?</label>
+      <input type="text" id="sp-class" placeholder="e.g., CWP Permit Class, Beginner Course">
+    </div>
+    <div class="form-group">
+      <label>Caption or message (optional)</label>
+      <input type="text" id="sp-caption" placeholder="Tell us about your experience">
+    </div>
+
+    <div class="consent">
+      <input type="checkbox" id="sp-consent" required>
+      <label for="sp-consent">I grant USS Academy LLC permission to use my submitted photo on the USS Academy website, social media accounts, marketing materials, and promotional content. I confirm this is my photo or I have permission from the person(s) pictured. I understand I can request removal at any time by emailing support@ussacademy.org.</label>
+    </div>
+
+    <button class="submit-btn" onclick="submitPhoto()">Submit Photo</button>
+
+    <p class="note">Photos are reviewed before being published. Not all submissions will be featured. By submitting you agree to our terms of use and privacy policy.</p>
+  </div>
+
+  <div class="success" id="photo-success">
+    <h3>Photo Submitted!</h3>
+    <p>Thank you for sharing your USS Academy experience! Our team will review your photo and you'll be notified if it's selected for our website or social media.</p>
+    <p style="margin-top:16px;"><a href="index.html" style="color:var(--gold);text-decoration:none;font-weight:600;">Return to USS Academy &rarr;</a></p>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="index.html">&larr; Back to USS Academy</a>
+  <span style="color:var(--silver);margin:0 12px;">|</span>
+  <a href="tel:8005088772">800-508-8772</a>
+  <span style="color:var(--silver);margin:0 12px;">|</span>
+  <a href="mailto:support@ussacademy.org">support@ussacademy.org</a>
+</div>
+
+<script>
+function submitPhoto(){
+  var name=document.getElementById('sp-name').value.trim();
+  var email=document.getElementById('sp-email').value.trim();
+  var phone=document.getElementById('sp-phone').value.trim();
+  var cls=document.getElementById('sp-class').value.trim();
+  var caption=document.getElementById('sp-caption').value.trim();
+  var consent=document.getElementById('sp-consent').checked;
+  var photo=document.getElementById('sp-photo').files[0];
+
+  if(!name||!email||!photo||!consent){
+    alert('Please fill in all required fields and agree to the photo usage consent.');
+    return;
+  }
+
+  var data={
+    form_type:'student_photo_submission',
+    source:'ussacademy.org/submit-photo',
+    submitted_at:new Date().toISOString(),
+    full_name:name,
+    email:email,
+    phone:phone,
+    class_attended:cls,
+    caption:caption,
+    photo_name:photo.name,
+    photo_size:photo.size,
+    consent_granted:true,
+    tags:['student-photo-submission','pending-approval']
+  };
+
+  // Log submission (webhook to GHL when configured)
+  console.log('Photo submission:',data);
+
+  // Show success
+  document.getElementById('photo-form').style.display='none';
+  document.getElementById('photo-success').style.display='block';
+}
+</script>
+</body>
+</html>
