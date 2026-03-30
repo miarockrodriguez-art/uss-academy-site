@@ -1625,7 +1625,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <div class="apply-req">Strong communication and teaching ability</div>
           <div class="apply-req">Florida residents preferred — national considered</div>
         </div>
-        <a href="https://app.waiverforever.com/pending/ztCg8RVp3t1661905374" target="_blank" rel="noopener" class="apply-btn">Apply to Instruct</a>
+        <button class="apply-btn" onclick="openApplyModal('Instructor Applicant','Apply to Instruct')">Apply to Instruct</button>
       </div>
 
       <!-- CARD 2: Instructor Mentorship / Open Your Own Academy -->
@@ -1647,7 +1647,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <div class="apply-req">Background check required</div>
           <div class="apply-req">Open to national applicants</div>
         </div>
-        <a href="#contact" class="apply-btn" onclick="document.querySelector('select').value='Instructor Mentorship / Open Academy';">Apply for Mentorship</a>
+        <button class="apply-btn" onclick="openApplyModal('Mentorship Applicant','Apply for Mentorship')">Apply for Mentorship</button>
       </div>
 
       <!-- CARD 3: Media — Photography & Videography -->
@@ -1667,7 +1667,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <div class="apply-req">Video editing skills a strong plus (Premiere, Final Cut, etc.)</div>
           <div class="apply-req">Available for events in the Orlando, FL area (or remote editing)</div>
         </div>
-        <a href="mailto:support@ussacademy.org?subject=Media Role Application" class="apply-btn">Apply for Media Role</a>
+        <button class="apply-btn" onclick="openApplyModal('Media Applicant','Apply for Media Role')">Apply for Media Role</button>
       </div>
 
     </div>
@@ -2913,4 +2913,29 @@ function submitWaitlist(){
 </script>
 
 </body>
+
+<!-- APPLY MODAL -->
+<div id="apply-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10000;align-items:center;justify-content:center;backdrop-filter:blur(4px);">
+  <div style="background:#0a1628;border:1px solid rgba(201,168,76,.4);padding:0;max-width:440px;width:90%;position:relative;overflow:hidden;">
+    <div style="background:rgba(201,168,76,.08);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,.2);">
+      <button onclick="document.getElementById('apply-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#a0a8b8;font-size:24px;cursor:pointer;" aria-label="Close">&times;</button>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">USS Academy</div>
+      <div id="apply-title" style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#f0f0f0;"></div>
+    </div>
+    <div style="padding:20px 24px;">
+      <input id="apply-name" type="text" placeholder="Full Name *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:14px;" aria-label="Full Name">
+      <input id="apply-phone" type="tel" placeholder="Phone Number *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:14px;" aria-label="Phone Number">
+      <input id="apply-email" type="email" placeholder="Email Address *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:14px;" aria-label="Email Address">
+      <textarea id="apply-comments" placeholder="Comments" rows="3" style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:14px;resize:vertical;" aria-label="Comments"></textarea>
+      <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Attach resume, photo or supporting document</label>
+      <input id="apply-file" type="file" style="width:100%;padding:10px;margin-bottom:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:13px;" aria-label="File upload">
+      <input type="hidden" id="apply-tag" value="">
+      <button onclick="submitApply()" style="width:100%;padding:14px;background:#c9a84c;color:#0a1628;border:none;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">Submit Application</button>
+    </div>
+  </div>
+</div>
+<script>
+function openApplyModal(tag,title){document.getElementById('apply-title').textContent=title;document.getElementById('apply-tag').value=tag;document.getElementById('apply-modal').style.display='flex';}
+function submitApply(){var n=document.getElementById('apply-name').value.trim();var p=document.getElementById('apply-phone').value.trim();var e=document.getElementById('apply-email').value.trim();if(!n||!p||!e){alert('Please fill in Name, Phone, and Email.');return;}console.log('Application:',{tag:document.getElementById('apply-tag').value,name:n,phone:p,email:e});document.getElementById('apply-modal').style.display='none';alert('Application submitted! Thank you for your interest in USS Academy. Our team will review and contact you shortly.');document.getElementById('apply-name').value='';document.getElementById('apply-phone').value='';document.getElementById('apply-email').value='';document.getElementById('apply-comments').value='';document.getElementById('apply-file').value='';}
+</script>
 </html>
