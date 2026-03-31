@@ -1493,6 +1493,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
             <label>Preferred Timing / Additional Details</label>
             <textarea id="rp-notes" placeholder="Tell us your preferred dates, how often you'd like to host classes, any special requirements, or questions..." style="min-height:90px;resize:vertical;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;"></textarea>
           </div>
+          <div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+              <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+              I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+              <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+              I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+            </label>
+            <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="privacy.html" style="color:var(--gold);text-decoration:underline;">Privacy Policy</a> and <a href="terms.html" style="color:var(--gold);text-decoration:underline;">Terms of Service</a>.</p>
+          </div>
           <button onclick="submitRangePartner()" class="btn-primary" style="border:none;cursor:pointer;font-size:14px;padding:16px;width:100%;">Submit Range Partnership Request</button>
           <div id="rp-success" style="display:none;background:rgba(45,106,45,.15);border:1px solid rgba(45,106,45,.4);padding:16px 20px;text-align:center;">
             <p style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#90ee90;margin-bottom:6px;">✓ Request Received!</p>
@@ -1843,7 +1854,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
             </select>
           </div>
           <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your training goals, experience level, location preference (virtual vs in-person), or any questions..."></textarea></div>
-          <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.6;line-height:1.6;margin:-4px 0 4px;">By submitting this form you agree to receive SMS and email communications from USS Academy. Reply STOP to unsubscribe. Calls to USS Academy may be recorded for quality assurance and training purposes.</p>
+          <div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+              <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+              I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+              <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+              I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+            </label>
+            <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="privacy.html" style="color:var(--gold);text-decoration:underline;">Privacy Policy</a> and <a href="terms.html" style="color:var(--gold);text-decoration:underline;">Terms of Service</a>. Calls to USS Academy may be recorded for quality assurance and training purposes.</p>
+          </div>
           <button class="btn-primary" style="border:none;cursor:pointer;width:100%;font-size:14px;padding:17px;" onclick="submitContact()">Submit Inquiry</button>
         </div>
       </div>
@@ -2210,6 +2231,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           </script>
           </div>
 
+          <!-- SMS Consent -->
+          <div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+              <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+              I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+              <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+              I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+            </label>
+            <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="privacy.html" style="color:var(--gold);text-decoration:underline;">Privacy Policy</a> and <a href="terms.html" style="color:var(--gold);text-decoration:underline;">Terms of Service</a>.</p>
+          </div>
           <!-- Submit -->
           <button onclick="submitWaiver()" style="width:100%;padding:16px;background:#c9a84c;color:#0a1628;border:none;border-radius:0;font-family:Barlow Condensed,sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">CHECK IN</button>
 
@@ -2413,6 +2446,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <input type="text" id="reg-name" placeholder="Full Name" aria-label="Full Name" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
       <input type="email" id="reg-email" placeholder="Email Address" aria-label="Email Address" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
       <input type="tel" id="reg-phone" placeholder="Phone Number" aria-label="Phone Number" style="background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:13px;"/>
+    </div>
+    <div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+      <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+        <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+        I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+      </label>
+      <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+        <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+        I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+      </label>
+      <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="privacy.html" style="color:var(--gold);text-decoration:underline;">Privacy Policy</a> and <a href="terms.html" style="color:var(--gold);text-decoration:underline;">Terms of Service</a>.</p>
     </div>
     <button onclick="submitRegistration()" class="btn-primary" style="width:100%;border:none;cursor:pointer;margin-top:16px;font-size:13px;padding:15px;">Submit Registration</button>
   </div>
@@ -2865,6 +2909,17 @@ function getBotReply(q){
       <input id="wl-phone" type="tel" placeholder="Phone Number *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:14px;" aria-label="Phone Number">
       <input id="wl-email" type="email" placeholder="Email Address *" required style="width:100%;padding:12px;margin-bottom:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:14px;" aria-label="Email Address">
       <textarea id="wl-comments" placeholder="Any questions or comments?" rows="3" style="width:100%;padding:12px;margin-bottom:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:14px;resize:vertical;" aria-label="Comments"></textarea>
+      <div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+          <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+          I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+          <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+          I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+        </label>
+        <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="privacy.html" style="color:var(--gold);text-decoration:underline;">Privacy Policy</a> and <a href="terms.html" style="color:var(--gold);text-decoration:underline;">Terms of Service</a>.</p>
+      </div>
       <button onclick="submitInfo()" style="width:100%;padding:14px;background:#c9a84c;color:#0a1628;border:none;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">Get My Class Information</button>
     </div>
   </div>
@@ -2914,6 +2969,17 @@ function submitInfo(){
       <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Attach resume, photo or supporting document</label>
       <input id="apply-file" type="file" style="width:100%;padding:10px;margin-bottom:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,.25);color:#f0f0f0;font-size:13px;" aria-label="File upload">
       <input type="hidden" id="apply-tag" value="">
+      <div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+          <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+          I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+          <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+          I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+        </label>
+        <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="privacy.html" style="color:var(--gold);text-decoration:underline;">Privacy Policy</a> and <a href="terms.html" style="color:var(--gold);text-decoration:underline;">Terms of Service</a>.</p>
+      </div>
       <button onclick="submitApply()" style="width:100%;padding:14px;background:#c9a84c;color:#0a1628;border:none;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">Submit Application</button>
     </div>
   </div>
