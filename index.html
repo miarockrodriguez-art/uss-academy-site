@@ -2525,40 +2525,70 @@ function handleFileUpload(event, type) {
 // Supports: GoHighLevel, Zapier, Make, WordPress, or any webhook endpoint.
 // ════════════════════════════════════════════════════
 var CRM = {
-  WAIVER_WEBHOOK:   'PASTE_WAIVER_WEBHOOK_URL_HERE',
-  CONTACT_WEBHOOK:  'PASTE_CONTACT_FORM_WEBHOOK_URL_HERE',
-  REGISTER_WEBHOOK: 'PASTE_REGISTRATION_WEBHOOK_URL_HERE',
-  ALUMNI_WEBHOOK:   'PASTE_ALUMNI_SIGNUP_WEBHOOK_URL_HERE',
-  LADIES_WEBHOOK:   'PASTE_LADIES_DAY_SIGNUP_WEBHOOK_URL_HERE',
-  // Set to true once webhooks are live — shows a banner on the page confirming CRM is connected
-  LIVE: false
+  GHL_API: 'https://services.leadconnectorhq.com',
+  GHL_TOKEN: 'pit-9e399bf9-3376-444e-9588-c41bff1f5899',
+  GHL_LOCATION: 'GOBk9IDY9xnt7JJeDYsI',
+  LIVE: true
 };
 
-// ── Helper: POST data to CRM webhook
-function sendToCRM(webhookUrl, data, successCallback) {
-  var isReady = webhookUrl && webhookUrl !== '' && !webhookUrl.startsWith('PASTE_');
-  if (!isReady) {
-    // CRM not yet connected — run success callback anyway so UX still works
-    console.warn('[USS Academy CRM] Webhook not configured yet for: ' + webhookUrl);
-    if (successCallback) successCallback();
-    return;
+// ── Create contact in GHL via API
+function sendToCRM(formType, data, successCallback) {
+  var nameParts = (data.full_name || '').trim().split(' ');
+  var firstName = data.first_name || nameParts[0] || '';
+  var lastName = data.last_name || nameParts.slice(1).join(' ') || '';
+
+  var contact = {
+    locationId: CRM.GHL_LOCATION,
+    firstName: firstName,
+    lastName: lastName,
+    email: data.email || '',
+    phone: data.phone || '',
+    source: 'ussacademy.org — ' + (data.form_type || formType),
+    tags: ['website-form-submission', 'source: ussacademy.org', 'form: ' + (data.form_type || formType)],
+    customFields: []
+  };
+
+  // Add program/class info to notes if present
+  var notes = [];
+  if (data.program) notes.push('Program: ' + data.program);
+  if (data.class_name) notes.push('Class: ' + data.class_name);
+  if (data.class_date) notes.push('Date: ' + data.class_date);
+  if (data.amount) notes.push('Amount: ' + data.amount);
+  if (data.message) notes.push('Message: ' + data.message);
+  if (data.comments) notes.push('Comments: ' + data.comments);
+  if (data.range_name) notes.push('Range: ' + data.range_name);
+  if (data.location) notes.push('Location: ' + data.location);
+  if (data.notes) notes.push('Notes: ' + data.notes);
+  if (notes.length > 0) {
+    contact.customFields.push({ id: 'notes', field_value: notes.join(' | ') });
   }
-  fetch(webhookUrl, {
+
+  // Address fields if present
+  if (data.address || data.full_address) contact.address1 = data.address || data.full_address;
+  if (data.city) contact.city = data.city;
+  if (data.state) contact.state = data.state;
+  if (data.zip) contact.postalCode = data.zip;
+
+  fetch(CRM.GHL_API + '/contacts/', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+    headers: {
+      'Authorization': 'Bearer ' + CRM.GHL_TOKEN,
+      'Content-Type': 'application/json',
+      'Version': '2021-07-28'
+    },
+    body: JSON.stringify(contact)
   })
-  .then(function(res) {
-    if (res.ok) {
-      console.log('[USS Academy CRM] Data sent successfully.');
-      if (successCallback) successCallback();
+  .then(function(res) { return res.json(); })
+  .then(function(result) {
+    if (result.contact && result.contact.id) {
+      console.log('[USS Academy CRM] Contact created: ' + result.contact.id);
     } else {
-      console.error('[USS Academy CRM] Server returned error: ' + res.status);
-      if (successCallback) successCallback(); // still show success to user
+      console.warn('[USS Academy CRM] Response:', result);
     }
+    if (successCallback) successCallback();
   })
   .catch(function(err) {
-    console.error('[USS Academy CRM] Network error: ' + err);
+    console.error('[USS Academy CRM] Error: ' + err);
     if (successCallback) successCallback(); // still show success to user
   });
 }
@@ -2667,7 +2697,7 @@ function submitWaiver() {
   };
 
   // Send to CRM
-  sendToCRM(CRM.WAIVER_WEBHOOK, payload, function() {
+  sendToCRM('student_checkin', payload, function() {
     document.getElementById('waiver-success').style.display = 'block';
     document.querySelector('#waiver .btn-primary').style.display = 'none';
     document.getElementById('waiver-success').scrollIntoView({behavior:'smooth', block:'center'});
@@ -2695,7 +2725,7 @@ function submitRangePartner(){
     range_type:type, location:loc, course_interest:course,
     group_size:size, notes:notes
   };
-  sendToCRM(CRM.CONTACT_WEBHOOK, payload, function(){
+  sendToCRM('range_partner_request', payload, function(){
     document.getElementById('rp-success').style.display='block';
     document.querySelector('#range-partners .btn-primary').style.display='none';
   });
@@ -2746,7 +2776,7 @@ function alumniSignup() {
   var em = document.getElementById('alumni-email').value.trim();
   if (!em) { alert('Please enter your email address.'); return; }
   var payload = { form_type:'alumni_signup', source:'ussacademy.org', submitted_at:new Date().toISOString(), email:em };
-  sendToCRM(CRM.ALUMNI_WEBHOOK, payload, function() {
+  sendToCRM('alumni_signup', payload, function() {
     document.getElementById('alumni-success').style.display = 'block';
   });
 }
@@ -2756,7 +2786,7 @@ function ladiesSignup() {
   var em = document.getElementById('ladies-email').value.trim();
   if (!em) { alert('Please enter your email address.'); return; }
   var payload = { form_type:'ladies_day_signup', source:'ussacademy.org', submitted_at:new Date().toISOString(), email:em };
-  sendToCRM(CRM.LADIES_WEBHOOK, payload, function() {
+  sendToCRM('ladies_day_signup', payload, function() {
     document.getElementById('ladies-success').style.display = 'block';
   });
 }
@@ -2795,7 +2825,7 @@ function submitRegistration() {
     amount:       amt
   };
 
-  sendToCRM(CRM.REGISTER_WEBHOOK, payload, function() {
+  sendToCRM('class_registration', payload, function() {
     alert('Registration received! All sales are final and non-refundable. A secure payment link will be sent to your email. IMPORTANT: Contact us at 800-508-8772 (USSA) or 407-305-8335 to confirm your class location. Thank you!');
     closePayment();
   });
@@ -2827,7 +2857,7 @@ function submitContact() {
     message:      message
   };
 
-  sendToCRM(CRM.CONTACT_WEBHOOK, payload, function() {
+  sendToCRM('contact_inquiry', payload, function() {
     alert('Thank you for your inquiry! Our team will respond shortly. Call 800-508-8772 (USSA) or 407-305-8335 for immediate assistance, or email support@ussacademy.org');
   });
 }
@@ -2944,10 +2974,12 @@ function submitInfo(){
   if(!n||!p||!e){alert('Please fill in Name, Phone, and Email.');return;}
   var cls=document.getElementById('wl-class-name').textContent;
   var comments=document.getElementById('wl-comments').value.trim();
-  console.log('Info request:',{name:n,phone:p,email:e,class_name:cls,comments:comments,submitted:new Date().toISOString()});
-  document.getElementById('waitlist-modal').style.display='none';
-  alert('Thank you! We will send you information about '+cls+' shortly. Call 800-508-8772 for immediate assistance.');
-  document.getElementById('wl-name').value='';document.getElementById('wl-phone').value='';document.getElementById('wl-email').value='';document.getElementById('wl-comments').value='';
+  var payload={form_type:'class_info_request',source:'ussacademy.org',submitted_at:new Date().toISOString(),full_name:n,phone:p,email:e,class_name:cls,comments:comments};
+  sendToCRM('class_info_request',payload,function(){
+    document.getElementById('waitlist-modal').style.display='none';
+    alert('Thank you! We will send you information about '+cls+' shortly. Call 800-508-8772 for immediate assistance.');
+    document.getElementById('wl-name').value='';document.getElementById('wl-phone').value='';document.getElementById('wl-email').value='';document.getElementById('wl-comments').value='';
+  });
 }
 </script>
 
@@ -2986,6 +3018,6 @@ function submitInfo(){
 </div>
 <script>
 function openApplyModal(tag,title){document.getElementById('apply-title').textContent=title;document.getElementById('apply-tag').value=tag;document.getElementById('apply-modal').style.display='flex';}
-function submitApply(){var n=document.getElementById('apply-name').value.trim();var p=document.getElementById('apply-phone').value.trim();var e=document.getElementById('apply-email').value.trim();if(!n||!p||!e){alert('Please fill in Name, Phone, and Email.');return;}console.log('Application:',{tag:document.getElementById('apply-tag').value,name:n,phone:p,email:e});document.getElementById('apply-modal').style.display='none';alert('Application submitted! Thank you for your interest in USS Academy. Our team will review and contact you shortly.');document.getElementById('apply-name').value='';document.getElementById('apply-phone').value='';document.getElementById('apply-email').value='';document.getElementById('apply-comments').value='';document.getElementById('apply-file').value='';}
+function submitApply(){var n=document.getElementById('apply-name').value.trim();var p=document.getElementById('apply-phone').value.trim();var e=document.getElementById('apply-email').value.trim();if(!n||!p||!e){alert('Please fill in Name, Phone, and Email.');return;}var tag=document.getElementById('apply-tag').value;var comments=document.getElementById('apply-comments').value.trim();var payload={form_type:'application_'+tag,source:'ussacademy.org',submitted_at:new Date().toISOString(),full_name:n,phone:p,email:e,comments:comments};sendToCRM('application',payload,function(){document.getElementById('apply-modal').style.display='none';alert('Application submitted! Thank you for your interest in USS Academy. Our team will review and contact you shortly.');document.getElementById('apply-name').value='';document.getElementById('apply-phone').value='';document.getElementById('apply-email').value='';document.getElementById('apply-comments').value='';document.getElementById('apply-file').value='';});}
 </script>
 </html>
