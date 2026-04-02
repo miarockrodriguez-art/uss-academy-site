@@ -463,7 +463,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <ul class="nav-links" id="navLinks">
     <li><a href="#programs">Courses</a></li>
     <li><a href="#schedule">Schedule</a></li>
-    <li><a href="https://app.waiverforever.com/pending/WYYmUoHlH41641624141" target="_blank" rel="noopener">Waivers</a></li>
+    <li><a href="waivers.html">Waivers</a></li>
     <li><a href="#ladies-day">Ladies Day</a></li>
     <li><a href="#compete">Compete</a></li>
     <li><a href="#range-partners">Host a Class</a></li>
@@ -2395,7 +2395,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <li><a href="tel:4073058335" aria-label="Call USS Academy at 407-305-8335">407-305-8335</a></li>
           <li><a href="mailto:support@ussacademy.org">support@ussacademy.org</a></li>
           <li><a href="/refund-policy.html">Refund Policy</a></li>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
@@ -2525,70 +2525,50 @@ function handleFileUpload(event, type) {
 // Supports: GoHighLevel, Zapier, Make, WordPress, or any webhook endpoint.
 // ════════════════════════════════════════════════════
 var CRM = {
-  GHL_API: 'https://services.leadconnectorhq.com',
-  GHL_TOKEN: 'pit-9e399bf9-3376-444e-9588-c41bff1f5899',
-  GHL_LOCATION: 'GOBk9IDY9xnt7JJeDYsI',
+  GHL_WEBHOOK: 'https://services.leadconnectorhq.com/hooks/REPLACE_WITH_USS_ACADEMY_WEBHOOK_ID',
+  NOTIFY_EMAILS: ['mia@ussacademy.org', 'josh@ussacademy.org', 'support@ussacademy.org'],
   LIVE: true
 };
 
-// ── Create contact in GHL via API
+// ── Send form data to GHL webhook
 function sendToCRM(formType, data, successCallback) {
   var nameParts = (data.full_name || '').trim().split(' ');
   var firstName = data.first_name || nameParts[0] || '';
   var lastName = data.last_name || nameParts.slice(1).join(' ') || '';
 
-  var contact = {
-    locationId: CRM.GHL_LOCATION,
-    firstName: firstName,
-    lastName: lastName,
+  var payload = {
+    form_type: data.form_type || formType,
+    source: 'ussacademy.org',
+    full_name: (firstName + ' ' + lastName).trim(),
+    first_name: firstName,
+    last_name: lastName,
     email: data.email || '',
     phone: data.phone || '',
-    source: 'ussacademy.org — ' + (data.form_type || formType),
-    tags: ['website-form-submission', 'source: ussacademy.org', 'form: ' + (data.form_type || formType)],
-    customFields: []
+    message: data.message || data.comments || '',
+    submitted_at: data.submitted_at || new Date().toISOString(),
+    tags: ['website-form-submission', 'form: ' + (data.form_type || formType)],
+    notify: CRM.NOTIFY_EMAILS
   };
 
-  // Add program/class info to notes if present
-  var notes = [];
-  if (data.program) notes.push('Program: ' + data.program);
-  if (data.class_name) notes.push('Class: ' + data.class_name);
-  if (data.class_date) notes.push('Date: ' + data.class_date);
-  if (data.amount) notes.push('Amount: ' + data.amount);
-  if (data.message) notes.push('Message: ' + data.message);
-  if (data.comments) notes.push('Comments: ' + data.comments);
-  if (data.range_name) notes.push('Range: ' + data.range_name);
-  if (data.location) notes.push('Location: ' + data.location);
-  if (data.notes) notes.push('Notes: ' + data.notes);
-  if (notes.length > 0) {
-    contact.customFields.push({ id: 'notes', field_value: notes.join(' | ') });
-  }
+  // Merge all extra data fields
+  var extras = ['program','class_name','class_date','amount','range_name','location',
+    'notes','address','full_address','city','state','zip','venue_type','venue_name',
+    'frequency','class_interest','range_type','group_size','course_interest',
+    'state_id','dob','age','gender','street','event_org','minor_first','minor_last',
+    'minor_dob','digital_cert','print_name','mobile'];
+  extras.forEach(function(k){ if(data[k]) payload[k] = data[k]; });
 
-  // Address fields if present
-  if (data.address || data.full_address) contact.address1 = data.address || data.full_address;
-  if (data.city) contact.city = data.city;
-  if (data.state) contact.state = data.state;
-  if (data.zip) contact.postalCode = data.zip;
-
-  fetch(CRM.GHL_API + '/contacts/', {
+  fetch(CRM.GHL_WEBHOOK, {
     method: 'POST',
-    headers: {
-      'Authorization': 'Bearer ' + CRM.GHL_TOKEN,
-      'Content-Type': 'application/json',
-      'Version': '2021-07-28'
-    },
-    body: JSON.stringify(contact)
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
   })
-  .then(function(res) { return res.json(); })
-  .then(function(result) {
-    if (result.contact && result.contact.id) {
-      console.log('[USS Academy CRM] Contact created: ' + result.contact.id);
-    } else {
-      console.warn('[USS Academy CRM] Response:', result);
-    }
+  .then(function(res) {
+    console.log('[USS Academy CRM] Webhook response: ' + res.status);
     if (successCallback) successCallback();
   })
   .catch(function(err) {
-    console.error('[USS Academy CRM] Error: ' + err);
+    console.error('[USS Academy CRM] Webhook error: ' + err);
     if (successCallback) successCallback(); // still show success to user
   });
 }

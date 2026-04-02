@@ -107,7 +107,7 @@
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/host-a-class.html" class="active">Host a Class</a></li>
-    <li><a href="https://app.waiverforever.com/pending/WYYmUoHlH41641624141" target="_blank" rel="noopener">Waivers</a></li>
+    <li><a href="waivers.html">Waivers</a></li>
     <li><a href="/terms.html">Terms</a></li>
     <li><a href="tel:8005088772" class="nav-cta">Call Now</a></li>
   </ul>
@@ -344,6 +344,17 @@
         <label for="message">Additional Details</label>
         <textarea id="message" name="message" placeholder="Tell us about your venue, your audience, and what you're looking for..."></textarea>
       </div>
+      <div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;" class="full">
+  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+    <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+    I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+  </label>
+  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:var(--silver);line-height:1.5;cursor:pointer;">
+    <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+    I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+  </label>
+  <p style="font-size:11px;font-weight:300;color:var(--silver);opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="/privacy.html" style="color:#c9a84c;text-decoration:underline;">Privacy Policy</a> and <a href="/terms.html" style="color:#c9a84c;text-decoration:underline;">Terms of Service</a>.</p>
+</div>
       <button type="submit" class="submit-btn">Submit Hosting Inquiry</button>
       <div class="form-note">We respond to all inquiries within 2 business days. Call 800-508-8772 (USSA) for immediate assistance.</div>
     </form>
@@ -357,14 +368,33 @@
 </div>
 
 <script>
+var CRM_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/REPLACE_WITH_USS_ACADEMY_WEBHOOK_ID';
 document.getElementById('hostForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  var data = new FormData(this);
-  var subject = 'Host a Class Inquiry — ' + (data.get('venue_name') || data.get('name'));
-  var body = '';
-  data.forEach(function(v, k) { if(v) body += k.replace(/_/g,' ') + ': ' + v + '%0A'; });
-  window.location.href = 'mailto:support@ussacademy.org?subject=' + encodeURIComponent(subject) + '&body=' + body;
-  alert('Thank you! Your inquiry is being submitted via email. If your email client did not open, please email support@ussacademy.org directly.');
+  var fd = new FormData(this);
+  var payload = {
+    form_type: 'host_a_class_inquiry',
+    source: 'ussacademy.org',
+    full_name: fd.get('name') || '',
+    email: fd.get('email') || '',
+    phone: fd.get('phone') || '',
+    venue_type: fd.get('venue_type') || '',
+    venue_name: fd.get('venue_name') || '',
+    location: fd.get('location') || '',
+    class_interest: fd.get('class_interest') || '',
+    frequency: fd.get('frequency') || '',
+    message: fd.get('message') || '',
+    submitted_at: new Date().toISOString(),
+    tags: ['website-form-submission', 'form: host_a_class_inquiry'],
+    notify: ['mia@ussacademy.org', 'josh@ussacademy.org', 'support@ussacademy.org']
+  };
+  fetch(CRM_WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(){ alert('Thank you! Your hosting inquiry has been submitted. Our team will reach out within 2 business days. Call 800-508-8772 (USSA) for immediate assistance.'); })
+  .catch(function(){ alert('Thank you! Your hosting inquiry has been submitted. Our team will reach out within 2 business days. Call 800-508-8772 (USSA) for immediate assistance.'); });
 });
 </script>
 

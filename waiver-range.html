@@ -72,14 +72,53 @@
   <div class="field"><label>Date Signed</label><input type="date" name="date_signed"></div>
 </div>
 
+<div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:#b0bec5;line-height:1.5;cursor:pointer;">
+    <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+    I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+  </label>
+  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:#b0bec5;line-height:1.5;cursor:pointer;">
+    <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+    I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+  </label>
+  <p style="font-size:11px;font-weight:300;color:#b0bec5;opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="/privacy.html" style="color:#c9a84c;text-decoration:underline;">Privacy Policy</a> and <a href="/terms.html" style="color:#c9a84c;text-decoration:underline;">Terms of Service</a>.</p>
+</div>
 <button type="submit" class="submit-btn">Submit Range Waiver</button>
 </form>
 </div>
 
 <script>
+var CRM_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/REPLACE_WITH_USS_ACADEMY_WEBHOOK_ID';
 document.getElementById('rangeForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  alert('Range waiver submitted successfully! You are cleared for range activity. Please check in with your instructor on arrival.');
+  var fd = new FormData(this);
+  var payload = {
+    form_type: 'range_waiver',
+    source: 'ussacademy.org',
+    first_name: fd.get('first_name') || '',
+    last_name: fd.get('last_name') || '',
+    full_name: ((fd.get('first_name') || '') + ' ' + (fd.get('last_name') || '')).trim(),
+    email: fd.get('email') || '',
+    phone: fd.get('mobile') || '',
+    mobile: fd.get('mobile') || '',
+    state_id: fd.get('state_id') || '',
+    visit_date: fd.get('visit_date') || '',
+    event_org: fd.get('event_org') || '',
+    minor_first: fd.get('minor_first') || '',
+    minor_last: fd.get('minor_last') || '',
+    minor_dob: fd.get('minor_dob') || '',
+    print_name: fd.get('print_name') || '',
+    submitted_at: new Date().toISOString(),
+    tags: ['website-form-submission', 'form: range_waiver'],
+    notify: ['mia@ussacademy.org', 'josh@ussacademy.org', 'support@ussacademy.org']
+  };
+  fetch(CRM_WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(){ alert('Range waiver submitted successfully! You are cleared for range activity. Please check in with your instructor on arrival.'); })
+  .catch(function(){ alert('Range waiver submitted successfully! You are cleared for range activity. Please check in with your instructor on arrival.'); });
 });
 document.querySelector('[name="visit_date"]').valueAsDate = new Date();
 document.querySelector('[name="date_signed"]').valueAsDate = new Date();

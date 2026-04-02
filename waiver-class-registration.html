@@ -93,10 +93,10 @@ I am fully aware of the risks and hazards connected with the participation in th
 I HEREBY ASSUME ALL OF THE RISK OF PARTICIPATING IN THIS ACTIVITY OR EVENT, including by way of example and not limitation, any risk that may arise from negligence or carelessness on the part of the persons or entities being released, from dangerous or defective equipment or property owned, maintained, or controlled by them, or because of their possible liability without fault.<br><br>
 I certify that to the best of my knowledge, I am in good physical condition and fully able to participate in this course and have not been advised to not participate by a qualified medical professional. I certify that there are no health-related reasons or problems, which preclude my participation in this course. If you are pregnant; please understand due to safety concerns, we cannot offer you the shooting portion of the range, but we will be happy to reschedule your class as needed.<br><br>
 I VOLUNTARILY ASSUME FULL RESPONSIBILITY FOR ANY RISKS OR LOSS, PROPERTY DAMAGE, OR PERSONAL INJURY, INCLUDING DEATH, that may be sustained by me, or loss or damage to property owned by me, as a result of participation in this course.<br><br>
-I RELEASE, WAIVE, DISCHARGE, from any and all liability, including but not limited to, liability arising from negligence or fault of the entities or persons released, for my death, disability, personal injury, property damage, property theft, or actions of any kind which may hereafter occur to me including my traveling to and from this course. THE FOLLOWING ENTITIES OR PERSONS: USS Agency LLC, their officers, servants, agents, and employees (hereinafter referred to as RELEASEES).<br><br>
+I RELEASE, WAIVE, DISCHARGE, from any and all liability, including but not limited to, liability arising from negligence or fault of the entities or persons released, for my death, disability, personal injury, property damage, property theft, or actions of any kind which may hereafter occur to me including my traveling to and from this course. THE FOLLOWING ENTITIES OR PERSONS: USS Academy LLC, their officers, servants, agents, and employees (hereinafter referred to as RELEASEES).<br><br>
 I hereby consent to receive medical treatment which may be deemed advisable in the event of injury, accident, and/or illness during this course or activity.<br><br>
 I INDEMNIFY, HOLD HARMLESS, AND PROMISE NOT TO SUE the Entities Company, subsidiaries, executives, employees and associates mentioned in this waiver from any and all liabilities, claims, loss, damage occurred, or caused as a result of participation or attendance in this course, program, or event.<br><br>
-I understand that during this course or related activities, I may be photographed. I agree to allow my photo, video, or film likeness to be used for any legitimate purpose by USS Agency LLC, their officers, servants or agents.
+I understand that during this course or related activities, I may be photographed. I agree to allow my photo, video, or film likeness to be used for any legitimate purpose by USS Academy LLC, their officers, servants or agents.
 </div>
 <div class="checkbox-group">
   <label><input type="checkbox" required> <strong>I have read, understand, and agree to ALL of the above terms, conditions, and waivers.</strong></label>
@@ -112,14 +112,55 @@ I understand that during this course or related activities, I may be photographe
   <div class="field"><label>Date Signed</label><input type="date" name="date_signed"></div>
 </div>
 
+<div style="margin:12px 0;display:flex;flex-direction:column;gap:10px;">
+  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:#b0bec5;line-height:1.5;cursor:pointer;">
+    <input type="checkbox" class="sms-transactional" required style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+    I consent to receive SMS messages from USS Academy LLC including appointment reminders, class confirmations, and notifications. Message frequency may vary. Msg &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+  </label>
+  <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;font-weight:300;color:#b0bec5;line-height:1.5;cursor:pointer;">
+    <input type="checkbox" class="sms-marketing" style="margin-top:2px;accent-color:#c9a84c;flex-shrink:0;">
+    I consent to receive promotional and marketing SMS messages from USS Academy LLC including special offers and event announcements. This is optional and will not affect form submission. Msg &amp; data rates may apply. Reply STOP to opt out.
+  </label>
+  <p style="font-size:11px;font-weight:300;color:#b0bec5;opacity:.7;line-height:1.5;">By submitting this form you agree to our <a href="/privacy.html" style="color:#c9a84c;text-decoration:underline;">Privacy Policy</a> and <a href="/terms.html" style="color:#c9a84c;text-decoration:underline;">Terms of Service</a>.</p>
+</div>
 <button type="submit" class="submit-btn">Submit Registration & Waiver</button>
 </form>
 </div>
 
 <script>
+var CRM_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/REPLACE_WITH_USS_ACADEMY_WEBHOOK_ID';
 document.getElementById('registrationForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  alert('Registration submitted successfully! USS Academy will confirm your booking via SMS and email.');
+  var fd = new FormData(this);
+  var payload = {
+    form_type: 'class_registration_waiver',
+    source: 'ussacademy.org',
+    first_name: fd.get('first_name') || '',
+    last_name: fd.get('last_name') || '',
+    full_name: ((fd.get('first_name') || '') + ' ' + (fd.get('last_name') || '')).trim(),
+    email: fd.get('email') || '',
+    phone: fd.get('mobile') || '',
+    mobile: fd.get('mobile') || '',
+    dob: fd.get('dob') || '',
+    age: fd.get('age') || '',
+    state_id: fd.get('state_id') || '',
+    gender: fd.get('gender') || '',
+    street: fd.get('street') || '',
+    city: fd.get('city') || '',
+    state: fd.get('state') || '',
+    zip: fd.get('zip') || '',
+    print_name: fd.get('print_name') || '',
+    submitted_at: new Date().toISOString(),
+    tags: ['website-form-submission', 'form: class_registration_waiver'],
+    notify: ['mia@ussacademy.org', 'josh@ussacademy.org', 'support@ussacademy.org']
+  };
+  fetch(CRM_WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(){ alert('Registration submitted successfully! USS Academy will confirm your booking via SMS and email.'); })
+  .catch(function(){ alert('Registration submitted successfully! USS Academy will confirm your booking via SMS and email.'); });
 });
 // Auto-fill today's date
 document.querySelector('[name="todays_date"]').valueAsDate = new Date();
