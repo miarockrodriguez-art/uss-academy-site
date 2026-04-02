@@ -3020,4 +3020,14 @@ function submitInfo(){
 function openApplyModal(tag,title){document.getElementById('apply-title').textContent=title;document.getElementById('apply-tag').value=tag;document.getElementById('apply-modal').style.display='flex';}
 function submitApply(){var n=document.getElementById('apply-name').value.trim();var p=document.getElementById('apply-phone').value.trim();var e=document.getElementById('apply-email').value.trim();if(!n||!p||!e){alert('Please fill in Name, Phone, and Email.');return;}var tag=document.getElementById('apply-tag').value;var comments=document.getElementById('apply-comments').value.trim();var payload={form_type:'application_'+tag,source:'ussacademy.org',submitted_at:new Date().toISOString(),full_name:n,phone:p,email:e,comments:comments};sendToCRM('application',payload,function(){document.getElementById('apply-modal').style.display='none';alert('Application submitted! Thank you for your interest in USS Academy. Our team will review and contact you shortly.');document.getElementById('apply-name').value='';document.getElementById('apply-phone').value='';document.getElementById('apply-email').value='';document.getElementById('apply-comments').value='';document.getElementById('apply-file').value='';});}
 </script>
+<!-- Mobile-Only Floating Call Button -->
+<style>
+.mobile-call-btn{display:none}
+@media(max-width:768px){
+  .mobile-call-btn{display:flex;flex-direction:column;align-items:center;gap:2px;position:fixed;top:80px;right:12px;z-index:9999;background:#C9A84C;color:#0D1B2A;padding:10px 18px;font-family:'Barlow Condensed',sans-serif;text-decoration:none;border-radius:50px;box-shadow:0 6px 24px rgba(201,168,76,0.4);text-align:center}
+  .mobile-call-btn .call-line1{font-size:14px;font-weight:700;line-height:1.2}
+  .mobile-call-btn .call-line2{font-size:11px;font-weight:500;line-height:1.2}
+}
+</style>
+<a href="tel:18005088772" class="mobile-call-btn"><span class="call-line1">📞 Call Now</span><span class="call-line2">1-800-508-8772</span></a>
 </html>
