@@ -29,12 +29,12 @@
   .region-card h3{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);margin-bottom:12px;}
   .region-card p{font-size:13px;color:var(--silver);line-height:1.6;margin-bottom:16px;}
   .region-card .cities{font-size:12px;color:var(--silver);opacity:.7;margin-bottom:16px;line-height:1.5;}
-  .region-card a{display:inline-block;padding:8px 20px;background:var(--gold);color:var(--navy);text-decoration:none;border-radius:4px;font-size:12px;font-weight:700;}
+  .region-card a{display:inline-block;padding:8px 20px;background:var(--gold);color:var(--navy);text-decoration:none;border-radius:0;font-size:12px;font-weight:700;}
   .cta{text-align:center;padding:40px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:8px;}
   .cta h3{font-family:'Cinzel',serif;font-size:22px;margin-bottom:12px;}
   .cta p{color:var(--silver);margin-bottom:20px;}
-  .cta a{display:inline-block;padding:12px 28px;background:var(--gold);color:var(--navy);text-decoration:none;border-radius:4px;font-weight:700;margin:4px;}
-  .cta .phone{display:inline-block;padding:12px 28px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;border-radius:4px;margin:4px;}
+  .cta a{display:inline-block;padding:12px 28px;background:var(--gold);color:var(--navy);text-decoration:none;border-radius:0;font-weight:700;margin:4px;}
+  .cta .phone{display:inline-block;padding:12px 28px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;border-radius:0;margin:4px;}
   .footer{text-align:center;padding:24px;border-top:1px solid rgba(201,168,76,.08);margin-top:40px;}
   .footer a{color:var(--gold);text-decoration:none;font-size:13px;}
   @media(max-width:768px){.regions{grid-template-columns:1fr;}}
@@ -223,12 +223,12 @@
 </div>
 <!-- Sticky Call Button -->
 <style>
-.sticky-call-btn{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:row;align-items:center;gap:0;background:#C9A84C;color:#0D1B2A;padding:12px 22px;font-family:'Barlow Condensed','Inter',sans-serif;text-decoration:none;border-radius:4px;box-shadow:0 4px 16px rgba(201,168,76,0.3);text-align:center}
+.sticky-call-btn{position:fixed;top:70px;right:0;z-index:9999;display:flex;flex-direction:row;align-items:center;gap:0;background:#C9A84C;color:#0D1B2A;padding:12px 22px;font-family:'Barlow Condensed','Inter',sans-serif;text-decoration:none;border-radius:0;box-shadow:0 4px 16px rgba(201,168,76,0.3);text-align:center}
 .sticky-call-btn:hover{background:#e8c96a;box-shadow:0 6px 24px rgba(201,168,76,0.4)}
 .sticky-call-btn .call-line1{font-size:14px;font-weight:700;line-height:1.2}
 .sticky-call-btn .call-sep{margin:0 6px;opacity:0.6}
 .sticky-call-btn .call-line2{font-size:13px;font-weight:600;line-height:1.2}
-@media(max-width:768px){.sticky-call-btn{bottom:16px;right:16px;padding:10px 18px}.sticky-call-btn .call-line1{font-size:13px}.sticky-call-btn .call-line2{font-size:12px}}
+@media(max-width:768px){.sticky-call-btn{top:70px;right:0;padding:10px 18px}.sticky-call-btn .call-line1{font-size:13px}.sticky-call-btn .call-line2{font-size:12px}}
 </style>
 <a href="tel:18005088772" class="sticky-call-btn"><span class="call-line1">Call Now</span><span class="call-sep">|</span><span class="call-line2">1-800-508-8772</span></a>
 </body>
