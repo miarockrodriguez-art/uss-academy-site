@@ -3025,6 +3025,54 @@ function openApplyModal(tag,title){document.getElementById('apply-title').textCo
 function submitApply(){var n=document.getElementById('apply-name').value.trim();var p=document.getElementById('apply-phone').value.trim();var e=document.getElementById('apply-email').value.trim();if(!n||!p||!e){alert('Please fill in Name, Phone, and Email.');return;}var tag=document.getElementById('apply-tag').value;var comments=document.getElementById('apply-comments').value.trim();var payload={form_type:'application_'+tag,source:'ussacademy.org',submitted_at:new Date().toISOString(),full_name:n,phone:p,email:e,comments:comments};sendToCRM('application',payload,function(){document.getElementById('apply-modal').style.display='none';alert('Application submitted! Thank you for your interest in USS Academy. Our team will review and contact you shortly.');document.getElementById('apply-name').value='';document.getElementById('apply-phone').value='';document.getElementById('apply-email').value='';document.getElementById('apply-comments').value='';document.getElementById('apply-file').value='';});}
 </script>
 
+<!-- Exit Intent Popup -->
+<div id="exitPopup" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;">
+  <div style="background:#0D1B2A;border:2px solid #C9A84C;border-radius:10px;max-width:440px;width:90%;padding:40px 32px;text-align:center;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5);">
+    <button onclick="closeExitPopup()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#C9A84C;font-size:24px;cursor:pointer;line-height:1;">&times;</button>
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;">FREE DOWNLOAD</div>
+    <h3 style="font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:#f4f4f6;margin-bottom:10px;">Before You Go...</h3>
+    <p style="font-size:14px;color:#b0bec5;margin-bottom:24px;line-height:1.6;">Get your <strong style="color:#C9A84C;">FREE Florida Firearms Safety Guide</strong> — essential tips for safe handling, Florida law basics, and what every gun owner should know.</p>
+    <input id="exit-email" type="email" placeholder="Enter your email address" style="width:100%;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.3);color:#f4f4f6;font-family:'Barlow',sans-serif;font-size:14px;border-radius:4px;margin-bottom:12px;text-align:center;">
+    <button onclick="submitExitPopup()" style="width:100%;padding:14px;background:#C9A84C;color:#0D1B2A;border:none;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:4px;">Get My Free Guide</button>
+    <p style="font-size:10px;color:#555;margin-top:12px;">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var shown=false;
+  document.addEventListener('mouseout',function(e){
+    if(e.clientY<5&&!shown&&!sessionStorage.getItem('exitShown')){
+      shown=true;
+      sessionStorage.setItem('exitShown','1');
+      document.getElementById('exitPopup').style.display='flex';
+    }
+  });
+  setTimeout(function(){
+    if(!shown&&!sessionStorage.getItem('exitShown')&&'ontouchstart' in window){
+      var scrollCount=0;
+      window.addEventListener('scroll',function(){
+        scrollCount++;
+        if(scrollCount>30&&!shown){
+          shown=true;
+          sessionStorage.setItem('exitShown','1');
+          document.getElementById('exitPopup').style.display='flex';
+        }
+      });
+    }
+  },15000);
+})();
+function closeExitPopup(){document.getElementById('exitPopup').style.display='none';}
+function submitExitPopup(){
+  var email=document.getElementById('exit-email').value.trim();
+  if(!email||email.indexOf('@')<1){alert('Please enter a valid email.');return;}
+  fetch('https://services.leadconnectorhq.com/hooks/GOBk9IDY9xnt7JJeDYsl/webhook-trigger/LVl0To2GE8jo5d279OkE',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({form_type:'exit_intent_guide',source:'ussacademy.org',email:email,tags:['website-form-submission','form: exit_intent_guide','free-guide-download'],submitted_at:new Date().toISOString(),notify:['mia@ussacademy.org','josh@ussacademy.org','support@ussacademy.org']})
+  }).catch(function(){});
+  document.getElementById('exitPopup').innerHTML='<div style="background:#0D1B2A;border:2px solid #C9A84C;border-radius:10px;max-width:440px;width:90%;padding:40px 32px;text-align:center;"><div style="font-size:36px;margin-bottom:12px;">&#10003;</div><h3 style="font-family:Cinzel,serif;font-size:22px;color:#f4f4f6;margin-bottom:10px;">Check Your Email!</h3><p style="font-size:14px;color:#b0bec5;">Your Florida Firearms Safety Guide is on its way. Welcome to USS Academy.</p><button onclick="closeExitPopup()" style="margin-top:20px;padding:12px 32px;background:#C9A84C;color:#0D1B2A;border:none;font-family:Barlow Condensed,sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:4px;">Continue Browsing</button></div>';
+}
+</script>
+
 <!-- Sticky Call Button -->
 <style>
 @keyframes fadeInCall{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
