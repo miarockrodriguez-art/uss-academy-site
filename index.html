@@ -360,11 +360,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 [
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "name": "USS Academy",
     "legalName": "USS Academy LLC",
-    "url": "https://ussacademy.org",
-    "logo": "https://ussacademy.org/favicon.ico",
+    "url": "https://www.ussacademy.org",
+    "logo": "https://www.ussacademy.org/favicon.ico",
     "description": "Central Florida's premier firearm training academy. From beginner safety to concealed carry permits, tactical courses, and professional development.",
     "foundingDate": "1999",
     "address": {
@@ -385,6 +385,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       "https://www.youtube.com/@ussacademy"
     ],
     "numberOfEmployees": {"@type": "QuantitativeValue", "value": "10+"},
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "28.5383",
+      "longitude": "-81.3792"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "priceRange": "$99-$799",
     "areaServed": {"@type": "State", "name": "Florida"}
   },
   {
@@ -2545,7 +2557,7 @@ function sendToCRM(formType, data, successCallback) {
     body: JSON.stringify(payload)
   })
   .then(function(res) {
-    console.log('[USS Academy CRM] Webhook response: ' + res.status);
+
     if (successCallback) successCallback();
   })
   .catch(function(err) {
@@ -2939,8 +2951,6 @@ function submitInfo(){
 }
 </script>
 
-</body>
-
 <!-- APPLY MODAL -->
 <div id="apply-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10000;align-items:center;justify-content:center;backdrop-filter:blur(4px);">
   <div style="background:#0a1628;border:1px solid rgba(201,168,76,.4);padding:0;max-width:440px;width:90%;position:relative;overflow:hidden;">
@@ -2981,4 +2991,5 @@ function submitApply(){var n=document.getElementById('apply-name').value.trim();
 }
 </style>
 <a href="tel:18005088772" class="mobile-call-btn"><span class="call-line1">📞 Call Now</span><span class="call-line2">1-800-508-8772</span></a>
+</body>
 </html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ussacademy.org/sitemap.xml
-<!-- deploy trigger -->
+Sitemap: https://www.ussacademy.org/sitemap.xml
+# deploy trigger
