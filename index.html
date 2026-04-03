@@ -3011,15 +3011,17 @@ function submitInfo(){
 function openApplyModal(tag,title){document.getElementById('apply-title').textContent=title;document.getElementById('apply-tag').value=tag;document.getElementById('apply-modal').style.display='flex';}
 function submitApply(){var n=document.getElementById('apply-name').value.trim();var p=document.getElementById('apply-phone').value.trim();var e=document.getElementById('apply-email').value.trim();if(!n||!p||!e){alert('Please fill in Name, Phone, and Email.');return;}var tag=document.getElementById('apply-tag').value;var comments=document.getElementById('apply-comments').value.trim();var payload={form_type:'application_'+tag,source:'ussacademy.org',submitted_at:new Date().toISOString(),full_name:n,phone:p,email:e,comments:comments};sendToCRM('application',payload,function(){document.getElementById('apply-modal').style.display='none';alert('Application submitted! Thank you for your interest in USS Academy. Our team will review and contact you shortly.');document.getElementById('apply-name').value='';document.getElementById('apply-phone').value='';document.getElementById('apply-email').value='';document.getElementById('apply-comments').value='';document.getElementById('apply-file').value='';});}
 </script>
-<!-- Mobile-Only Floating Call Button -->
+
+<!-- Sticky Call Button -->
 <style>
-.mobile-call-btn{display:none}
-@media(max-width:768px){
-  .mobile-call-btn{display:flex;flex-direction:column;align-items:center;gap:2px;position:fixed;top:110px;right:12px;z-index:9999;background:#C9A84C;color:#0D1B2A;padding:10px 18px;font-family:'Barlow Condensed',sans-serif;text-decoration:none;border-radius:50px;box-shadow:0 6px 24px rgba(201,168,76,0.4);text-align:center}
-  .mobile-call-btn .call-line1{font-size:14px;font-weight:700;line-height:1.2}
-  .mobile-call-btn .call-line2{font-size:11px;font-weight:500;line-height:1.2}
-}
+@keyframes fadeInCall{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.sticky-call-btn{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:row;align-items:center;gap:0;background:#C9A84C;color:#0D1B2A;padding:14px 24px;font-family:'Barlow Condensed','Inter',sans-serif;text-decoration:none;border-radius:50px;box-shadow:0 6px 24px rgba(201,168,76,0.4);text-align:center;animation:fadeInCall 0.6s ease both;animation-delay:0.5s;opacity:0}
+.sticky-call-btn:hover{background:#e8c96a;box-shadow:0 8px 30px rgba(201,168,76,0.5)}
+.sticky-call-btn .call-line1{font-size:16px;font-weight:700;line-height:1.2}
+.sticky-call-btn .call-sep{margin:0 6px;opacity:0.6}
+.sticky-call-btn .call-line2{font-size:14px;font-weight:600;line-height:1.2}
+@media(max-width:480px){.sticky-call-btn{bottom:16px;right:16px;padding:12px 20px}.sticky-call-btn .call-line1{font-size:14px}.sticky-call-btn .call-line2{font-size:11px}}
 </style>
-<a href="tel:18005088772" class="mobile-call-btn"><span class="call-line1">📞 Call Now</span><span class="call-line2">1-800-508-8772</span></a>
+<a href="tel:3218788089" class="sticky-call-btn"><span class="call-line1">📞 Call Now</span><span class="call-sep">|</span><span class="call-line2">321-878-8089</span></a>
 </body>
 </html>
