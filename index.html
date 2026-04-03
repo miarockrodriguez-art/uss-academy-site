@@ -176,6 +176,7 @@ h2 .gold{color:var(--gold);}
 .tag-virtual{color:#90ee90;border-color:rgba(144,238,144,.3);background:rgba(144,238,144,.07);}
 .cal-register-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:10px 20px;cursor:pointer;transition:background .2s;white-space:nowrap;}
 .cal-register-btn:hover{background:var(--gold-light);}
+.seats-note{display:block;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:6px;}
 
 /* ── CHAT BOT ── */
 .chatbot-bubble{position:fixed;bottom:28px;right:28px;z-index:2000;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
@@ -526,6 +527,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <p class="hero-sub">The Science of Self-Protection. — Open Carry · CWP · Self-Defense · Gun Safety</p>
       <div class="hero-divider"></div>
       <p class="hero-desc">USS Academy is Florida's #1 <strong style="color:var(--white);">Firearm Training Academy</strong> — specializing in CWP / CCW2 concealed carry permits, self-protection, gun safety, and carry-to-conceal training. 27+ years. 29,000+ students. Training available <strong style="color:var(--white);">in-person, online/virtually, and nationally.</strong> U.S. Marine Corps · NRA · USCCA · Florida K License certified instructors — with real-world operational experience in the field and in the courtroom.</p>
+      <div style="display:inline-block;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:6px 18px;margin-bottom:16px;border-radius:4px;">
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);">Classes Filling Fast — Book Your Spot Today</span>
+      </div>
       <div class="hero-actions">
         <a href="#programs" class="btn-primary">Explore Programs</a>
         <a href="#contact" class="btn-outline">Schedule Training</a>
@@ -703,51 +707,61 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="cal-date" style="background:rgba(201,168,76,.12);"><div class="cal-month" style="color:#c9a84c;">BOOK</div><div class="cal-day" style="color:#c9a84c;font-size:18px;">📞</div></div>
         <div class="cal-info"><h4 style="color:#c9a84c;">Book a Call with Your Instructor — $75 per session</h4><p>Schedule a one-on-one call with a certified USS Academy instructor to discuss your training goals, skill level, and the right course for you. Personalized guidance before you step on the range.</p><span class="cal-tag" style="background:rgba(201,168,76,.12);color:#c9a84c;border-color:rgba(201,168,76,.3);">One-on-One · All Levels · Personalized</span></div>
         <a href="#contact" class="cal-register-btn" style="background:#c9a84c;color:#0a1628;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;">BOOK NOW</a>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="ccw">
         <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>Florida CWP / CCW Permit Class</h4><p>State-approved concealed carry permit class. FL 790 &amp; 776. Live-fire qualification. Partner range — contact for location.</p><span class="cal-tag tag-ccw">CWP · CWP · Weekly</span></div>
         <button class="cal-register-btn" onclick="openPayment('CWP / CCW2 Permit Class','Weekly','Call for Pricing')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="beginner">
         <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>Entry-Level Beginner Course</h4><p>First-time firearm handling. Safe, welcoming, pressure-free. Partner range or online. All levels welcome.</p><span class="cal-tag tag-beginner">Beginner · First-Timers</span></div>
         <button class="cal-register-btn" onclick="openPayment('Entry-Level Beginner Course','Weekly','Call for Pricing')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="virtual">
         <div class="cal-date"><div class="cal-month">ONGOING</div><div class="cal-day">↗</div></div>
         <div class="cal-info"><h4>Virtual / Online Classes</h4><p>Virtual dry fire training is extremely valuable. Pick your instructor's brain live — duty belt and battle belt setup, optics recommendations (LPVO, red dots), lights, lasers, ammo selection, equipment placement, go bags and bug out bags. A lifetime of knowledge transferred directly to your device.</p><span class="cal-tag tag-virtual">Virtual · National</span></div>
         <button class="cal-register-btn" onclick="openPayment('Virtual Training','Flexible','Call for Info')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="ccw">
         <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>Self-Defense Seminar — FL 790 &amp; 776</h4><p>Know your rights. Know your law. Florida self-defense law, gun protection, and carry-to-conceal legal foundations.</p><span class="cal-tag tag-ccw">Self-Defense · FL Law</span></div>
         <button class="cal-register-btn" onclick="openPayment('Self-Defense Seminar FL 790 &amp; 776','Weekly','Call for Pricing')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="advanced">
         <div class="cal-date"><div class="cal-month">MONTHLY</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>Night Vision Training Course</h4><p>Advanced NVD operation, weapon mounting, low-light engagement fundamentals. Partner range. Limited seats.</p><span class="cal-tag tag-advanced">Night Vision · Advanced</span></div>
         <button class="cal-register-btn" onclick="openPayment('Night Vision Course','Monthly','Call for Info')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="beginner">
         <div class="cal-date"><div class="cal-month">WEEKLY</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>Women's Firearms Training</h4><p>Women-only firearms sessions — beginner to advanced. Safe, empowering, supportive environment.</p><span class="cal-tag tag-ladies">Women-Only</span></div>
         <button class="cal-register-btn" onclick="openPayment('Women\'s Firearms Training','Weekly','Call for Pricing')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="beginner">
         <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>Zero to Accurate — Sight Alignment, Sight Picture &amp; Zeroing Fundamentals</h4><p>Proper sight alignment, sight picture, and zeroing procedures for iron sights, red dots, and scopes. All platforms welcome.</p><span class="cal-tag tag-beginner">All Levels · All Platforms</span></div>
         <button class="cal-register-btn" onclick="openPayment('Zero to Accurate','Rolling','Call for Pricing')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="advanced">
         <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>The Science of the Shot — Precision Marksmanship &amp; Respiratory Pause</h4><p>Respiratory control, natural pause cycle, trigger discipline, and precision fundamentals. Pistol &amp; rifle. All advanced levels.</p><span class="cal-tag tag-advanced">Precision · Intermediate–Advanced</span></div>
         <button class="cal-register-btn" onclick="openPayment('Precision Marksmanship &amp; Respiratory Pause','Rolling','Call for Pricing')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
       <div class="cal-event reveal" data-cat="advanced">
         <div class="cal-date"><div class="cal-month">ROLLING</div><div class="cal-day">–</div></div>
         <div class="cal-info"><h4>G-Qualification — Armed Security</h4><p>Florida G-License requalification. Live-fire range session. Certificate provided. Call for availability.</p><span class="cal-tag tag-advanced">G-License · Security</span></div>
         <button class="cal-register-btn" onclick="openPayment('G-Qualification','Rolling','Call for Pricing')">BOOK NOW</button>
+        <span class="seats-note">Limited seats available</span>
       </div>
     </div>
     <div style="margin-top:20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
