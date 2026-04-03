@@ -134,8 +134,22 @@ function submitPhoto(){
     tags:['student-photo-submission','pending-approval']
   };
 
-  // Log submission (webhook to GHL when configured)
-  console.log('Photo submission:',data);
+  // Send to GHL webhook
+  fetch('https://services.leadconnectorhq.com/hooks/GOBk9IDY9xnt7JJeDYsl/webhook-trigger/LVl0To2GE8jo5d279OkE', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      form_type: 'student_photo_submission',
+      source: 'ussacademy.org',
+      full_name: data.full_name,
+      email: data.email,
+      phone: data.phone,
+      message: 'Photo submission: ' + data.photo_name + ' | Caption: ' + (data.caption || 'none'),
+      submitted_at: data.submitted_at,
+      tags: ['website-form-submission', 'form: student_photo_submission'],
+      notify: ['mia@ussacademy.org', 'josh@ussacademy.org', 'support@ussacademy.org']
+    })
+  }).catch(function(){});
 
   // Show success
   document.getElementById('photo-form').style.display='none';
