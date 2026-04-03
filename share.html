@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 5L10 25v35c0 28 17 45 40 55 23-10 40-27 40-55V25L50 5z' fill='%230a1628' stroke='%23c9a84c' stroke-width='4'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-family='serif' font-size='24' font-weight='bold' fill='%23c9a84c'%3EUSS%3C/text%3E%3Ctext x='50' y='80' text-anchor='middle' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23c9a84c' letter-spacing='3'%3EACADEMY%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Share Your Experience | USS Academy</title>
+<meta name="description" content="Share your USS Academy training experience. Upload photos or videos, leave a review, and get featured on our website and social media.">
+<link rel="canonical" href="https://www.ussacademy.org/share">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Share Your Experience | USS Academy">
+<meta property="og:description" content="Share your USS Academy training experience. Upload photos or videos and get featured.">
+<meta property="og:url" content="https://www.ussacademy.org/share">
+<meta property="og:site_name" content="USS Academy">
+<meta property="og:image" content="https://www.ussacademy.org/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ussacademy.org/"},{"@type":"ListItem","position":2,"name":"Share Your Experience","item":"https://www.ussacademy.org/share"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--navy-mid:#112240;--gold:#c9a84c;--gold-light:#e8c96a;--silver:#b0bec5;--white:#f4f4f6;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);min-height:100vh}
+.header{max-width:500px;margin:0 auto;padding:24px 24px 0;display:flex;justify-content:space-between;align-items:center}
+.header a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:600}
+.container{max-width:500px;margin:0 auto;padding:24px}
+h1{font-size:24px;font-weight:800;color:var(--gold);margin-bottom:6px;text-align:center}
+.subtitle{font-size:14px;color:var(--silver);text-align:center;margin-bottom:28px;line-height:1.6}
+label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+input,textarea{width:100%;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.25);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;border-radius:6px;margin-bottom:16px}
+input::placeholder,textarea::placeholder{color:rgba(176,190,197,.5)}
+textarea{min-height:80px;resize:vertical}
+.upload-zone{border:2px dashed rgba(201,168,76,.3);border-radius:8px;padding:32px 20px;text-align:center;margin-bottom:16px;cursor:pointer;transition:border-color .2s}
+.upload-zone:hover{border-color:var(--gold)}
+.upload-zone input[type="file"]{display:none}
+.upload-zone .icon{font-size:36px;margin-bottom:8px}
+.upload-zone p{font-size:13px;color:var(--silver)}
+.upload-zone .hint{font-size:11px;color:rgba(176,190,197,.4);margin-top:6px}
+.stars{display:flex;gap:8px;margin-bottom:16px;justify-content:center}
+.stars span{font-size:32px;cursor:pointer;color:rgba(201,168,76,.25);transition:color .15s;user-select:none}
+.stars span.active{color:var(--gold)}
+.stars span:hover{color:var(--gold-light)}
+.submit-btn{width:100%;padding:16px;background:var(--gold);color:var(--navy);border:none;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:6px;margin-top:8px}
+.submit-btn:hover{background:var(--gold-light)}
+.success{display:none;text-align:center;padding:40px 20px}
+.success .check{font-size:48px;margin-bottom:16px}
+.success h2{font-size:22px;color:var(--gold);margin-bottom:10px}
+.success p{font-size:14px;color:var(--silver);line-height:1.6}
+.footer{max-width:500px;margin:0 auto;padding:24px;text-align:center;font-size:11px;color:rgba(176,190,197,.3);border-top:1px solid rgba(201,168,76,.1);margin-top:24px}
+.footer a{color:var(--gold);text-decoration:none}
+@media(max-width:480px){.container{padding:20px 16px}h1{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="header">
+  <a href="index.html">← Back to USS Academy</a>
+  <a href="tel:8005088772" style="color:var(--silver);">800-508-8772</a>
+</div>
+<div class="container">
+  <div id="share-form">
+    <h1>🎥 Share Your Experience</h1>
+    <p class="subtitle">Trained with USS Academy? Share your story — upload a photo or video, leave a review, and get featured on our website and social media.</p>
+
+    <label>Your Name *</label>
+    <input type="text" id="share-name" placeholder="Full name" required>
+
+    <label>Social Media Handle (optional)</label>
+    <input type="text" id="share-handle" placeholder="@yourusername on Instagram, TikTok, etc.">
+
+    <label>Upload Photo or Video *</label>
+    <div class="upload-zone" onclick="document.getElementById('share-file').click()">
+      <input type="file" id="share-file" accept="image/*,video/*" capture="environment">
+      <div class="icon">📸</div>
+      <p>Tap to open camera or choose a file</p>
+      <p class="hint">Photos or videos up to 50MB</p>
+    </div>
+    <p id="file-name" style="font-size:12px;color:var(--gold);margin-bottom:16px;display:none;"></p>
+
+    <label>Your Rating</label>
+    <div class="stars" id="star-rating">
+      <span data-val="1" onclick="setRating(1)">★</span>
+      <span data-val="2" onclick="setRating(2)">★</span>
+      <span data-val="3" onclick="setRating(3)">★</span>
+      <span data-val="4" onclick="setRating(4)">★</span>
+      <span data-val="5" onclick="setRating(5)">★</span>
+    </div>
+
+    <label>Comment (optional)</label>
+    <textarea id="share-comment" placeholder="Tell us about your training experience..."></textarea>
+
+    <button class="submit-btn" onclick="submitShare()">Submit Your Experience</button>
+  </div>
+
+  <div class="success" id="share-success">
+    <div class="check">✓</div>
+    <h2>Thank you!</h2>
+    <p>We'll tag you when your story goes live 🎥</p>
+    <a href="index.html" style="display:inline-block;margin-top:20px;color:var(--gold);font-size:13px;font-weight:600;">← Back to USS Academy</a>
+  </div>
+</div>
+
+<div class="footer">
+  USS Academy LLC · Orlando, Florida · <a href="tel:8005088772">800-508-8772</a>
+</div>
+
+<script>
+var rating = 0;
+function setRating(val) {
+  rating = val;
+  var stars = document.querySelectorAll('#star-rating span');
+  stars.forEach(function(s, i) {
+    s.classList.toggle('active', i < val);
+  });
+}
+setRating(5);
+
+document.getElementById('share-file').addEventListener('change', function() {
+  var fn = document.getElementById('file-name');
+  if (this.files.length > 0) {
+    fn.textContent = '📎 ' + this.files[0].name + ' (' + (this.files[0].size / 1024 / 1024).toFixed(1) + ' MB)';
+    fn.style.display = 'block';
+  }
+});
+
+function submitShare() {
+  var name = document.getElementById('share-name').value.trim();
+  var file = document.getElementById('share-file').files[0];
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!file) { alert('Please upload a photo or video.'); return; }
+
+  var payload = {
+    form_type: 'student_content_submission',
+    source: 'ussacademy.org/share',
+    full_name: name,
+    message: 'Rating: ' + rating + '/5 | Handle: ' + (document.getElementById('share-handle').value.trim() || 'none') + ' | Comment: ' + (document.getElementById('share-comment').value.trim() || 'none') + ' | File: ' + file.name + ' (' + (file.size / 1024 / 1024).toFixed(1) + 'MB)',
+    submitted_at: new Date().toISOString(),
+    tags: ['website-form-submission', 'form: student_content_submission', 'user-generated-content'],
+    notify: ['mia@ussacademy.org', 'josh@ussacademy.org', 'support@ussacademy.org']
+  };
+
+  fetch('https://services.leadconnectorhq.com/hooks/GOBk9IDY9xnt7JJeDYsl/webhook-trigger/LVl0To2GE8jo5d279OkE', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  }).catch(function(){});
+
+  document.getElementById('share-form').style.display = 'none';
+  document.getElementById('share-success').style.display = 'block';
+}
+</script>
+
+<!-- Sticky Call Button -->
+<style>
+.sticky-call-btn{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:row;align-items:center;gap:0;background:#C9A84C;color:#0D1B2A;padding:12px 22px;font-family:'Inter',sans-serif;text-decoration:none;border-radius:0;box-shadow:0 4px 16px rgba(201,168,76,0.3);text-align:center}
+.sticky-call-btn:hover{background:#e8c96a}
+.sticky-call-btn .call-line1{font-size:14px;font-weight:700;line-height:1.2}
+.sticky-call-btn .call-sep{margin:0 6px;opacity:0.6}
+.sticky-call-btn .call-line2{font-size:13px;font-weight:600;line-height:1.2}
+</style>
+<a href="tel:18005088772" class="sticky-call-btn"><span class="call-line1">Call Now</span><span class="call-sep">|</span><span class="call-line2">1-800-508-8772</span></a>
+</body>
+</html>

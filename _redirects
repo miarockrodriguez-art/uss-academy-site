@@ -12,3 +12,4 @@ https://ussacademy.org/* https://www.ussacademy.org/:splat 301
 /espanol /espanol.html 200
 /portugues /portugues.html 200
 /kreyol /kreyol.html 200
+/share /share.html 200
