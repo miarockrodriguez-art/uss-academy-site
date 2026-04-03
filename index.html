@@ -2591,7 +2591,6 @@ function sendToCRM(formType, data, successCallback) {
     if (successCallback) successCallback();
   })
   .catch(function(err) {
-    console.error('[USS Academy CRM] Webhook error: ' + err);
     if (successCallback) successCallback(); // still show success to user
   });
 }
