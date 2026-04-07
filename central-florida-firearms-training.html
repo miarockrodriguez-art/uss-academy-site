@@ -619,6 +619,7 @@ function submitSlideForm(){
     method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({form_type:'slide_form_lead',source:'ussacademy.org',first_name:n,email:e,phone:p,tags:['website-form-submission','form: slide_form_lead'],notify:['mia@ussacademy.org','josh@ussacademy.org','support@ussacademy.org'],submitted_at:new Date().toISOString()})
   }).catch(function(){});
+  gtag('event', 'form_submission', { form_name: 'slide_form' });
   document.getElementById('slideForm').innerHTML='<div style="text-align:center;padding:20px 0;"><div style="font-size:28px;margin-bottom:8px;">&#10003;</div><p style="font-size:14px;color:#f4f4f6;">Thank you! We will be in touch shortly.</p></div>';
 }
 </script>
