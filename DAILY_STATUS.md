@@ -1,38 +1,72 @@
-# POLY Daily Status — 2026-04-07
+# POLY Daily Status Report
+**Date:** 2026-04-08  
+**Chief of Staff:** POLY  
 
-## USS Academy (uss-academy-site)
+---
 
-- **Latest commit:** GA4 form_submission + stripe_click event tracking across all 32 pages and 4 Stripe links (Mia Rodriguez, 07:36 UTC)
-- **Commits today:** 3
-  - Add GA4 form_submission and stripe_click event tracking — 16 form types, 32 pages, 4 Stripe links
-  - Add GA4 phone_call_click event tracking to all 28 pages — every tel: link fires GA4 event
-  - Fix 15 redirect loops — remove redundant rewrite rules, let Cloudflare handle .html stripping natively
-- **index.html:** Present — `USS Academy v9.1`, ~307KB, valid structure
-- **Local src= assets:** 22 `images/*.jpg` — all 22 follow consistent naming convention, no broken paths detected
-- **Local href= pages:** 17 linked pages — all confirmed present in repo root
-- **Pages in repo not linked from index.html:** `compete.html`, `terms.html`, `waiver-class-registration.html`, `waiver-exam-registration.html`, `waiver-range.html`, regional training pages (central, northeast, northwest, south, space-coast, tampa-bay) — expected, likely linked from inner nav/footer
-- **Open Issues:** None
-- **Open PRs:** None
+## USS Academy Site (`uss-academy-site`)
 
-## CityOne Transportation (cityone-transportation-site)
+### Recent Commits (today — 2026-04-08)
+| SHA | Message | Time |
+|-----|---------|------|
+| `264424b` | Update privacy, terms, and SMS consent for TCPA/A2P compliance | 08:02 UTC |
+| `15e9f76` | Update llms.txt with correct business details and class location | 06:01 UTC |
+| `51de3c6` | Add llms.txt for AI crawlers with full business info and class catalog | 05:57 UTC |
 
-- **Latest commit:** Fix Port Canaveral sub-tab bug — duplicate IDs caused Destinations to show Rideshare content (Mia Rodriguez, 04:38 UTC)
-- **Commits today:** 5 (active bug-fix session)
-  - Fix Port Canaveral sub-tab bug — duplicate IDs, gave Destinations unique IDs and updated JS
-  - v-refresh-003 — force Pages redeploy
-  - v-refresh-002 — force Worker redeploy
-  - Add TABLE-A through TABLE-L identifier comments to all 12 rate table sections
-  - v-refresh-001 — force Worker redeploy
-- **index.html:** Present — `v-refresh-003`, ~310KB, single-file site, valid structure
-- **Local src= assets:** None — all images are base64 inline data URIs, zero local file dependencies
-- **Local href= links:** None — all external (Square checkout, social links, mailto, tel)
-- **Open Issues:** None
-- **Open PRs:** **PR #1** — Cloudflare Workers bot autoconfig (open since 2026-03-26, **12 days unreviewed**)
+**TCPA commit detail:** privacy.html expanded (8 sections + Contact, added no-third-party-sharing statement). terms.html added §17 SMS Program Terms + §18 Support. SMS consent checkbox updated on all 10 forms across 5 files (index.html ×6, host-a-class ×1, waiver-class ×1, waiver-exam ×1, waiver-range ×1) — not pre-checked, includes 321-878-8089 and Privacy/Terms links.
+
+### Issues / PRs
+- Open issues: **0**
+- Open PRs: **0**
+
+### index.html
+- **Status: VALID**
+- Size: 304,578 chars
+- Structure: `<html>` ✓ `<head>` ✓ `<body>` ✓ `</body>` ✓ `</html>` ✓
+- Internal `.html` links: **16 found, all verified present in repo**
+
+### Link Check
+All internal links in index.html resolve to existing files:
+`best-gun-class-orlando.html`, `blog.html`, `ccw-near-me.html`, `ember-iron.html`, `espanol.html`, `first-time-buyer.html`, `gallery.html`, `/host-a-class.html`, `kreyol.html`, `portugues.html`, `/privacy.html`, `/refund-policy.html`, `service-areas.html`, `share.html`, `submit-photo.html`, `waivers.html`
+
+**No broken links detected.**
+
+---
+
+## Cityone Transportation Site (`cityone-transportation-site`)
+
+### Recent Commits (last 5 — most recent: 2026-04-07)
+| SHA | Message | Date |
+|-----|---------|------|
+| `c5ec45e` | Fix Port Canaveral sub-tab bug — duplicate IDs caused Destinations to show Rideshare content | 2026-04-07 |
+| `6f2e2af` | v-refresh-003 — force Pages redeploy | 2026-04-07 |
+| `052b56d` | v-refresh-002 — force Worker redeploy | 2026-04-07 |
+| `146065` | Add TABLE-A through TABLE-L identifier comments to all 12 rate table sections | 2026-04-07 |
+| `49da837` | v-refresh-001 — force Worker redeploy | 2026-04-07 |
+
+### Issues / PRs
+- Open issues: **0**
+- Open PRs: **1 — NEEDS DECISION**
+
+> **PR #1** — "Add Cloudflare Workers configuration" (opened by Cloudflare bot 2026-03-26, **13 days old**)  
+> Adds `wrangler.jsonc` for Cloudflare Workers deployment. Framework: static. Preview deploy is live.  
+> **Action required:** Merge or close.
+
+### index.html
+- **Status: VALID**
+- Size: 309,965 chars
+- Structure: `<html>` ✓ `<head>` ✓ `<body>` ✓ `</body>` ✓ `</html>` ✓
+- Internal `.html` links: 0 (single-page app — all navigation is JS-driven)
+
+**No broken links detected.**
+
+---
 
 ## Action Items
+| Priority | Repo | Item |
+|----------|------|------|
+| HIGH | cityone | **Decide on PR #1** (Cloudflare Workers autoconfig, 13 days open) — merge or close |
 
-- [ ] **cityone PR #1** — Merge or close Cloudflare Workers bot PR (open 12 days) — merge to enable CF Workers versioned deployments, close if not needed
-- [ ] **uss-academy — verify GA4 events** — Confirm form_submission, stripe_click, and phone_call_click events firing correctly in GA4 DebugView after today's tracking push
-- [ ] **uss-academy — verify redirect fix** — Confirm the 15 redirect loops are resolved on live site after today's `_redirects` cleanup
+---
 
-## Overall Status: HEALTHY — Both repos active today. USS Academy: GA4 tracking + redirect fixes. CityOne: Port Canaveral bug patched.
+*Generated by POLY — MFS Empire Chief of Staff*
