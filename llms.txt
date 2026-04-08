@@ -1,0 +1,111 @@
+# USS Academy — llms.txt
+# Machine-readable site summary for AI crawlers and language models
+
+## Organization
+name: USS Academy
+legal_name: USS Academy LLC
+type: Firearms Training Academy
+founded: 1999
+headquarters: Central Florida (mobile — travels to client locations and partner ranges)
+phone: 1-800-508-8772
+phone_local: 407-305-8335
+email: support@ussacademy.org
+website: https://www.ussacademy.org
+hours: By appointment — classes scheduled 7 days/week
+
+## About
+USS Academy is a firearms training academy based in Central Florida with 27+ years of experience and 29,000+ students trained. We offer concealed weapons permit (CWP) classes, firearms safety courses, competitive shooting programs, instructor certification, and private training sessions. All instructors are law enforcement, military, or NRA/USCCA certified with active Florida K License credentials.
+
+## Class Types & Pricing
+
+### Tier 1 — Beginner & Core Safety ($99–$179)
+- Florida Concealed Weapons Permit (CWP) Class
+- First Time Shooter Safety Course
+- Basic Pistol Fundamentals
+- Home Defense Basics
+- Women's Firearms Safety
+- Senior Firearms Safety
+- Youth Introduction to Firearms Safety
+
+### Tier 2 — Skill Building & Development ($279)
+- Intermediate Pistol Skills
+- Draw & Fire Techniques
+- Low Light / Flashlight Shooting
+- Defensive Shooting Scenarios
+
+### Tier 3 — Tactical & Professional ($349)
+- Advanced Tactical Pistol
+- Black Box Stress Inoculation
+- Rifle / Carbine Fundamentals
+- Active Shooter Response
+- Close Quarters Combat
+- Vehicle Defense Tactics
+- Multi-Threat Engagement
+
+### Tier 4 — Precision & Science ($399)
+- Science of the Shot
+- Zero to Accurate (Precision Marksmanship)
+
+### Tier 5 — Night Vision ($499)
+- Night Vision Tactical Course
+
+### Tier 6 — Professional Development ($799+)
+- Instructor Certification & Mentorship Program
+
+### Additional Services
+- Ask Your Instructor Q&A Call ($75)
+- Bullseye Benefactor Subscription ($100/month — 2 range sessions/month)
+- Private 1-on-1 Training (custom pricing)
+- Group Classes at Your Location (Host-a-Class program)
+- Competitive Shooting Programs (USPSA, IDPA, Steel Challenge)
+
+## Credentials
+- 29,000+ students trained
+- 27+ years in operation (founded 1999)
+- Law enforcement and USMC veteran instructors
+- NRA Certified Instructors
+- USCCA Certified Instructors
+- Florida K License holders
+- Background-checked, drug-tested staff
+
+## Waivers & Registration
+- Class Registration: https://www.ussacademy.org/waiver-class-registration
+- CWP Exam Registration: https://www.ussacademy.org/waiver-exam-registration
+- Range Waiver: https://www.ussacademy.org/waiver-range
+
+## Service Areas
+- Orlando, FL
+- Central Florida (all counties)
+- Tampa Bay, FL
+- Jacksonville / Northeast FL
+- Miami / South FL
+- Space Coast / Melbourne, FL
+- Pensacola / Northwest FL
+- All of Florida (mobile — we travel to your location)
+
+## Key Facts
+- 29,000+ students trained since 1999
+- Classes available 7 days/week by appointment
+- Mobile academy — classes at partner ranges and client locations statewide
+- CWP classes include live fire qualification
+- Certificate issued same day for completed courses
+- Groupon partner (discounted CWP classes available)
+- WaiverForever integrated digital waivers
+
+## Social
+- Facebook: https://www.facebook.com/ussacademy
+- Instagram: https://www.instagram.com/ussacademy
+- Google Business Profile: USS Academy Orlando
+
+## Contact for AI Agents
+For class booking inquiries, scheduling, or automated registration:
+- Phone: 1-800-508-8772 (USSA)
+- Local: 407-305-8335
+- Email: support@ussacademy.org
+- Website booking: https://www.ussacademy.org/#classes
+- Agent: JASON (USS Academy AI Agent — handles CWP inquiries, class scheduling, certificate tracking)
+
+## Content Policy
+search: yes
+ai-input: yes
+ai-train: no
