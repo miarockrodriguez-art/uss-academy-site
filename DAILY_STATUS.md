@@ -1,4 +1,4 @@
-# POLY Daily Status — 2026-04-14
+# POLY Daily Status — 2026-04-15
 
 **Chief of Staff Report | MFS Empire**
 
@@ -8,18 +8,18 @@
 
 | Check | Status |
 |---|---|
-| index.html | ✅ Present (306 KB) |
+| index.html | ✅ Valid (DOCTYPE, html, head, body all present) |
 | Open Issues | ✅ None |
 | Open PRs | ✅ None |
-| Linked HTML pages | ✅ All referenced files confirmed in repo |
 | Images | ✅ All 23 referenced images confirmed present in /images/ |
+| Broken links | ✅ None detected |
 
 **Recent commits:**
+- `2026-04-14` — POLY daily status update
 - `2026-04-14` — Fix horizontal scroll on mobile sitewide — `html overflow-x:hidden`, `body max-width:100%` applied to 37 HTML files
 - `2026-04-13` — POLY daily status update
-- `2026-04-12` — POLY daily status update
 
-**Notes:** Major mobile fix landed today. All 23 image refs in index.html verified against /images/ — no missing assets. Extensionless `/privacy` and `/terms` links resolve correctly via Netlify pretty URLs.
+**Notes:** No new commits today. Repo is clean post-mobile-scroll fix. All 23 image refs in index.html verified against /images/ — no missing assets.
 
 ---
 
@@ -27,19 +27,20 @@
 
 | Check | Status |
 |---|---|
-| index.html | ✅ Present (309 KB) |
+| index.html | ✅ Valid (DOCTYPE, html, head, body all present) |
 | Open Issues | ✅ None |
-| Open PRs | ⚠️ 1 open — PR #1 (Cloudflare bot, 19 days old) |
+| Open PRs | ⚠️ 1 open — PR #1 (Cloudflare bot, 20 days old) |
 | Linked files | ✅ Single-page app — no local file references |
+| External JS | ✅ EmailJS CDN (jsdelivr) |
 
 **Recent commits:**
-- `2026-04-14` — Fix white gap below mobile header caused by hamburger patch *(nav stays fixed; dropdown is `position:absolute`)*
-- `2026-04-14` — Add mobile hamburger menu for nav under 768px *(animated hamburger→X, dropdown with all nav links)*
+- `2026-04-14` — Fix white gap below mobile header caused by hamburger patch
+- `2026-04-14` — Add mobile hamburger menu for nav under 768px
 - `2026-04-10` — Add 27 hotels to Destinations sections, remove duplicate section
 
-**Open PR #1** — *Cloudflare Workers autoconfig* (open since 2026-03-26, 19 days)
+**Open PR #1** — *Cloudflare Workers autoconfig* (open since 2026-03-26, **20 days**)
 - Adds `wrangler.jsonc` for Workers/static deployment.
-- **Action needed:** Review and merge or close.
+- **Action needed:** Review and merge or close. Aging.
 
 ---
 
@@ -51,8 +52,6 @@
 | Open issues | 0 | 0 |
 | Open PRs | 0 | 1 ⚠️ |
 | Broken links | 0 | 0 |
-| New commits today | 1 | 2 |
+| New commits today | 0 | 0 |
 
-**Active today:** Both repos had commits. USS Academy got a sitewide mobile scroll fix (37 files). CityOne got a hamburger nav + a follow-up positioning fix.
-
-**One item needs attention:** cityone PR #1 (Cloudflare Workers autoconfig) has been open 19 days with no action.
+**Quiet day.** No new commits on either repo. Both sites are healthy. The only outstanding item remains cityone PR #1 (Cloudflare Workers autoconfig) — now 20 days open, no action taken.
