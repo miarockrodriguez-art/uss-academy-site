@@ -57,7 +57,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none;}
 .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--silver);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--gold);}
-.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)!important;background:var(--gold);padding:14px 28px;text-decoration:none;transition:background .2s;border:2px solid var(--gold-light);box-shadow:0 0 12px rgba(201,168,76,.35);}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)!important;background:var(--gold);padding:14px 28px;text-decoration:none;transition:all .2s;border:2px solid var(--gold-light);box-shadow:0 0 12px rgba(201,168,76,.35);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
 .nav-cta:hover{background:var(--gold-light)!important;}
 .logo-text-block{display:flex;flex-direction:column;line-height:1;}
 .logo-uss{font-family:'Cinzel',serif;font-weight:900;font-size:21px;color:var(--gold);letter-spacing:.18em;}
@@ -175,7 +175,7 @@ h2 .gold{color:var(--gold);}
 .tag-beginner{color:#7ec8e3;border-color:rgba(126,200,227,.3);background:rgba(126,200,227,.07);}
 .tag-advanced{color:#f0a070;border-color:rgba(240,160,112,.3);background:rgba(240,160,112,.07);}
 .tag-virtual{color:#90ee90;border-color:rgba(144,238,144,.3);background:rgba(144,238,144,.07);}
-.cal-register-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:10px 20px;cursor:pointer;transition:background .2s;white-space:nowrap;}
+.cal-register-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:10px 20px;cursor:pointer;transition:all .2s;white-space:nowrap;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));}
 .cal-register-btn:hover{background:var(--gold-light);}
 .seats-note{display:none;}
 
@@ -875,7 +875,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div style="text-align:center;"><div><button class="cal-register-btn" onclick="window.open('https://api.leadconnectorhq.com/widget/bookings/law-update-class','_blank')">BOOK NOW</button></div><div style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:4px;">Limited seats available</div></div>
       </div>
     <div id="viewAllWrap" style="text-align:center;margin-top:24px;">
-      <button id="viewAllBtn" onclick="document.getElementById('calContainer').classList.add('show-all');document.getElementById('viewAllWrap').style.display='none';" style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:14px 36px;cursor:pointer;transition:background .2s;border:2px solid var(--gold-light);box-shadow:0 0 12px rgba(201,168,76,.35);" onmouseover="this.style.background='var(--gold-light)'" onmouseout="this.style.background='var(--gold)'">VIEW ALL CLASSES &rarr;</button>
+      <button id="viewAllBtn" onclick="document.getElementById('calContainer').classList.add('show-all');document.getElementById('viewAllWrap').style.display='none';" style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:14px 36px;cursor:pointer;transition:all .2s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));" onmouseover="this.style.background='var(--gold-light)'" onmouseout="this.style.background='var(--gold)'">VIEW ALL CLASSES &rarr;</button>
     </div>
     <div style="margin-top:20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
       <p style="font-size:13px;font-weight:300;color:var(--silver);">⚠ Always contact us to confirm your class date, time, and <strong style="color:var(--white);">exact location</strong> — classes are held at partner ranges, not the corporate office.</p>
