@@ -82,7 +82,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 .hero-bg{position:absolute;inset:0;overflow:hidden;}
 .hero-bg .hero-slide{will-change:opacity;position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease-in-out;}
 .hero-bg .hero-slide.active{opacity:1;}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.78) 0%,rgba(10,22,40,0.65) 40%,rgba(15,34,68,0.72) 100%);z-index:1;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,13,26,0.78) 0%,rgba(10,22,40,0.65) 40%,rgba(15,34,68,0.72) 100%),linear-gradient(to bottom,rgba(10,18,40,0.2) 0%,rgba(10,18,40,0.75) 100%);z-index:1;}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 60% 50%,black 20%,transparent 80%);}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:6px 14px;margin-bottom:28px;animation:fadeUp .8s ease both;}
@@ -674,7 +674,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 <!-- ═══ LED BY EXPERTS ═══ -->
 <section style="background:var(--navy-mid);padding:72px 40px;">
-  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;background:radial-gradient(ellipse at center,rgba(201,168,76,0.12) 0%,transparent 70%);padding:40px 20px;border-radius:8px;">
     <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Our Instructors</div>
     <h2 style="font-family:'Cinzel',serif;font-size:28px;font-weight:800;color:var(--white);margin-bottom:12px;">Led by <span style="color:var(--gold);">Experts</span></h2>
     <p style="font-size:15px;font-weight:300;color:var(--silver);max-width:640px;margin:0 auto 40px;line-height:1.7;">Classes are taught by Law Enforcement Firearms Instructors, U.S. Marine Corps Instructors, NRA Instructors, USCCA Instructors, and Florida K License Instructors. All instructors are vetted, state-certified, and bring real-world experience into every class.</p>
