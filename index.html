@@ -3310,13 +3310,24 @@ function submitSlideForm(){
         if(d>=now){nextDate=d;nextTs=d.getTime();break;}
       }
     }
+    // Determine pin priority: Book a Call = 1, Ladies Day = 2, all others = 99
+    var h4=card.querySelector('h4');
+    var title=h4?h4.textContent:'';
+    var pinOrder=99;
+    if(title.indexOf('Book a Call')!==-1) pinOrder=1;
+    else if(title.indexOf('Ladies Day')!==-1) pinOrder=2;
+
     // Update date display
     var dateDiv=card.querySelector('.cal-date');
     if(dateDiv){
       var monthDiv=dateDiv.querySelector('.cal-month');
       var dayDiv=dateDiv.querySelector('.cal-day');
       if(monthDiv&&dayDiv){
-        if(nextDate){
+        if(pinOrder<=2){
+          // Pinned cards get gold star
+          monthDiv.textContent='EVENT';
+          dayDiv.textContent='\u2605';
+        } else if(nextDate){
           monthDiv.textContent=MONTHS[nextDate.getMonth()].toUpperCase();
           dayDiv.textContent=nextDate.getDate();
         } else if(slug){
@@ -3325,11 +3336,13 @@ function submitSlideForm(){
         }
       }
     }
-    var isBookACall=card.querySelector('h4')&&card.querySelector('h4').textContent.indexOf('Book a Call')!==-1;
-    cardData.push({el:card,ts:nextTs,pinned:isBookACall});
+    cardData.push({el:card,ts:nextTs,pinOrder:pinOrder});
   });
-  // Sort: pinned first, then earliest date, TBD/Infinity last
-  cardData.sort(function(a,b){if(a.pinned&&!b.pinned)return -1;if(!a.pinned&&b.pinned)return 1;return a.ts-b.ts;});
+  // Sort: pinned cards first by pinOrder, then chronological, TBD last
+  cardData.sort(function(a,b){
+    if(a.pinOrder!==b.pinOrder) return a.pinOrder-b.pinOrder;
+    return a.ts-b.ts;
+  });
   cardData.forEach(function(cd){container.appendChild(cd.el);});
 })();
 </script>
