@@ -3325,10 +3325,11 @@ function submitSlideForm(){
         }
       }
     }
-    cardData.push({el:card,ts:nextTs});
+    var isBookACall=card.querySelector('h4')&&card.querySelector('h4').textContent.indexOf('Book a Call')!==-1;
+    cardData.push({el:card,ts:nextTs,pinned:isBookACall});
   });
-  // Sort: earliest date first, TBD/Infinity last
-  cardData.sort(function(a,b){return a.ts-b.ts;});
+  // Sort: pinned first, then earliest date, TBD/Infinity last
+  cardData.sort(function(a,b){if(a.pinned&&!b.pinned)return -1;if(!a.pinned&&b.pinned)return 1;return a.ts-b.ts;});
   cardData.forEach(function(cd){container.appendChild(cd.el);});
 })();
 </script>
