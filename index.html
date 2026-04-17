@@ -105,7 +105,14 @@ h1 .gold{color:var(--gold);}
 .stats-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(5,1fr);}
 .stat-item{padding:28px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15);}
 .stat-item:last-child{border-right:none;}
-.stat-number{font-family:'Cinzel',serif;font-size:36px;font-weight:900;color:var(--gold);line-height:1;display:block;}
+.stat-number{font-family:'Cinzel',serif;font-size:36px;font-weight:900;color:var(--gold);line-height:1;display:block;position:relative;display:inline-block;}
+.stat-number::after{content:'';position:absolute;bottom:-6px;left:0;height:2px;width:0;background:var(--gold);animation:drawUnderline 0.8s ease-out forwards;}
+.stat-item:nth-child(1) .stat-number::after{animation-delay:0s;}
+.stat-item:nth-child(2) .stat-number::after{animation-delay:0.8s;}
+.stat-item:nth-child(3) .stat-number::after{animation-delay:1.6s;}
+.stat-item:nth-child(4) .stat-number::after{animation-delay:2.4s;}
+.stat-item:nth-child(5) .stat-number::after{animation-delay:3.2s;}
+@keyframes drawUnderline{from{width:0;}to{width:100%;}}
 .stat-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--silver);margin-top:5px;display:block;}
 
 /* ── SECTIONS ── */
