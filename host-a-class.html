@@ -377,7 +377,7 @@ body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);o
         </label>
       </div>
       <button type="submit" class="submit-btn">Submit Hosting Inquiry</button>
-      <div class="form-note">We respond to all inquiries within 2 business days. Call 407-305-8335 (USSA) for immediate assistance.</div>
+      <div class="form-note">We respond to all inquiries within 2 business days. Call 407-305-8335 for immediate assistance.</div>
     </form>
   </div>
 </section>
@@ -414,8 +414,8 @@ document.getElementById('hostForm').addEventListener('submit', function(e) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
   })
-  .then(function(){ alert('Thank you! Your hosting inquiry has been submitted. Our team will reach out within 2 business days. Call 407-305-8335 (USSA) for immediate assistance.'); gtag('event', 'form_submission', { form_name: 'host_a_class_inquiry' }); })
-  .catch(function(){ alert('Thank you! Your hosting inquiry has been submitted. Our team will reach out within 2 business days. Call 407-305-8335 (USSA) for immediate assistance.'); });
+  .then(function(){ alert('Thank you! Your hosting inquiry has been submitted. Our team will reach out within 2 business days. Call 407-305-8335 for immediate assistance.'); gtag('event', 'form_submission', { form_name: 'host_a_class_inquiry' }); })
+  .catch(function(){ alert('Thank you! Your hosting inquiry has been submitted. Our team will reach out within 2 business days. Call 407-305-8335 for immediate assistance.'); });
 });
 </script>
 
