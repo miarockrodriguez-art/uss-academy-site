@@ -166,7 +166,7 @@ h2 .gold{color:var(--gold);}
 .cal-event:hover{background:rgba(201,168,76,.04);border-color:rgba(201,168,76,.25);}
 .cal-date{text-align:center;}
 .cal-month{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
-.cal-day{font-family:'Cinzel',serif;font-size:28px;font-weight:900;color:var(--white);line-height:1;}
+.cal-day{font-family:'Cinzel',serif;font-size:28px;font-weight:500;color:var(--white);line-height:1;}
 .cal-info h4{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:4px;}
 .cal-info p{font-size:12px;font-weight:300;color:var(--silver);}
 .cal-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:3px 10px;border:1px solid;margin-top:6px;}
@@ -3293,34 +3293,43 @@ function submitSlideForm(){
   };
   var MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var now=new Date();now.setHours(0,0,0,0);
-  document.querySelectorAll('.cal-event').forEach(function(card){
+  var container=document.getElementById('calContainer');
+  var cards=Array.from(container.querySelectorAll('.cal-event'));
+  var cardData=[];
+  cards.forEach(function(card){
     var btn=card.querySelector('button[onclick*="widget/bookings/"],a[href*="widget/bookings/"]');
-    if(!btn) return;
-    var m=btn.getAttribute('onclick');
-    if(!m) m=btn.getAttribute('href');
-    var match=m.match(/bookings\/([^'"]+)/);
-    if(!match) return;
-    var slug=match[1];
-    var dates=DATES[slug];
-    if(!dates || !dates.length) return;
-    var next=null;
-    for(var i=0;i<dates.length;i++){
-      var d=new Date(dates[i]+'T00:00:00');
-      if(d>=now){next=d;break;}
+    var slug=null,nextDate=null,nextTs=Infinity;
+    if(btn){
+      var attr=btn.getAttribute('onclick')||btn.getAttribute('href')||'';
+      var match=attr.match(/bookings\/([^'"]+)/);
+      if(match) slug=match[1];
     }
+    if(slug && DATES[slug]){
+      for(var i=0;i<DATES[slug].length;i++){
+        var d=new Date(DATES[slug][i]+'T00:00:00');
+        if(d>=now){nextDate=d;nextTs=d.getTime();break;}
+      }
+    }
+    // Update date display
     var dateDiv=card.querySelector('.cal-date');
-    if(!dateDiv) return;
-    var monthDiv=dateDiv.querySelector('.cal-month');
-    var dayDiv=dateDiv.querySelector('.cal-day');
-    if(!monthDiv||!dayDiv) return;
-    if(next){
-      monthDiv.textContent=MONTHS[next.getMonth()].toUpperCase();
-      dayDiv.textContent=next.getDate();
-    } else {
-      monthDiv.textContent='TBD';
-      dayDiv.textContent='–';
+    if(dateDiv){
+      var monthDiv=dateDiv.querySelector('.cal-month');
+      var dayDiv=dateDiv.querySelector('.cal-day');
+      if(monthDiv&&dayDiv){
+        if(nextDate){
+          monthDiv.textContent=MONTHS[nextDate.getMonth()].toUpperCase();
+          dayDiv.textContent=nextDate.getDate();
+        } else if(slug){
+          monthDiv.textContent='TBD';
+          dayDiv.textContent='\u2013';
+        }
+      }
     }
+    cardData.push({el:card,ts:nextTs});
   });
+  // Sort: earliest date first, TBD/Infinity last
+  cardData.sort(function(a,b){return a.ts-b.ts;});
+  cardData.forEach(function(cd){container.appendChild(cd.el);});
 })();
 </script>
 </body>
