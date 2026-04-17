@@ -2,85 +2,134 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 5L10 25v35c0 28 17 45 40 55 23-10 40-27 40-55V25L50 5z' fill='%230a1628' stroke='%23c9a84c' stroke-width='4'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-family='serif' font-size='24' font-weight='bold' fill='%23c9a84c'%3EUSS%3C/text%3E%3Ctext x='50' y='80' text-anchor='middle' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23c9a84c' letter-spacing='3'%3EACADEMY%3C/text%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Share Your Experience | USS Academy</title>
 <meta name="description" content="Share your USS Academy training experience. Upload photos or videos, leave a review, and get featured on our website and social media.">
 <link rel="canonical" href="https://www.ussacademy.org/share">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 5L10 25v35c0 28 17 45 40 55 23-10 40-27 40-55V25L50 5z' fill='%230a1628' stroke='%23c9a84c' stroke-width='4'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-family='serif' font-size='24' font-weight='bold' fill='%23c9a84c'%3EUSS%3C/text%3E%3Ctext x='50' y='80' text-anchor='middle' font-family='sans-serif' font-size='12' font-weight='bold' fill='%23c9a84c' letter-spacing='3'%3EACADEMY%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Share Your Experience | USS Academy">
 <meta property="og:description" content="Share your USS Academy training experience. Upload photos or videos and get featured.">
 <meta property="og:url" content="https://www.ussacademy.org/share">
 <meta property="og:site_name" content="USS Academy">
-<meta property="og:image" content="https://www.ussacademy.org/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ussacademy.org/"},{"@type":"ListItem","position":2,"name":"Share Your Experience","item":"https://www.ussacademy.org/share"}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H3Q129SS5F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H3Q129SS5F');document.addEventListener('click',function(e){var l=e.target.closest('a[href^="tel:"]');if(l)gtag('event','phone_call_click',{phone_number:l.getAttribute('href').replace('tel:','')});});</script>
 <style>
-:root{--navy:#0a1628;--navy-mid:#112240;--gold:#c9a84c;--gold-light:#e8c96a;--silver:#b0bec5;--white:#f4f4f6;}
-*{margin:0;padding:0;box-sizing:border-box}img{max-width:100%;height:auto}
-html{overflow-x:hidden}
-body{overflow-x:hidden;font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;max-width:100%}
-.header{max-width:500px;margin:0 auto;padding:24px 24px 0;display:flex;justify-content:space-between;align-items:center}
-.header a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:600}
-.container{max-width:500px;margin:0 auto;padding:24px}
-h1{font-size:24px;font-weight:800;color:var(--gold);margin-bottom:6px;text-align:center}
-.subtitle{font-size:14px;color:var(--silver);text-align:center;margin-bottom:28px;line-height:1.6}
-label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-input,textarea{width:100%;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.25);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;border-radius:6px;margin-bottom:16px}
-input::placeholder,textarea::placeholder{color:rgba(176,190,197,.5)}
+:root{--navy:#0a1628;--navy-mid:#112240;--gold:#c9a84c;--gold-light:#e8c96a;--gold-dim:#8a6e2f;--silver:#b0bec5;--white:#f8f6f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;max-width:100%;min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:80px;background:rgba(10,22,40,.97);border-bottom:1px solid rgba(201,168,76,.25);backdrop-filter:blur(12px)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--silver);transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.logo-text-block{display:flex;flex-direction:column;line-height:1}
+.logo-uss{font-family:'Cinzel',serif;font-weight:900;font-size:21px;color:var(--gold);letter-spacing:.18em}
+.logo-academy{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:10px;letter-spacing:.35em;color:var(--silver);text-transform:uppercase;margin-top:2px}
+.mobile-menu-btn{display:none;background:none;border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:8px 12px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em}
+@media(max-width:1024px){.nav-links{display:none}.mobile-menu-btn{display:block}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:80px;left:0;right:0;background:rgba(5,12,25,.99);border-bottom:1px solid rgba(201,168,76,.2);padding:20px 40px;gap:16px;z-index:999}}
+.notice-bar{position:fixed;top:80px;left:0;right:0;z-index:999;background:rgba(10,22,40,0.97);border-bottom:1px solid rgba(201,168,76,.3);padding:10px 48px;text-align:center;backdrop-filter:blur(8px)}
+.notice-bar p{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--gold)}
+.notice-bar a{color:var(--white);text-decoration:none}
+
+/* FORM */
+.page-header{text-align:center;padding:160px 4% 24px}
+.page-header h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--gold);letter-spacing:3px;margin-bottom:10px}
+.page-header p{font-size:14px;color:var(--silver);max-width:500px;margin:0 auto;line-height:1.7;font-weight:300}
+.form-wrap{max-width:520px;margin:0 auto;padding:32px 24px 60px}
+label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+input,textarea{width:100%;padding:14px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;margin-bottom:16px;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--gold)}
+input::placeholder,textarea::placeholder{color:rgba(176,190,197,.4)}
 textarea{min-height:80px;resize:vertical}
-.upload-zone{border:2px dashed rgba(201,168,76,.3);border-radius:8px;padding:32px 20px;text-align:center;margin-bottom:16px;cursor:pointer;transition:border-color .2s}
+.upload-zone{border:2px dashed rgba(201,168,76,.25);padding:32px 20px;text-align:center;margin-bottom:16px;cursor:pointer;transition:border-color .2s}
 .upload-zone:hover{border-color:var(--gold)}
 .upload-zone input[type="file"]{display:none}
-.upload-zone .icon{font-size:36px;margin-bottom:8px}
-.upload-zone p{font-size:13px;color:var(--silver)}
-.upload-zone .hint{font-size:11px;color:rgba(176,190,197,.4);margin-top:6px}
+.upload-zone .uz-icon{font-family:'Cinzel',serif;font-size:28px;color:var(--gold);opacity:.5;margin-bottom:8px}
+.upload-zone p{font-size:13px;color:var(--silver);font-weight:300}
+.upload-zone .hint{font-size:11px;color:rgba(176,190,197,.3);margin-top:6px}
 .stars{display:flex;gap:8px;margin-bottom:16px;justify-content:center}
-.stars span{font-size:32px;cursor:pointer;color:rgba(201,168,76,.25);transition:color .15s;user-select:none}
+.stars span{font-size:32px;cursor:pointer;color:rgba(201,168,76,.2);transition:color .15s;user-select:none}
 .stars span.active{color:var(--gold)}
 .stars span:hover{color:var(--gold-light)}
-.submit-btn{width:100%;padding:16px;background:var(--gold);color:var(--navy);border:none;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:6px;margin-top:8px}
+.submit-btn{width:100%;padding:16px;background:var(--gold);color:var(--navy);border:none;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:all .2s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
 .submit-btn:hover{background:var(--gold-light)}
-.success{display:none;text-align:center;padding:40px 20px}
-.success .check{font-size:48px;margin-bottom:16px}
-.success h2{font-size:22px;color:var(--gold);margin-bottom:10px}
-.success p{font-size:14px;color:var(--silver);line-height:1.6}
-.footer{max-width:500px;margin:0 auto;padding:24px;text-align:center;font-size:11px;color:rgba(176,190,197,.3);border-top:1px solid rgba(201,168,76,.1);margin-top:24px}
-.footer a{color:var(--gold);text-decoration:none}
-@media(max-width:480px){.container{padding:20px 16px}h1{font-size:20px}}
-</style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H3Q129SS5F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-H3Q129SS5F');
+.success{display:none;text-align:center;padding:60px 20px}
+.success h2{font-family:'Cinzel',serif;font-size:24px;color:var(--gold);margin-bottom:10px}
+.success p{font-size:14px;color:var(--silver);line-height:1.6;font-weight:300}
 
-  // GA4 phone call click tracking
-  document.addEventListener('click', function(e) {
-    var link = e.target.closest('a[href^="tel:"]');
-    if (link) {
-      gtag('event', 'phone_call_click', {
-        phone_number: link.getAttribute('href').replace('tel:', '')
-      });
-    }
-  });
-</script>
+/* FOOTER */
+.footer-wrap{background:rgba(10,22,40,.98);border-top:1px solid rgba(201,168,76,.12);padding:40px 4% 24px}
+.footer-inner{max-width:1100px;margin:0 auto;text-align:center}
+.footer-inner p{font-size:11px;color:var(--silver);opacity:.6;line-height:1.6;margin-bottom:8px}
+.footer-inner a{color:var(--gold);text-decoration:none;font-size:12px}
+.footer-credit{font-size:9px;color:rgba(201,168,76,.35);margin-top:12px}
+
+/* STICKY CALL */
+.sticky-call-btn{position:fixed;top:120px;right:0;z-index:998;display:flex;align-items:center;background:#C9A84C;color:#0D1B2A;padding:14px 24px;font-family:'Barlow Condensed',sans-serif;text-decoration:none;box-shadow:0 4px 16px rgba(201,168,76,0.3);clip-path:polygon(0 0,100% 0,100% 100%,10px 100%,0 calc(100% - 10px))}
+.sticky-call-btn:hover{background:#e8c96a}
+.sticky-call-btn .call-line1{font-size:14px;font-weight:700}
+.sticky-call-btn .call-sep{margin:0 8px;opacity:.6}
+.sticky-call-btn .call-line2{font-size:13px;font-weight:600}
+@media(max-width:768px){.form-wrap{padding:24px 16px 40px}.page-header{padding:140px 20px 20px}.sticky-call-btn{top:115px;padding:10px 18px}.sticky-call-btn .call-line1{font-size:13px}.sticky-call-btn .call-line2{font-size:12px}}
+</style>
 </head>
 <body>
-<div class="header">
-  <a href="index.html">← Back to USS Academy</a>
-  <a href="tel:4073058335" style="color:var(--silver);">407-305-8335</a>
-</div>
-<div class="container">
-  <div id="share-form">
-    <h1>🎥 Share Your Experience</h1>
-    <p class="subtitle">Trained with USS Academy? Share your story — upload a photo or video, leave a review, and get featured on our website and social media.</p>
 
+<!-- NAV -->
+<nav role="navigation" id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <svg role="img" aria-hidden="true" width="44" height="50" viewBox="0 0 52 58" fill="none">
+        <path d="M26 2L4 11V30C4 42.5 14 53 26 56C38 53 48 42.5 48 30V11L26 2Z" fill="#0D1B2A" stroke="#c9a84c" stroke-width="1.5"/>
+        <path d="M26 5L7 13.5V30C7 40.5 15 50 26 52.5C37 50 45 40.5 45 30V13.5L26 5Z" fill="none" stroke="rgba(201,168,76,.2)" stroke-width=".6"/>
+        <polygon points="20,14 20.8,16 23,16 21.3,17.2 21.8,19.3 20,18.1 18.2,19.3 18.7,17.2 17,16 19.2,16" fill="#c9a84c"/>
+        <polygon points="32,14 32.8,16 35,16 33.3,17.2 33.8,19.3 32,18.1 30.2,19.3 30.7,17.2 29,16 31.2,16" fill="#c9a84c"/>
+        <text x="26" y="26" text-anchor="middle" font-family="'Cinzel',serif" font-weight="900" font-size="8" fill="#c9a84c" letter-spacing="1.5">USS</text>
+        <line x1="16" y1="28" x2="36" y2="28" stroke="#c9a84c" stroke-width=".8"/>
+        <text x="26" y="33" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="4" fill="#c9a84c" letter-spacing="2">ACADEMY</text>
+        <circle cx="26" cy="44" r="6.5" fill="none" stroke="#c9a84c" stroke-width="1" opacity=".95"/>
+        <circle cx="26" cy="44" r="2.8" fill="none" stroke="#c9a84c" stroke-width=".7" opacity=".8"/>
+        <circle cx="26" cy="44" r=".8" fill="#c9a84c" opacity=".95"/>
+        <line x1="26" y1="35.5" x2="26" y2="39.5" stroke="#c9a84c" stroke-width=".9" opacity=".95"/>
+        <line x1="26" y1="48.5" x2="26" y2="52.5" stroke="#c9a84c" stroke-width=".9" opacity=".95"/>
+        <line x1="17.5" y1="44" x2="21.5" y2="44" stroke="#c9a84c" stroke-width=".9" opacity=".95"/>
+        <line x1="30.5" y1="44" x2="34.5" y2="44" stroke="#c9a84c" stroke-width=".9" opacity=".95"/>
+      </svg>
+      <div class="logo-text-block"><span class="logo-uss">USS</span><span class="logo-academy">Academy</span></div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#schedule">Schedule</a></li>
+    <li><a href="index.html#programs">Courses</a></li>
+    <li><a href="calendar.html">Calendar</a></li>
+    <li><a href="waivers.html">Waivers</a></li>
+    <li><a href="index.html#ladies-day">Ladies Day</a></li>
+    <li><a href="service-areas.html">Service Areas</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <button class="mobile-menu-btn" onclick="toggleNav()">MENU</button>
+</nav>
+<div class="notice-bar" role="alert">
+  <p>Classes held ONLINE &amp; at PARTNER RANGES — NOT at corporate office. &nbsp;|&nbsp; <a href="tel:4073058335">407-305-8335</a> &nbsp;|&nbsp; <a href="mailto:support@ussacademy.org">support@ussacademy.org</a></p>
+</div>
+
+<!-- PAGE -->
+<div class="page-header">
+  <h1>Share Your Experience</h1>
+  <p>Trained with USS Academy? Share your story — upload a photo or video, leave a review, and get featured on our website and social media.</p>
+</div>
+
+<div class="form-wrap">
+  <div id="share-form">
     <label>Your Name *</label>
     <input type="text" id="share-name" placeholder="Full name" required>
 
@@ -90,7 +139,7 @@ textarea{min-height:80px;resize:vertical}
     <label>Upload Photo or Video *</label>
     <div class="upload-zone" onclick="document.getElementById('share-file').click()">
       <input type="file" id="share-file" accept="image/*,video/*" capture="environment">
-      <div class="icon">📸</div>
+      <div class="uz-icon">USS</div>
       <p>Tap to open camera or choose a file</p>
       <p class="hint">Photos or videos up to 50MB</p>
     </div>
@@ -98,11 +147,11 @@ textarea{min-height:80px;resize:vertical}
 
     <label>Your Rating</label>
     <div class="stars" id="star-rating">
-      <span data-val="1" onclick="setRating(1)">★</span>
-      <span data-val="2" onclick="setRating(2)">★</span>
-      <span data-val="3" onclick="setRating(3)">★</span>
-      <span data-val="4" onclick="setRating(4)">★</span>
-      <span data-val="5" onclick="setRating(5)">★</span>
+      <span data-val="1" onclick="setRating(1)">&#9733;</span>
+      <span data-val="2" onclick="setRating(2)">&#9733;</span>
+      <span data-val="3" onclick="setRating(3)">&#9733;</span>
+      <span data-val="4" onclick="setRating(4)">&#9733;</span>
+      <span data-val="5" onclick="setRating(5)">&#9733;</span>
     </div>
 
     <label>Comment (optional)</label>
@@ -112,112 +161,41 @@ textarea{min-height:80px;resize:vertical}
   </div>
 
   <div class="success" id="share-success">
-    <div class="check">✓</div>
-    <h2>Thank you!</h2>
-    <p>We'll tag you when your story goes live 🎥</p>
-    <a href="index.html" style="display:inline-block;margin-top:20px;color:var(--gold);font-size:13px;font-weight:600;">← Back to USS Academy</a>
+    <h2>Thank You</h2>
+    <p>Your submission has been received. We will tag you when your story goes live.</p>
+    <a href="index.html" style="display:inline-block;margin-top:20px;color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;">Back to USS Academy</a>
   </div>
 </div>
 
-<div class="footer">
-  USS Academy LLC · Orlando, Florida · <a href="tel:4073058335">407-305-8335</a>
+<!-- FOOTER -->
+<div class="footer-wrap">
+  <div class="footer-inner">
+    <p><a href="index.html">Back to USS Academy</a> &nbsp;|&nbsp; <a href="tel:4073058335">407-305-8335</a> &nbsp;|&nbsp; <a href="mailto:support@ussacademy.org">support@ussacademy.org</a></p>
+    <p>&copy; 2026 USS Academy LLC. All Rights Reserved. NRA &middot; USCCA &middot; FL K License Certified.</p>
+    <div class="footer-credit">Powered by Phoenix Blueprint</div>
+  </div>
 </div>
 
+<!-- STICKY CALL -->
+<a href="tel:14073058335" class="sticky-call-btn"><span class="call-line1">Call Now</span><span class="call-sep">|</span><span class="call-line2">407-305-8335</span></a>
+
 <script>
-var rating = 0;
-function setRating(val) {
-  rating = val;
-  var stars = document.querySelectorAll('#star-rating span');
-  stars.forEach(function(s, i) {
-    s.classList.toggle('active', i < val);
-  });
-}
+var rating=0;
+function setRating(val){rating=val;document.querySelectorAll('#star-rating span').forEach(function(s,i){s.classList.toggle('active',i<val)});}
 setRating(5);
-
-document.getElementById('share-file').addEventListener('change', function() {
-  var fn = document.getElementById('file-name');
-  if (this.files.length > 0) {
-    fn.textContent = '📎 ' + this.files[0].name + ' (' + (this.files[0].size / 1024 / 1024).toFixed(1) + ' MB)';
-    fn.style.display = 'block';
-  }
-});
-
-function submitShare() {
-  var name = document.getElementById('share-name').value.trim();
-  var file = document.getElementById('share-file').files[0];
-  if (!name) { alert('Please enter your name.'); return; }
-  if (!file) { alert('Please upload a photo or video.'); return; }
-
-  var payload = {
-    form_type: 'student_content_submission',
-    source: 'ussacademy.org/share',
-    full_name: name,
-    message: 'Rating: ' + rating + '/5 | Handle: ' + (document.getElementById('share-handle').value.trim() || 'none') + ' | Comment: ' + (document.getElementById('share-comment').value.trim() || 'none') + ' | File: ' + file.name + ' (' + (file.size / 1024 / 1024).toFixed(1) + 'MB)',
-    submitted_at: new Date().toISOString(),
-    tags: ['website-form-submission', 'form: student_content_submission', 'user-generated-content'],
-    notify: ['mia@ussacademy.org', 'josh@ussacademy.org', 'support@ussacademy.org']
-  };
-
-  fetch('https://services.leadconnectorhq.com/hooks/GOBk9IDY9xnt7JJeDYsl/webhook-trigger/LVl0To2GE8jo5d279OkE', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(payload)
-  }).catch(function(){});
-  gtag('event', 'form_submission', { form_name: 'slide_form' });
-
-  document.getElementById('share-form').style.display = 'none';
-  document.getElementById('share-success').style.display = 'block';
+document.getElementById('share-file').addEventListener('change',function(){var fn=document.getElementById('file-name');if(this.files.length>0){fn.textContent=this.files[0].name+' ('+( this.files[0].size/1024/1024).toFixed(1)+' MB)';fn.style.display='block';}});
+function submitShare(){
+  var name=document.getElementById('share-name').value.trim();
+  var file=document.getElementById('share-file').files[0];
+  if(!name){alert('Please enter your name.');return;}
+  if(!file){alert('Please upload a photo or video.');return;}
+  var payload={form_type:'student_content_submission',source:'ussacademy.org/share',full_name:name,message:'Rating: '+rating+'/5 | Handle: '+(document.getElementById('share-handle').value.trim()||'none')+' | Comment: '+(document.getElementById('share-comment').value.trim()||'none')+' | File: '+file.name+' ('+(file.size/1024/1024).toFixed(1)+'MB)',submitted_at:new Date().toISOString(),tags:['website-form-submission','form: student_content_submission','user-generated-content'],notify:['mia@ussacademy.org','josh@ussacademy.org','support@ussacademy.org']};
+  fetch('https://services.leadconnectorhq.com/hooks/GOBk9IDY9xnt7JJeDYsl/webhook-trigger/LVl0To2GE8jo5d279OkE',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
+  gtag('event','form_submission',{form_name:'student_content_submission'});
+  document.getElementById('share-form').style.display='none';
+  document.getElementById('share-success').style.display='block';
 }
-</script>
-
-<!-- Sticky Call Button -->
-<style>
-.sticky-call-btn{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:row;align-items:center;gap:0;background:#C9A84C;color:#0D1B2A;padding:12px 22px;font-family:'Inter',sans-serif;text-decoration:none;border-radius:0;box-shadow:0 4px 16px rgba(201,168,76,0.3);text-align:center}
-.sticky-call-btn:hover{background:#e8c96a}
-.sticky-call-btn .call-line1{font-size:14px;font-weight:700;line-height:1.2}
-.sticky-call-btn .call-sep{margin:0 6px;opacity:0.6}
-.sticky-call-btn .call-line2{font-size:13px;font-weight:600;line-height:1.2}
-</style>
-<a href="tel:14073058335" class="sticky-call-btn"><span class="call-line1">Call Now</span><span class="call-sep">|</span><span class="call-line2">1-407-305-8335</span></a>
-<!-- Slide-In Lead Capture -->
-<div id="slideForm" style="display:none;position:fixed;bottom:80px;right:20px;z-index:9998;background:var(--navy,#0a1628);border:2px solid #c9a84c;border-radius:8px;width:320px;max-width:90vw;padding:24px 20px;box-shadow:0 12px 40px rgba(0,0,0,.5);transition:transform .4s ease,opacity .4s ease;transform:translateY(20px);opacity:0;">
-  <button onclick="closeSlideForm()" style="position:absolute;top:8px;right:12px;background:none;border:none;color:#c9a84c;font-size:20px;cursor:pointer;line-height:1;">&times;</button>
-  <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;">RESERVE YOUR SPOT</div>
-  <h4 style="font-family:'Cinzel',serif;font-size:18px;color:#f4f4f6;margin-bottom:12px;">Reserve Your Spot Today</h4>
-  <input id="sf-name" type="text" placeholder="First Name" style="width:100%;padding:10px;margin-bottom:8px;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.3);color:#f4f4f6;font-size:13px;border-radius:4px;font-family:inherit;">
-  <input id="sf-phone" type="tel" placeholder="Phone Number" style="width:100%;padding:10px;margin-bottom:8px;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.3);color:#f4f4f6;font-size:13px;border-radius:4px;font-family:inherit;">
-  <input id="sf-email" type="email" placeholder="Email Address" style="width:100%;padding:10px;margin-bottom:10px;background:rgba(255,255,255,.06);border:1px solid rgba(201,168,76,.3);color:#f4f4f6;font-size:13px;border-radius:4px;font-family:inherit;">
-  <button onclick="submitSlideForm()" style="width:100%;padding:12px;background:#c9a84c;color:#0a1628;border:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:4px;">Request My Assessment</button>
-</div>
-<script>
-(function(){
-  if(sessionStorage.getItem('slideFormShown'))return;
-  var triggered=false;
-  window.addEventListener('scroll',function(){
-    if(triggered)return;
-    var scrollPct=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
-    if(scrollPct>0.5){
-      triggered=true;
-      sessionStorage.setItem('slideFormShown','1');
-      var sf=document.getElementById('slideForm');
-      sf.style.display='block';
-      setTimeout(function(){sf.style.transform='translateY(0)';sf.style.opacity='1';},50);
-    }
-  });
-})();
-function closeSlideForm(){var sf=document.getElementById('slideForm');sf.style.transform='translateY(20px)';sf.style.opacity='0';setTimeout(function(){sf.style.display='none';},400);}
-function submitSlideForm(){
-  var n=document.getElementById('sf-name').value.trim();
-  var p=document.getElementById('sf-phone').value.trim();
-  var e=document.getElementById('sf-email').value.trim();
-  if(!n||!e){alert('Please enter your name and email.');return;}
-  fetch('https://services.leadconnectorhq.com/hooks/GOBk9IDY9xnt7JJeDYsl/webhook-trigger/LVl0To2GE8jo5d279OkE',{
-    method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({form_type:'slide_form_lead',source:'ussacademy.org',first_name:n,email:e,phone:p,tags:['website-form-submission','form: slide_form_lead'],notify:['mia@ussacademy.org','josh@ussacademy.org','support@ussacademy.org'],submitted_at:new Date().toISOString()})
-  }).catch(function(){});
-  gtag('event', 'form_submission', { form_name: 'slide_form' });
-  document.getElementById('slideForm').innerHTML='<div style="text-align:center;padding:20px 0;"><div style="font-size:28px;margin-bottom:8px;">&#10003;</div><p style="font-size:14px;color:#f4f4f6;">Thank you! We will be in touch shortly.</p></div>';
-}
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 </script>
 </body>
 </html>
