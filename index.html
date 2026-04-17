@@ -172,10 +172,6 @@ h2 .gold{color:var(--gold);}
 .cal-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
 .cal-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(201,168,76,.25);background:transparent;color:var(--silver);padding:7px 16px;cursor:pointer;transition:all .2s;}
 .cal-btn:hover,.cal-btn.active{background:rgba(201,168,76,.15);color:var(--gold);border-color:rgba(201,168,76,.4);}
-
-/* SCROLL FADE-IN */
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
 /* SCROLLABLE SCHEDULE CONTAINER */
 #calContainer{max-height:640px;overflow-y:auto;scroll-behavior:smooth;padding-right:6px}
 #calContainer::-webkit-scrollbar{width:6px}
@@ -3484,24 +3480,6 @@ function submitSlideForm(){
     requestAnimationFrame(draw);
   }
   draw();
-})();
-</script>
-
-<script>
-// Scroll fade-in — skip schedule section
-(function(){
-  var sections=document.querySelectorAll('.section-inner');
-  sections.forEach(function(el){
-    var parent=el.closest('section');
-    if(parent&&parent.id==='schedule')return;
-    el.classList.add('fade-in');
-  });
-  var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
-    });
-  },{threshold:0.1});
-  document.querySelectorAll('.fade-in').forEach(function(el){observer.observe(el);});
 })();
 </script>
 </body>
