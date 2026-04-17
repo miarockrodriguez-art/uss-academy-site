@@ -169,8 +169,8 @@ h2 .gold{color:var(--gold);}
 #calContainer::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
 #calContainer::-webkit-scrollbar-thumb:hover{background:var(--gold-light)}
 #calContainer{scrollbar-width:auto;scrollbar-color:var(--gold) rgba(17,34,64,.9)}
-.cal-event{display:grid;grid-template-columns:80px 1fr auto;gap:12px 20px;align-items:center;background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.1);padding:14px 20px;margin-bottom:8px;transition:all .25s;}
-.cal-event:hover{background:rgba(201,168,76,.04);border-color:rgba(201,168,76,.25);}
+.cal-event{display:grid;grid-template-columns:80px 1fr auto;gap:12px 20px;align-items:center;background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.1);padding:14px 20px;margin-bottom:8px;transition:all .2s ease;}
+.cal-event:hover{background:rgba(201,168,76,.04);border-color:rgba(201,168,76,.35);box-shadow:0 4px 16px rgba(201,168,76,.15);transform:translateY(-3px);}
 .cal-date{text-align:center;}
 .cal-month{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
 .cal-day{font-family:'Cinzel',serif;font-size:28px;font-weight:500;color:var(--white);line-height:1;}
@@ -636,11 +636,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <!-- ═══ STATS BAR ═══ -->
 <div class="stats-bar" aria-label="USS Academy statistics">
   <div class="stats-inner">
-    <div class="stat-item"><span class="stat-number">29,000+</span><span class="stat-label">Students Trained</span></div>
+    <div class="stat-item"><span class="stat-number" data-countup="29000" data-suffix="+" data-comma="true">29,000+</span><span class="stat-label">Students Trained</span></div>
     <div class="stat-item"><span class="stat-number">#1</span><span class="stat-label">Largest in Southeast</span></div>
-    <div class="stat-item"><span class="stat-number">27+</span><span class="stat-label">Years of Excellence</span></div>
-    <div class="stat-item"><span class="stat-number">★ 4.9</span><span class="stat-label">Google Reviews</span></div>
-    <div class="stat-item"><span class="stat-number">★ 5.0</span><span class="stat-label">Facebook Rating</span></div>
+    <div class="stat-item"><span class="stat-number" data-countup="27" data-suffix="+">27+</span><span class="stat-label">Years of Excellence</span></div>
+    <div class="stat-item"><span class="stat-number" data-countup="4.9" data-prefix="★ " data-decimal="true">★ 4.9</span><span class="stat-label">Google Reviews</span></div>
+    <div class="stat-item"><span class="stat-number" data-countup="5.0" data-prefix="★ " data-decimal="true">★ 5.0</span><span class="stat-label">Facebook Rating</span></div>
   </div>
 </div>
 
@@ -3349,6 +3349,50 @@ function submitSlideForm(){
     return a.ts-b.ts;
   });
   cardData.forEach(function(cd){container.appendChild(cd.el);});
+})();
+</script>
+
+<script>
+// Count-up animation on scroll into view
+(function(){
+  var animated=false;
+  function easeOut(t){return 1-Math.pow(1-t,3);}
+  function formatNum(n,comma){
+    if(!comma)return String(n);
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+  }
+  function countUp(){
+    if(animated)return;
+    var bar=document.querySelector('.stats-bar');
+    if(!bar)return;
+    var rect=bar.getBoundingClientRect();
+    if(rect.top>window.innerHeight||rect.bottom<0)return;
+    animated=true;
+    document.querySelectorAll('[data-countup]').forEach(function(el){
+      var target=parseFloat(el.dataset.countup);
+      var prefix=el.dataset.prefix||'';
+      var suffix=el.dataset.suffix||'';
+      var isDecimal=el.dataset.decimal==='true';
+      var useComma=el.dataset.comma==='true';
+      var duration=2000;
+      var start=performance.now();
+      function tick(now){
+        var elapsed=now-start;
+        var progress=Math.min(elapsed/duration,1);
+        var eased=easeOut(progress);
+        var current=eased*target;
+        if(isDecimal){
+          el.textContent=prefix+current.toFixed(1)+suffix;
+        } else {
+          el.textContent=prefix+formatNum(Math.floor(current),useComma)+suffix;
+        }
+        if(progress<1)requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+  window.addEventListener('scroll',countUp,{passive:true});
+  countUp();
 })();
 </script>
 </body>
