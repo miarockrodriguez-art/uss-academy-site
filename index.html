@@ -163,12 +163,12 @@ h2 .gold{color:var(--gold);}
 .cal-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(201,168,76,.25);background:transparent;color:var(--silver);padding:7px 16px;cursor:pointer;transition:all .2s;}
 .cal-btn:hover,.cal-btn.active{background:rgba(201,168,76,.15);color:var(--gold);border-color:rgba(201,168,76,.4);}
 /* SCROLLABLE SCHEDULE CONTAINER */
-#calContainer{max-height:640px;overflow-y:auto;scroll-behavior:smooth;padding-right:4px}
-#calContainer::-webkit-scrollbar{width:5px}
-#calContainer::-webkit-scrollbar-track{background:rgba(201,168,76,.05);border-radius:4px}
-#calContainer::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3);border-radius:4px}
-#calContainer::-webkit-scrollbar-thumb:hover{background:rgba(201,168,76,.5)}
-#calContainer{scrollbar-width:thin;scrollbar-color:rgba(201,168,76,.3) rgba(201,168,76,.05)}
+#calContainer{max-height:640px;overflow-y:auto;scroll-behavior:smooth;padding-right:6px}
+#calContainer::-webkit-scrollbar{width:6px}
+#calContainer::-webkit-scrollbar-track{background:rgba(17,34,64,.9);border-radius:3px}
+#calContainer::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+#calContainer::-webkit-scrollbar-thumb:hover{background:var(--gold-light)}
+#calContainer{scrollbar-width:auto;scrollbar-color:var(--gold) rgba(17,34,64,.9)}
 .cal-event{display:grid;grid-template-columns:80px 1fr auto;gap:12px 20px;align-items:center;background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.1);padding:14px 20px;margin-bottom:8px;transition:all .25s;}
 .cal-event:hover{background:rgba(201,168,76,.04);border-color:rgba(201,168,76,.25);}
 .cal-date{text-align:center;}
