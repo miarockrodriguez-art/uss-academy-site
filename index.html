@@ -162,6 +162,13 @@ h2 .gold{color:var(--gold);}
 .cal-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
 .cal-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(201,168,76,.25);background:transparent;color:var(--silver);padding:7px 16px;cursor:pointer;transition:all .2s;}
 .cal-btn:hover,.cal-btn.active{background:rgba(201,168,76,.15);color:var(--gold);border-color:rgba(201,168,76,.4);}
+/* SCROLLABLE SCHEDULE CONTAINER */
+#calContainer{max-height:640px;overflow-y:auto;scroll-behavior:smooth;padding-right:4px}
+#calContainer::-webkit-scrollbar{width:5px}
+#calContainer::-webkit-scrollbar-track{background:rgba(201,168,76,.05);border-radius:4px}
+#calContainer::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3);border-radius:4px}
+#calContainer::-webkit-scrollbar-thumb:hover{background:rgba(201,168,76,.5)}
+#calContainer{scrollbar-width:thin;scrollbar-color:rgba(201,168,76,.3) rgba(201,168,76,.05)}
 .cal-event{display:grid;grid-template-columns:80px 1fr auto;gap:12px 20px;align-items:center;background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.1);padding:14px 20px;margin-bottom:8px;transition:all .25s;}
 .cal-event:hover{background:rgba(201,168,76,.04);border-color:rgba(201,168,76,.25);}
 .cal-date{text-align:center;}
@@ -874,9 +881,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="cal-info"><h4>Law Update Class</h4><p>Stay current on Florida firearms laws, recent legal changes, and what they mean for gun owners, carriers, and security professionals. Essential for anyone who carries.</p><span class="cal-tag tag-ccw">FL Law · Legal Update</span></div>
         <div style="text-align:center;"><div><button class="cal-register-btn" onclick="window.open('https://api.leadconnectorhq.com/widget/bookings/law-update-class','_blank')">BOOK NOW</button></div><div style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:4px;">Limited seats available</div></div>
       </div>
-    <div id="viewAllWrap" style="text-align:center;margin-top:24px;">
-      <button id="viewAllBtn" onclick="document.getElementById('calContainer').classList.add('show-all');document.getElementById('viewAllWrap').style.display='none';" style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:var(--gold);border:none;padding:14px 36px;cursor:pointer;transition:all .2s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));" onmouseover="this.style.background='var(--gold-light)'" onmouseout="this.style.background='var(--gold)'">VIEW ALL CLASSES &rarr;</button>
-    </div>
     <div style="margin-top:20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
       <p style="font-size:13px;font-weight:300;color:var(--silver);">⚠ Always contact us to confirm your class date, time, and <strong style="color:var(--white);">exact location</strong> — classes are held at partner ranges, not the corporate office.</p>
       <a href="tel:8005088772" class="btn-primary" style="font-size:12px;padding:12px 22px;">📞 800-508-8772 (USSA)</a>
