@@ -1,48 +1,48 @@
 # MFS Empire — Daily Status
-**Date:** 2026-04-17
+**Date:** 2026-04-18
 **Chief of Staff:** POLY
 
 ---
 
 ## USS Academy (`uss-academy-site`)
 
-**Status: ACTIVE — styling work in progress today**
+**Status: ACTIVE — heavy SEO + UX push today (5 commits)**
 
-### Commits Today (4)
+### Commits Today
 | SHA | Message |
 |-----|---------|
-| `44023b7` | Hero ::before gradient overlay (z2) + hero-content z3 + instructor gold glow 0.25 |
-| `7e97a6ae` | Hero bottom gradient overlay + warm gold radial tint on instructor section |
-| `463943f` | **REVERT** — scroll-in animations reverted (was ff710f4) |
-| `ff710f4` | Add scroll-in animations, gold accent lines on sections/stats, hero bottom gradient overlay |
-
-> Scroll-in animations were added then immediately reverted. Hero gradient + instructor gold glow is what shipped. If scroll animations are still desired, that work needs to be redone cleanly.
+| `f1cf9fa` | Restyle exit intent popup — shield logo, clipped corner button, navy/gold theme |
+| `dd1ddf6` | Fix orphan pages — nav links to compete.html and host-a-class.html; waivers.html links to 3 waiver sub-pages; all 29 pages now reachable |
+| `f830fae` | FAQPage JSON-LD schema added to 4 pages (service-areas, waivers, gallery, refund-policy) |
+| `6efc570` | Twitter Card meta tags added to all 30 HTML pages |
+| `c9749bc` | 11 thin pages expanded to 1,200+ words each; 12 images renamed to keyword-rich filenames |
 
 ### Health Check
-- `index.html`: Valid (DOCTYPE, `<head>`, `<body>` all present)
-- Images (23 refs): All present in `images/` — no broken images
-- HTML pages (18 refs): All files exist — no 404s
-- `/privacy` + `/terms` bare paths: covered by Netlify Pretty URLs (no explicit `_redirects` rules needed)
+- `index.html`: Valid — DOCTYPE, `<html>`, `<head>`, `<body>`, `</html>` all present (338 KB)
 - Open Issues: 0
 - Open PRs: 0
+
+### Notable Work
+- All 29 content pages are now reachable via internal links (zero orphans).
+- SEO: FAQPage schema, Twitter Cards, long-form content, and keyword image names all shipped in one session.
+- Exit intent popup rebranded to match USS Academy visual identity.
 
 ---
 
 ## CityOne Transportation (`cityone-transportation-site`)
 
-**Status: STABLE — no commits since 2026-04-14**
+**Status: STABLE — no new commits since 2026-04-14**
 
 ### Last Commit
 `e142f539` — Fix white gap below mobile header caused by hamburger patch (2026-04-14)
 
 ### Health Check
-- `index.html`: Valid (DOCTYPE, `<head>`, `<body>` all present)
-- Local assets: None — all CSS/JS is inline or CDN (no local refs to break)
+- `index.html`: Valid — DOCTYPE, `<html>`, `<head>`, `<body>`, `</html>` all present (313 KB)
 - Open Issues: 0
 - Open PRs: **1 — NEEDS DECISION**
 
 ### Open PR: #1 — Cloudflare Workers Autoconfig (Bot)
-- Opened: 2026-03-26 (22 days ago)
+- Opened: 2026-03-26 (23 days ago, now updated 2026-04-14)
 - Source: Cloudflare Workers bot — adds `wrangler.jsonc` for static Workers deployment
 - Action needed: **Merge to enable Cloudflare Workers deployment, or Close if not using Workers**
 
@@ -52,8 +52,8 @@
 
 | Priority | Repo | Item |
 |----------|------|------|
-| HIGH | CityOne | Decide on PR #1 (Cloudflare Workers) — merge or close |
-| LOW | USS Academy | Scroll-in animations were reverted — revisit if still wanted |
+| HIGH | CityOne | Decide on PR #1 (Cloudflare Workers) — merge or close, 23 days open |
+| MONITOR | USS Academy | Verify exit intent popup renders correctly on live site |
 
 ---
 
