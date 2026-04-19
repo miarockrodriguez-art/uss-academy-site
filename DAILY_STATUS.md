@@ -1,50 +1,50 @@
 # MFS Empire — Daily Status
-**Date:** 2026-04-18
+**Date:** 2026-04-19
 **Chief of Staff:** POLY
 
 ---
 
 ## USS Academy (`uss-academy-site`)
 
-**Status: ACTIVE — heavy SEO + UX push today (5 commits)**
+**Status: STABLE — no new commits today**
 
-### Commits Today
+### Last Activity
+Yesterday (2026-04-18) was a heavy push — 5 commits in one session:
+
 | SHA | Message |
 |-----|---------|
 | `f1cf9fa` | Restyle exit intent popup — shield logo, clipped corner button, navy/gold theme |
-| `dd1ddf6` | Fix orphan pages — nav links to compete.html and host-a-class.html; waivers.html links to 3 waiver sub-pages; all 29 pages now reachable |
-| `f830fae` | FAQPage JSON-LD schema added to 4 pages (service-areas, waivers, gallery, refund-policy) |
-| `6efc570` | Twitter Card meta tags added to all 30 HTML pages |
-| `c9749bc` | 11 thin pages expanded to 1,200+ words each; 12 images renamed to keyword-rich filenames |
+| `dd1ddf6` | Fix orphan pages — nav links to compete.html and host-a-class.html; waivers.html → 3 waiver sub-pages; all 29 pages reachable |
+| `f830fae` | FAQPage JSON-LD schema — 4 pages (service-areas, waivers, gallery, refund-policy) |
+| `6efc570` | Twitter Card meta tags — all 30 HTML pages |
+| `c9749bc` | 11 thin pages expanded; 12 images renamed to keyword-rich filenames |
 
 ### Health Check
-- `index.html`: Valid — DOCTYPE, `<html>`, `<head>`, `<body>`, `</html>` all present (338 KB)
+- `index.html`: Present and valid (338 KB)
+- Referenced HTML files: All 21 confirmed present in repo
+- Referenced images: `images/` directory present
+- `/privacy` and `/terms` bare routes: Handled by platform pretty-URL rewrite (privacy.html / terms.html both exist)
 - Open Issues: 0
 - Open PRs: 0
-
-### Notable Work
-- All 29 content pages are now reachable via internal links (zero orphans).
-- SEO: FAQPage schema, Twitter Cards, long-form content, and keyword image names all shipped in one session.
-- Exit intent popup rebranded to match USS Academy visual identity.
 
 ---
 
 ## CityOne Transportation (`cityone-transportation-site`)
 
-**Status: STABLE — no new commits since 2026-04-14**
+**Status: STABLE — no new commits (5 days quiet)**
 
 ### Last Commit
 `e142f539` — Fix white gap below mobile header caused by hamburger patch (2026-04-14)
 
 ### Health Check
-- `index.html`: Valid — DOCTYPE, `<html>`, `<head>`, `<body>`, `</html>` all present (313 KB)
+- `index.html`: Present and valid (313 KB, single-page app — no local file refs)
 - Open Issues: 0
-- Open PRs: **1 — NEEDS DECISION**
+- Open PRs: **1 — NEEDS DECISION (now 24 days old)**
 
 ### Open PR: #1 — Cloudflare Workers Autoconfig (Bot)
-- Opened: 2026-03-26 (23 days ago, now updated 2026-04-14)
+- Opened: 2026-03-26
 - Source: Cloudflare Workers bot — adds `wrangler.jsonc` for static Workers deployment
-- Action needed: **Merge to enable Cloudflare Workers deployment, or Close if not using Workers**
+- **Action required: Merge to enable Workers deployment, or Close if not using Workers**
 
 ---
 
@@ -52,8 +52,8 @@
 
 | Priority | Repo | Item |
 |----------|------|------|
-| HIGH | CityOne | Decide on PR #1 (Cloudflare Workers) — merge or close, 23 days open |
-| MONITOR | USS Academy | Verify exit intent popup renders correctly on live site |
+| HIGH | CityOne | Resolve PR #1 — Cloudflare Workers bot, 24 days open, merge or close |
+| LOW | USS Academy | Spot-check exit intent popup on live site (shipped yesterday) |
 
 ---
 
