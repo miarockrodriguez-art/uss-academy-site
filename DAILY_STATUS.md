@@ -1,5 +1,5 @@
 # MFS Empire — Daily Status
-**Date:** 2026-04-19
+**Date:** 2026-04-20
 **Chief of Staff:** POLY
 
 ---
@@ -9,21 +9,11 @@
 **Status: STABLE — no new commits today**
 
 ### Last Activity
-Yesterday (2026-04-18) was a heavy push — 5 commits in one session:
-
-| SHA | Message |
-|-----|---------|
-| `f1cf9fa` | Restyle exit intent popup — shield logo, clipped corner button, navy/gold theme |
-| `dd1ddf6` | Fix orphan pages — nav links to compete.html and host-a-class.html; waivers.html → 3 waiver sub-pages; all 29 pages reachable |
-| `f830fae` | FAQPage JSON-LD schema — 4 pages (service-areas, waivers, gallery, refund-policy) |
-| `6efc570` | Twitter Card meta tags — all 30 HTML pages |
-| `c9749bc` | 11 thin pages expanded; 12 images renamed to keyword-rich filenames |
+No changes since yesterday's POLY status commit. Last substantive work was 2026-04-18.
 
 ### Health Check
-- `index.html`: Present and valid (338 KB)
-- Referenced HTML files: All 21 confirmed present in repo
-- Referenced images: `images/` directory present
-- `/privacy` and `/terms` bare routes: Handled by platform pretty-URL rewrite (privacy.html / terms.html both exist)
+- `index.html`: Present and valid (338 KB, DOCTYPE + `</html>` confirmed)
+- Local image refs: 29 checked — **all 29 OK** (235 images in `/images`)
 - Open Issues: 0
 - Open PRs: 0
 
@@ -31,20 +21,28 @@ Yesterday (2026-04-18) was a heavy push — 5 commits in one session:
 
 ## CityOne Transportation (`cityone-transportation-site`)
 
-**Status: STABLE — no new commits (5 days quiet)**
+**Status: ACTIVE — 5 commits today**
 
-### Last Commit
-`e142f539` — Fix white gap below mobile header caused by hamburger patch (2026-04-14)
+### Today's Commits
+
+| SHA | Message |
+|-----|---------|
+| `027120f` | Add Port Canaveral to Hotels pricing section (10 fields) |
+| `c0b5b14` | Update admin: new password, pricing editor, remove $100 fee, add service disclaimer |
+| `8d31c40` | Add admin panel with announcement ticker and emergency banner |
+| `50ae357` | Replace EmailJS Service ID with service_hexohos (Microsoft 365) |
+| `78ffcc5` | Restore EmailJS public key to exact case |
 
 ### Health Check
-- `index.html`: Present and valid (313 KB, single-page app — no local file refs)
+- `index.html`: Present and valid (320 KB, DOCTYPE + `</html>` confirmed)
+- Repo files: 2 total — `index.html` + `admin.html` (no local assets, all external CDN)
 - Open Issues: 0
-- Open PRs: **1 — NEEDS DECISION (now 24 days old)**
+- Open PRs: **1 open — 25 days old (see below)**
 
 ### Open PR: #1 — Cloudflare Workers Autoconfig (Bot)
-- Opened: 2026-03-26
-- Source: Cloudflare Workers bot — adds `wrangler.jsonc` for static Workers deployment
-- **Action required: Merge to enable Workers deployment, or Close if not using Workers**
+- Opened: 2026-03-26 by Cloudflare bot
+- Adds `wrangler.jsonc` for static Workers deployment
+- **Action required: Merge or Close**
 
 ---
 
@@ -52,8 +50,9 @@ Yesterday (2026-04-18) was a heavy push — 5 commits in one session:
 
 | Priority | Repo | Item |
 |----------|------|------|
-| HIGH | CityOne | Resolve PR #1 — Cloudflare Workers bot, 24 days open, merge or close |
-| LOW | USS Academy | Spot-check exit intent popup on live site (shipped yesterday) |
+| **CRITICAL** | CityOne | Commit `8d31c40` contains plain-text admin password in the public git commit message — rotate the password immediately and scrub commit history or accept exposure |
+| HIGH | CityOne | Resolve PR #1 — Cloudflare Workers bot, 25 days open |
+| LOW | CityOne | Verify EmailJS booking flow end-to-end after today's service ID + key changes |
 
 ---
 
