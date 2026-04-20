@@ -1,198 +1,291 @@
 # WEEKLY EMPIRE REPORT
-**Prepared by:** POLY — Chief of Staff, MFS Empire  
-**Reporting Period:** 2026-03-30 through 2026-04-06  
-**Report Date:** 2026-04-06  
-**Properties Audited:** `uss-academy-site` · `cityone-transportation-site`
+**POLY — Chief of Staff, MFS Empire**
+**Report Period:** April 13 – April 20, 2026
+**Generated:** 2026-04-20
+**Repos Covered:** `uss-academy-site` · `cityone-transportation-site`
 
 ---
 
 ## EXECUTIVE SUMMARY
 
-- **USS Academy had its biggest content and infrastructure week yet:** 49 commits shipped GA4 tracking to all 28 pages, wired 11 forms to live GHL webhooks, launched 8 new SEO blog articles, added 6 new landing pages (3 languages + 3 keyword pillars), deployed a slide-in lead capture form, and added OG images site-wide — the academy is now a fully instrumented, lead-capturing machine.
-- **CityOne Transportation has a silent critical failure:** The reservation form at the core of the site uses EmailJS with unconfigured placeholder credentials (`YOUR_EMAILJS_PUBLIC_KEY`, `YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`). Every customer reservation since launch has triggered a success confirmation to the user but delivered zero notification to the operator. Additionally, the site has no analytics, no SEO meta tags, no sitemap, and no robots.txt.
-- **Empire-wide infrastructure matured significantly this week:** BreadcrumbList and FAQPage schema deployed across 21+ USS Academy pages, robots.txt and sitemap verified, image compression saved hundreds of KBs, and a Cloudflare redirect loop was resolved — the academy is now technically sound and search-engine-ready.
+- **USS Academy had its single most productive week on record** — 67 commits transformed the site with a full calendar booking system, 30-page Twitter Card rollout, 11 pages expanded to 1,200+ words each, 12 images renamed for SEO, and every orphan page eliminated. The site is now audit-clean and conversion-ready.
+- **CityOne Transportation went live with full email automation** — all 3 forms (quote, contact, reservation) now fire to `bookmyride@cityonetransportation.com` via EmailJS, an admin control panel was built, and mobile navigation was added; however the site is **missing all SEO meta tags** (description, canonical, OG, Twitter Card, analytics) — this is the empire's #1 open issue.
+- **Combined: 82 commits, ~42 files changed, 8,000+ lines added across both properties** — the empire's digital infrastructure made a generational leap this week.
 
 ---
 
 ## CHANGES THIS WEEK
 
-### USS Academy (`uss-academy-site`) — ~49 commits
+### USS ACADEMY — `uss-academy-site`
+**Total commits: 67** | **Period: Apr 13–20**
 
-#### Lead Capture & CRM (RESOLVED from last week's critical C-1)
-- **All 11 forms wired to live GHL webhook** — contact, waiver, class registration, alumni, Ladies Day, lead capture, and slide-in forms all now POSTing to GoHighLevel in production. Last week's critical revenue leak is sealed.
-- **Slide-in lead capture form deployed to all 28 pages** — triggers at 50% scroll depth, collects name/email/phone, submits to GHL webhook.
-- **Exit-intent popup deployed** — fires on cursor moving to browser chrome, captures leads before bounce.
-- **`share.html`** (UGC page): student photo/video upload form with GHL webhook + QR code on homepage.
+#### Calendar & Booking System
+- Built `calendar.html` from scratch — full monthly grid with 91 class dates across Apr–Dec 2026, color-coded by tier (CWP, Beginner, Advanced, Tactical, Special), animated shield watermark, today highlighting
+- Wired 28+ Book Now buttons to GoHighLevel booking widgets (`api.leadconnectorhq.com`)
+- Added dynamic next-class-date logic to schedule cards — auto-advances as dates pass
+- Pinned "Book a Call" + "Ladies Day" cards at top; all others sort chronologically
+- Replaced show/hide toggle with scrollable 640px container with gold scrollbar
+- Added `calendar.html` to `sitemap.xml`
 
-#### Analytics (RESOLVED from last week's critical C-2)
-- **GA4 installed on all 28 pages** — measurement ID `G-H3Q129SS5F`. Empire is no longer flying blind on USS Academy.
+#### Sitewide SEO Push
+- **Twitter Card meta tags** added to all 30 HTML pages
+- **FAQPage JSON-LD schema** added to 4 pages: service-areas (4 Q&A), waivers (8 Q&A), gallery (4 Q&A), refund-policy (4 Q&A)
+- **12 images renamed** from generic/unnamed to keyword-rich filenames (e.g., `USS+ACADEMY-CCW` → `uss-academy-ccw-class-orlando-group`)
+- Fixed 7 audit items: H1 added to gallery, canonical/OG/Twitter on calendar, canonicals on 3 waiver pages, og:image on share.html, calendar added to sitemap, duplicate privacy-policy.html deleted
+- GA4 (`G-H3Q129SS5F`) added to `calendar.html`
+- Phone deduplication in schema: removed duplicate telephone from service-areas JSON-LD
 
-#### Content — Blog Launch
-- **8 new blog articles published** under `/blog/` subdirectory (2026-04-05):
-  - `florida-concealed-carry-permit.html`
-  - `armed-vs-unarmed-firearms-course.html`
-  - `first-firearms-training-class.html`
-  - `florida-firearms-safety-course.html`
-  - `choose-firearms-instructor-central-florida.html`
-  - `women-firearms-ccw-florida.html`
-  - `florida-stand-your-ground-law.html`
-  - `beginner-to-confident-firearms-journey.html`
-- **`blog.html` updated** to index all 8 articles.
-- All blog articles have: full SEO head, BreadcrumbList schema, BlogPosting schema, GA4, slide-in form, sticky Call Now button, Twitter card.
+#### Content Expansion (11 Thin Pages → 1,200+ Words)
+| Page | Before | After |
+|------|--------|-------|
+| compete.html | 729 words | 2,014 words |
+| host-a-class.html | 768 words | 1,953 words |
+| waivers.html | 864 words | 1,527 words |
+| service-areas.html | 1,143 words | 1,297 words |
+| terms.html | 1,165 words | 1,295 words |
+| 6 regional pages | 796–946 words | 2,059–2,241 words |
 
-#### New Pages (6 total)
-- **Language landing pages:** `espanol.html`, `portugues.html`, `kreyol.html` — serving Spanish, Portuguese, and Haitian Creole-speaking students.
-- **SEO keyword pillars:** `ccw-near-me.html`, `best-gun-class-orlando.html`, `first-time-buyer.html`.
+#### Navigation & Internal Linking
+- **Zero orphan pages** — fixed `compete.html` and `host-a-class.html` nav links across all 29 content pages
+- Added waiver form links from `waivers.html` → 3 waiver sub-pages
+- Blog and Share pages: full 14-link nav matching `index.html` exactly
+- Gallery and Service Areas: full nav + brand fonts/colors
 
-#### SEO & Schema
-- **OG image deployed to 21+ pages** — `og-image.jpg` (1200x630 branded) added.
-- **BreadcrumbList schema** added to 21+ pages.
-- **FAQPage schema** confirmed on 10 pages.
-- **Google Search Console meta tag** added and GSC verification confirmed (`google9612a65910aee27d.html`).
-- **Canonical URLs** verified site-wide using `https://www.ussacademy.org/` prefix.
-- **Cloudflare redirect loop resolved** — `www` redirect rule removed from `_redirects` (was causing infinite loop).
-- **Robots.txt and sitemap.xml** confirmed present and valid.
-- **Image compression** — ballistics image: 727KB → 90KB; PCC permit image: 2.1MB → 100KB.
+#### Sitewide Phone Number Correction
+- Replaced `800-508-8772` with `407-305-8335` — **429 replacements across 37 files**
+- Removed `(USSA)` label from phone number — **55 instances across 15 files**
+- Cleaned up duplicate phone in hero and announcement banner
 
-#### UX / Conversion
-- **Sticky "Call Now | 1-800-508-8772" button** deployed across all pages (fixed top-right, gold on navy).
-- Blog nav link styling polished (2026-04-06).
+#### UI & Brand Refinements
+- Gold particle network animation on hero section (tactical targeting grid)
+- Count-up animation on stat numbers (29,000 / 27 / 4.9 / 5.0)
+- Card hover effects: gold glow + 4px lift on course cards
+- 2px gold top border on section headings
+- Hero gradient overlay + warm gold radial tint on instructor section
+- Sticky call button: clipped corners, top-right fully filled
+- All gold CTA buttons: clipped-corner `clip-path` styling
+- Calendar card hover: gold left border, dark drop shadow, −4px lift
+- Consolidated 2 testimonial sections into 1 with 6 reviews + Submit button
+- Swapped nav order: Schedule first, Courses second
+
+#### New Pages & Files
+- `404.html` — branded navy/gold 404 with shield logo, clipped-corner buttons, schedule CTA
+- `_headers` — security headers file (CSP, X-Frame-Options, etc.)
+- Exit intent popup restyled to match USS Academy brand (shield logo, navy/gold, clipped button)
+- Live Google Reviews feed: 4+ star reviews, clipped corner cards, auto-fetch from Places API
+
+#### Mobile Fix
+- `overflow-x: hidden` + `max-width: 100%` applied to all 37 HTML files — eliminates horizontal scroll on mobile
 
 ---
 
-### CityOne Transportation (`cityone-transportation-site`) — 6 commits (all 2026-03-27 to 2026-03-28)
+### CITYONE TRANSPORTATION — `cityone-transportation-site`
+**Total commits: 15** | **Period: Apr 14 + Apr 20**
 
-**Note:** Zero commits from 2026-03-29 through 2026-04-06. All activity was concentrated at the tail end of last week's reporting window.
+#### Email Automation — All 3 Forms Live
+- Wired **quote form**, **contact form**, and **reservation form** to EmailJS
+- Service: `service_hexohos` (Microsoft 365), Template: `template_k13dd9n`
+- All submissions route to `bookmyride@cityonetransportation.com`
+- Fixed template variable mapping: `from_name`, `from_email`, `phone`, `pickup_location`, `destination`, `date`, `time`, `passengers`, `message`, `reservation_number`
+- Fixed `ReferenceError` — undefined `pickup` variable → corrected to `dest`
+- Fixed EmailJS init race condition: removed `defer`, moved to `DOMContentLoaded`
+- Added full debug logging (params, success, error status/text on all 3 forms)
+- Reservation success heading changed from "Confirmed" → "Submitted" (accurate expectation)
 
-- Slogan deployed to all 8 page tabs (9 total instances) as 28px Georgia serif italic in hero sections.
-- "Powered by Phoenix Blueprint" footer credit added.
-- Broken HTML restored from clean commit after prior corruption.
-- Rates disclaimer added to Port Canaveral section.
-- Service type, rates, email, and slogan placement updated.
+#### Admin Control Panel (`admin.html`)
+- Password-protected admin panel created
+- Controls: announcement ticker (on/off + text), emergency banner (on/off + text + color)
+- Pricing editor for all hotel rate tables
+- Wired to main site via localStorage
+
+#### Pricing & Content Updates
+- All hotels alphabetized within Disney, Universal, and SeaWorld sections
+- Port Canaveral section added to Hotels pricing (10 rate fields)
+- Removed `$100 administrative fee` language
+- Added service disclaimer
+
+#### Mobile Navigation
+- Hamburger menu added for viewport < 768px (animated → X icon)
+- Fixed white gap below mobile header (positioning conflict with fixed nav)
 
 ---
 
 ## ISSUES FOUND
 
-### CRITICAL — Production Failures
+### CRITICAL
 
-| # | Property | Issue | Impact |
-|---|----------|-------|--------|
-| C-1 | CityOne | **EmailJS NOT CONFIGURED.** Credentials `YOUR_EMAILJS_PUBLIC_KEY`, `YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID` are literal placeholder strings in production code. The reservation form shows a success card to customers but the operator receives zero notification. Every reservation since launch has been silently lost. | All reservation requests are lost. Revenue impact unknown but active. |
-| C-2 | CityOne | **No Google Analytics or any tracking.** Zero data collected on traffic, reservations, form conversions, or bounce rate. | No performance visibility whatsoever. |
+#### 1. CityOne — Missing ALL SEO Meta Tags
+**File:** `cityone-transportation-site/index.html`
+**Status:** 🔴 Critical
+The CityOne homepage is entirely missing:
+- `<meta name="description">` — Google will auto-generate a snippet (bad)
+- `<link rel="canonical">` — duplicate content risk
+- All Open Graph tags (`og:title`, `og:description`, `og:image`) — social shares show nothing
+- Twitter Card tags — no Twitter preview
+- Google Analytics / GA4 — zero conversion tracking
 
-### HIGH — SEO / Visibility
+CityOne is essentially invisible to SEO and untracked for conversions.
 
-| # | Property | Issue |
-|---|----------|-------|
-| H-1 | CityOne | **No `<meta name="description">`** — site is invisible/incomplete to search engines. |
-| H-2 | CityOne | **No OG tags** — `og:title`, `og:description`, `og:image` all missing. Social shares show blank previews. |
-| H-3 | CityOne | **No canonical tag** — search engines have no authoritative URL signal. |
-| H-4 | CityOne | **No sitemap.xml** — pages cannot be efficiently crawled or indexed. |
-| H-5 | CityOne | **No robots.txt** — no crawl instructions for search engines. |
-| H-6 | CityOne | **Page `<title>` is a dev-facing name:** "Cityone Transportation — The Blend" — "The Blend" is the internal design concept. This exact string would appear in Google search results. |
-
-### MEDIUM — Content / Polish
-
-| # | Property | Issue |
-|---|----------|-------|
-| M-1 | USS Academy | **TBD event date** — "Ladies Day — Annual Event" calendar entry shows "TBD" to live visitors (`<div class="cal-month">TBD</div>`). Displayed publicly until a date is set. |
-| M-2 | USS Academy | **Missing `twitter:card`** on `share.html`, `submit-photo.html`, and `privacy.html` — all other pages have it. Minor SEO hygiene gap. |
-| M-3 | CityOne | **Social media links unverified** — Facebook, Instagram, Twitter/X, YouTube links exist in footer but account validity unconfirmed. |
-
-### LOW — Architecture Notes
-
-| # | Property | Issue |
-|---|----------|-------|
-| L-1 | CityOne | **Single-file SPA architecture** — all 7 "pages" share one URL via JS tab switching. Each service type (rideshare, fleet, destinations, etc.) cannot be individually indexed by search engines or deep-linked. |
-| L-2 | USS Academy | **Blog articles use `href="/blog.html"`** for "Back to Blog" but canonical is `https://www.ussacademy.org/blog`. Functional if `_redirects` handles it, but worth confirming no 404 edge case. |
+#### 2. CityOne — Admin Password in Git History
+**Commit:** `8d31c40` (2026-04-20T06:55:54Z)
+**Status:** 🔴 Security — Cannot be undone
+Commit message includes: `Password: #November302013` — this is now permanently readable in the public git history. The password must be rotated immediately. Consider environment-based auth or a proper backend for admin access.
 
 ---
 
-## HTML STRUCTURE AUDIT
+### MODERATE
 
-### USS Academy
+#### 3. USS Academy — Duplicate Phone in Calendar Notice Bar
+**File:** `calendar.html` (notice bar)
+**Status:** 🟡 Visual Bug
+The notice bar reads: `...| 407-305-8335 | 407-305-8335 | support@ussacademy.org` — the phone number appears twice. One instance should be removed.
 
-| Page | DOCTYPE | Meta Desc | og:title | og:image | Viewport | Canonical | GA4 | Twitter Card | TODO/Placeholder |
-|------|---------|-----------|----------|----------|----------|-----------|-----|-------------|------------------|
-| `index.html` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ 2x TBD (event date) |
-| `blog.html` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | None |
-| All 8 blog articles | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | None |
-| `share.html` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ Missing | None |
-| `submit-photo.html` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ Missing | None |
-| `privacy.html` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ Missing | None |
-| `privacy-policy.html` | ✅ | N/A | N/A | N/A | N/A | N/A | N/A | N/A | Redirect shell — by design |
+#### 4. USS Academy — `share.html` Canonical URL Missing `.html`
+**File:** `share.html`
+**Status:** 🟡 Minor SEO
+Canonical is set to `https://www.ussacademy.org/share` (no extension) while all other pages use `.html`. If the server doesn't redirect `/share` → `/share.html`, this creates a canonical mismatch.
 
-**Broken internal links: NONE detected.** All 17+ internal page references verified against the repo file tree.
-
-### CityOne Transportation
-
-| Page | DOCTYPE | Meta Desc | og:title | og:image | Viewport | Canonical | GA4 | Twitter Card | TODO/Placeholder |
-|------|---------|-----------|----------|----------|----------|-----------|-----|-------------|------------------|
-| `index.html` | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | **CRITICAL: EmailJS credentials are placeholders** |
-
-**Internal links:** Site uses JS tab navigation only (`showPage()` calls) — no traditional `href` internal links. Square payment link appears valid. Social links unverified.
+#### 5. CityOne — EmailJS Public Key in Git History
+**Commit:** `fec57845b` (2026-04-20)
+**Status:** 🟡 Security Note
+The EmailJS public key (`URLtKQDq3xZsiz7HL`) and service ID are committed to public git history. While EmailJS public keys are designed to be client-side, anyone can use this key to send from your EmailJS account. Consider rate limiting in your EmailJS dashboard.
 
 ---
 
-## EMPIRE COMMIT METRICS
+### MINOR
 
-| Property | Commits This Week | New HTML Files | Key Changes |
-|----------|------------------|----------------|-------------|
-| `uss-academy-site` | ~49 | 15+ (6 pages + 8 blog + share) | GA4, GHL webhooks, blog, SEO, OG images |
-| `cityone-transportation-site` | 6 | 0 | Slogan, footer credit, HTML repair |
-| **EMPIRE TOTAL** | **~55** | **15+** | — |
+#### 6. USS Academy — Scroll Animation Reverted Twice
+Two animation commits were pushed then reverted within hours (scroll fade-in, gold underline on stats) suggesting feature decisions need to be validated locally before commit. Creates noise in git history.
 
-**USS Academy file count:** 37 HTML files total (29 root + 8 blog articles)  
-**CityOne file count:** 1 HTML file (301KB monolithic SPA)
+#### 7. USS Academy — `index.html` Size (339KB)
+`index.html` is 339KB — very large for a single HTML file. While functional, this may affect Time to First Byte on slower connections. Future consideration: split schedule data into a JSON file loaded async.
+
+#### 8. CityOne — `admin.html` Has No Auth Beyond Password Prompt
+The admin panel uses a simple JS `prompt()` password check — this is client-side only and bypassable. Acceptable for a private tool but worth noting if the site ever goes fully public.
 
 ---
 
-## EMPIRE HEALTH SCORECARD
+## SEO META TAG AUDIT
 
-| Category | USS Academy | CityOne | vs. Last Week |
-|----------|-------------|---------|---------------|
-| HTML Structure | ✅ Valid | ✅ Valid | — |
-| Meta Description | ✅ All pages | ❌ Missing | USS: improved |
-| OG / Social Tags | ✅ All pages | ❌ Missing | USS: improved |
-| Twitter Card | ⚠️ 3 pages missing | ❌ Missing | — |
-| Schema Markup | ✅ Full | ❌ None | — |
-| Sitemap | ✅ Present | ❌ None | — |
-| Robots.txt | ✅ Present | ❌ None | — |
-| Google Analytics | ✅ GA4 Live (all 28 pages) | ❌ None | USS: **FIXED** ✅ |
-| CRM / Lead Capture | ✅ All 11 forms live | ❌ Broken (EmailJS) | USS: **FIXED** ✅ |
-| Broken Internal Links | ✅ None | ✅ None (JS nav) | — |
-| TODO / Placeholder Content | ⚠️ 1 (TBD event date) | ❌ Placeholder credentials in prod | — |
-| Page Speed | ✅ Images compressed | ⚠️ Unknown | — |
-| Accessibility | ✅ Audited | ⚠️ Not audited | — |
+### USS Academy (`uss-academy-site`) — 30 pages
+
+| Tag | Status |
+|-----|--------|
+| `<title>` | ✅ All pages |
+| `<meta name="description">` | ✅ All pages |
+| `<link rel="canonical">` | ✅ All pages |
+| `og:title` / `og:description` / `og:image` | ✅ All pages |
+| `twitter:card` / `twitter:title` / `twitter:image` | ✅ All 30 pages (added this week) |
+| FAQPage JSON-LD | ✅ 4 pages |
+| BreadcrumbList JSON-LD | ✅ share.html + others |
+| LocalBusiness JSON-LD | ✅ index.html |
+| GA4 (`G-H3Q129SS5F`) | ✅ All pages |
+| Sitemap | ✅ 30 URLs in sitemap.xml |
+| robots.txt | ✅ Present |
+
+**USS Academy SEO Grade: A** — Fully equipped. No missing tags.
+
+### CityOne Transportation (`cityone-transportation-site`) — 1 public page
+
+| Tag | Status |
+|-----|--------|
+| `<title>` | ✅ Present ("Cityone Transportation — The Blend") |
+| `<meta name="description">` | ❌ MISSING |
+| `<link rel="canonical">` | ❌ MISSING |
+| `og:title` / `og:description` / `og:image` | ❌ MISSING |
+| `twitter:card` | ❌ MISSING |
+| JSON-LD schema | ❌ MISSING |
+| GA4 / Analytics | ❌ MISSING |
+| Sitemap | ❌ MISSING |
+| robots.txt | ❌ MISSING |
+
+**CityOne SEO Grade: D** — Title only. Site is invisible to search engines and untracked.
+
+---
+
+## TODO & PLACEHOLDER CONTENT AUDIT
+
+**USS Academy:** ✅ Zero TODO comments, zero placeholder text found across all reviewed pages. Codebase is clean.
+
+**CityOne:** ✅ No TODO comments found. Site content appears production-ready; gaps are infrastructure (SEO/tracking), not content.
+
+---
+
+## INTERNAL LINK AUDIT — USS ACADEMY
+
+- All 14 nav links present and consistent across: `calendar.html`, `share.html`, `blog.html`, `waivers.html`, `gallery.html`, `service-areas.html`
+- `compete.html` and `host-a-class.html` orphan status: **RESOLVED this week** (nav links added across all 29 subpages)
+- 3 waiver sub-pages (`waiver-class-registration.html`, `waiver-exam-registration.html`, `waiver-range.html`) now linked from `waivers.html`
+- `404.html` links back to schedule and home — proper UX recovery
+- **Zero known orphan pages** as of Apr 18, 2026
 
 ---
 
 ## RECOMMENDATIONS FOR NEXT WEEK
 
-### Priority 1 — Fix CityOne Reservation System (URGENT)
-1. **Configure EmailJS credentials** — replace `YOUR_EMAILJS_PUBLIC_KEY`, `YOUR_SERVICE_ID`, and `YOUR_TEMPLATE_ID` in `index.html` with real values from the EmailJS dashboard. Test a live form submission end-to-end. Alternatively, migrate reservation form to a GHL webhook (same pattern as USS Academy) for consistency across the empire.
-2. **Fix `<title>`** — change from `"Cityone Transportation — The Blend"` to `"Cityone Transportation | Orlando Private Car & Airport Transfer Service"` or similar customer-facing copy.
+### Priority 1 — CityOne SEO Emergency
+**Add full SEO head block to `cityone-transportation-site/index.html`:**
+```html
+<meta name="description" content="Cityone Transportation — premium car service for Orlando theme parks, hotels, and Port Canaveral. Book online or call for a quote.">
+<link rel="canonical" href="https://www.cityonetransportation.com/">
+<meta property="og:title" content="Cityone Transportation — The Blend">
+<meta property="og:description" content="Premium car service. Disney, Universal, SeaWorld, Port Canaveral. Book online.">
+<meta property="og:image" content="https://www.cityonetransportation.com/og-image.jpg">
+<meta property="og:url" content="https://www.cityonetransportation.com/">
+<meta name="twitter:card" content="summary_large_image">
+```
+Also add GA4 tracking and a `robots.txt` + `sitemap.xml`.
 
-### Priority 2 — CityOne SEO Minimum Viable Setup
-3. **Add `<meta name="description">`** — single line, 150 chars, targeting Orlando airport transfer keywords.
-4. **Add OG tags** — `og:title`, `og:description`, `og:image` (create a 1200x630 branded image). Unlocks social sharing previews immediately.
-5. **Add canonical tag** — `<link rel="canonical" href="https://www.cityonetransportation.com/">` (or whatever the live domain is).
-6. **Add GA4** — create a property, drop the measurement ID in. Zero visibility without this.
-7. **Create `sitemap.xml` and `robots.txt`** — basic crawl infrastructure.
+### Priority 2 — Rotate CityOne Admin Password
+The password `#November302013` is in public git history. Create a new password and consider using environment-based authentication or Netlify Identity instead of a JS prompt.
 
-### Priority 3 — USS Academy Polish
-8. **Set the Ladies Day date** — replace `TBD` in the `index.html` calendar with the actual date, or hide the entry until it is confirmed. Visitors are currently seeing "TBD" for an event.
-9. **Add `twitter:card`** to `share.html`, `submit-photo.html`, and `privacy.html` — three-line fix on each.
-10. **Confirm `/blog` clean URL redirect** in `_redirects` — blog articles link to `/blog.html` but canonical is `/blog`. Ensure no 404 edge case for the blog index.
+### Priority 3 — Fix Calendar Notice Bar Duplicate Phone
+Remove the second `| 407-305-8335 |` instance from `calendar.html` notice bar — simple one-line fix.
 
-### Priority 4 — Empire Growth
-11. **Verify CityOne social handles** — confirm the Facebook, Instagram, Twitter/X, and YouTube accounts linked in the footer are active and claimed before driving traffic.
-12. **USS Academy: upload videos to YouTube** — 32 training videos are in the repo at 2.7GB+ and are not yet embedded. Create a USS Academy YouTube channel, upload, and update `gallery.html` with real `<iframe>` embeds.
-13. **USS Academy: set class schedule dates** — once Josh provides dates, restore Event schema to `index.html` to unlock Event rich results in Google Search Console.
+### Priority 4 — Canonicalize `share.html`
+Change `<link rel="canonical" href="https://www.ussacademy.org/share">` to `https://www.ussacademy.org/share.html` to match all other pages, OR add a redirect in `_redirects`.
+
+### Priority 5 — USS Academy Blog Content
+`blog.html` exists at 119KB — verify it contains real published posts and is not a shell. If blog posts are present, add `BlogPosting` JSON-LD schema to each.
+
+### Priority 6 — Google Reviews API Key Audit
+The Google Reviews feed on the homepage fetches live data from Places API. Confirm the API key has domain restrictions set in Google Cloud Console to prevent unauthorized usage.
+
+### Priority 7 — CityOne Sitemap & Robots
+Create `sitemap.xml` and `robots.txt` for CityOne. Even a single-page site benefits from sitemap submission to Google Search Console.
+
+### Priority 8 — Performance: USS Academy `index.html`
+At 339KB, `index.html` is large. Consider:
+- Moving schedule card data to an external JSON (loaded async)
+- Lazy-loading images below the fold
+- This is medium-term, not urgent
 
 ---
 
-*POLY — Chief of Staff, MFS Empire*  
-*Report generated: 2026-04-06*  
-*Next report: 2026-04-13*
+## COMMIT STATISTICS
+
+| Metric | USS Academy | CityOne | Total |
+|--------|-------------|---------|-------|
+| Commits (7 days) | 67 | 15 | **82** |
+| New files created | ~3 (calendar, 404, _headers) | ~1 (admin.html) | ~4 |
+| Files modified | 37+ | 2 | **39+** |
+| Estimated lines added | ~7,000+ | ~1,200+ | **~8,200+** |
+| Estimated lines removed | ~1,800+ | ~200+ | **~2,000+** |
+| SEO tags added to pages | 30 (Twitter Cards) | 0 | 30 |
+| Booking integrations | 28+ buttons wired | 3 forms wired | 31 |
+
+---
+
+## EMPIRE HEALTH SCORECARD
+
+| Property | SEO | Content | Booking/Conversion | Mobile | Security |
+|----------|-----|---------|-------------------|--------|----------|
+| USS Academy | A | A | A | A | B+ |
+| CityOne | D | B+ | A | B+ | C |
+
+**Overall Empire Grade: B+** — USS Academy is firing on all cylinders. CityOne needs its SEO foundation installed before its email automation gains traction.
+
+---
+
+*Report generated by POLY, Chief of Staff — MFS Empire*
+*Next report: 2026-04-27*
