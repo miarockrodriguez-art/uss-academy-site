@@ -5,7 +5,7 @@
 name: USS Academy
 type: Firearms Training School
 location: Winter Garden / Orlando, Florida
-class_location: Triple N Ranch, 595 Donovan Crews Rd, St Cloud, FL
+class_location: classes held at partner ranges across Central Florida including Saint Cloud FL
 phone: 321-878-8089
 email: support@ussacademy.org
 website: https://www.ussacademy.org
