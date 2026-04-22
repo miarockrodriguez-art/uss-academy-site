@@ -4,3 +4,6 @@
 /range-waiver /waiver-range.html 200
 /privacy-policy /privacy.html 301
 /terms-of-service /terms.html 301
+
+# External/indexed legacy path → closest current page
+/our-services / 301
