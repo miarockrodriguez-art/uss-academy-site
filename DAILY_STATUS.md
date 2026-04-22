@@ -1,48 +1,51 @@
-# POLY Daily Status — 2026-04-21
+# POLY Daily Status — 2026-04-22
 
 ---
 
 ## USS Academy Site
 
-**Status: CLEAN**
+**Status: VERY ACTIVE — 4 commits today**
 
-- `index.html` present and valid (339 KB) — title: *Firearm Training Classes in Central Florida | USS Academy*
-- All 23 referenced images confirmed present in `/images/`
-- All linked HTML pages confirmed present (waivers, blog, calendar, gallery, espanol, kreyol, portugues, compete, etc.)
+- `index.html` present and valid (3,531 lines) — DOCTYPE ✓, head/body ✓, GTM ✓, OG tags ✓, Twitter card ✓, canonical ✓
+- All 43 local file refs confirmed present (18 HTML pages + 23 images + `/images/` dir)
 - No open issues
 - No open PRs
-- Last code commit: **2026-04-18** — Exit intent popup restyled to USS Academy brand (shield logo, navy/gold, clipped corner button)
-- No broken links detected
+
+### Today's Commits (2026-04-22)
+1. **OG + Twitter normalization** — `og:image`, `og:title`, `og:description`, Twitter summary_large_image locked across all 65 pages; 339 tags inserted. Link previews now render the brand card on every page.
+2. **Sitemap regenerated** — all 65 live pages, proper priorities (homepage 1.0 / pillars 0.9 / keyword pages 0.85 / blog 0.6 / legal 0.3), calendar changefreq=daily, all lastmod 2026-04-22.
+3. **Playwright issues fixed** — CSP `connect-src` expanded for analytics/Places API endpoints; `Permissions-Policy` geolocation corrected; H1 `<br>` replaced with `display:block` spans; Google Reviews fetch migrated from broken corsproxy.io to Places API (New) v1; preview images given transparent 1×1 data-URI src to pass Playwright broken-image check.
+4. **GTM installed sitewide** — `GTM-MK5V8TWB` head snippet + noscript iframe on 58/59 HTML files (GSC verification file intentionally skipped).
 
 ---
 
 ## CityOne Transportation Site
 
-**Status: ACTIVE — 1 PR NEEDS DECISION**
+**Status: ACTIVE — 1 PR STILL NEEDS DECISION**
 
-- `index.html` present and valid (321 KB) — title: *Cityone Transportation — The Blend*
+- `index.html` present and valid (1,893 lines) — DOCTYPE ✓, head/body ✓, OG tags ✓, Twitter card ✓, canonical ✓
 - `admin.html` present
-- No local file dependencies — all styles/assets inline or CDN; no broken links possible
+- `og-image.jpg` present (1200×630 brand card, added today)
+- No local file dependencies — all styles/scripts inline or CDN; no broken links possible
 - No open issues
+- **GTM: NOT INSTALLED** — no GTM tag on this site
 
-### Open PR — Action Required
+### Today's Commit (2026-04-22)
+1. **OG + Twitter Card added** — full Open Graph and Twitter summary_large_image tags added to `index.html`; brand OG card (`og-image.jpg`, forest green/gold, 1200×630) committed to repo root. Texts-and-shares now show a professional preview instead of a blank card.
+
+### Open PR — Action Required (27 days old)
 | # | Title | Author | Age |
 |---|-------|--------|-----|
-| 1 | Add Cloudflare Workers configuration | cloudflare-workers-and-pages[bot] | 26 days (opened 2026-03-26) |
+| 1 | Add Cloudflare Workers configuration | cloudflare-workers-and-pages[bot] | 27 days (opened 2026-03-26) |
 
-> Bot-generated PR to add `wrangler.jsonc` for Cloudflare Workers deployment. Detected framework: `static`. Has a live preview build. **Merge or close — it has sat unreviewed for 26 days.**
-
-### Recent Commits (2026-04-20)
-1. Add Port Canaveral to Hotels pricing section (10 fields), both toggles confirmed
-2. Update admin: new password, pricing editor, removed $100 fee, added service disclaimer
-3. Add admin panel — announcement ticker + emergency banner, wired to main site
-4. Replace EmailJS Service ID → `service_hexohos` (Microsoft 365 / bookmyride@cityonetransportation.com)
+> Bot-generated PR to add `wrangler.jsonc`; detected framework: `static`. Has a live preview build. **Merge or close — still unreviewed.**
 
 ---
 
 ## Action Items
 
-- [ ] **CityOne — PR #1**: Decide on Cloudflare Workers autoconfig PR (merge or close)
+- [ ] **CityOne — PR #1**: Decide on Cloudflare Workers autoconfig PR (merge or close) — now 27 days old
+- [ ] **CityOne — GTM**: No Google Tag Manager on CityOne. Install if analytics tracking is wanted.
 
 ---
 
