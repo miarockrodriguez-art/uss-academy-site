@@ -66,6 +66,7 @@
 
 
 
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -433,17 +434,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .page-hero h1{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(2rem,5vw,3rem);color:var(--white);letter-spacing:1.5px;line-height:1.3;margin-bottom:14px;}
 .page-hero h1 span{color:var(--gold);}
 .page-hero p{max-width:720px;margin:0 auto;font-size:15px;font-weight:300;color:#b8bcc8;line-height:1.75;}
-/* Blog post prose overrides — SCOPED to .container only so they can't hijack
-   the notice-bar p, credibility-bar, or any other chrome element. */
-.blog-post-body{font-family:'Barlow',sans-serif;}
+/* Blog post prose — EXACT homepage typography, scoped to .container so nothing
+   leaks into the chrome. Values below mirror the index.html style block:
+     base body:       font-family:'Barlow',sans-serif; color:var(--white)
+     h1 (line 98):    Cinzel 900, clamp(34px,4.5vw,60px), line-height 1.05, --white
+     h2 (line 123):   Cinzel 700, clamp(26px,3.2vw,42px), line-height 1.15, --white
+     body prose:      matches .section-desc (line 125) - 16px, 300, line-height 1.8, --silver */
+.blog-post-body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);}
 .blog-post-body .container{max-width:800px;margin:0 auto;padding:40px 32px 48px;}
-.blog-post-body .container h1{font-family:'Cinzel',serif;font-weight:900;color:var(--gold);font-size:clamp(28px,4vw,44px);line-height:1.2;margin-bottom:16px;}
-.blog-post-body .container h2{font-family:'Cinzel',serif;font-weight:700;color:var(--white);font-size:22px;margin:36px 0 14px;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:10px;}
-.blog-post-body .container h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--gold);letter-spacing:.05em;margin:24px 0 10px;}
-.blog-post-body .container p,.blog-post-body .container li{font-family:'Barlow',sans-serif;font-size:16px;font-weight:400;color:var(--off-white);line-height:1.75;margin-bottom:14px;}
-.blog-post-body .container strong{color:var(--white);}
+.blog-post-body .container h1{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(34px,4.5vw,60px);line-height:1.05;color:var(--white);margin-bottom:16px;}
+.blog-post-body .container h2{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(26px,3.2vw,42px);line-height:1.15;color:var(--white);margin:40px 0 16px;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:12px;}
+.blog-post-body .container h3{font-family:'Cinzel',serif;font-weight:600;font-size:clamp(20px,2.2vw,28px);line-height:1.3;color:var(--gold);margin:28px 0 12px;}
+.blog-post-body .container p,.blog-post-body .container li{font-family:'Barlow',sans-serif;font-size:16px;font-weight:300;line-height:1.8;color:var(--silver);margin-bottom:14px;}
+.blog-post-body .container strong{color:var(--white);font-weight:600;}
 .blog-post-body .container a{color:var(--gold);text-decoration:none;}
 .blog-post-body .container a:hover{text-decoration:underline;}
+.blog-post-body .container ul,.blog-post-body .container ol{padding-left:22px;margin-bottom:16px;}
 .blog-post-body .container .cta-box{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:28px;margin:32px 0;text-align:center;}
 .blog-post-body .container .cta-btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:14px 36px;text-decoration:none;border:2px solid var(--gold-light);box-shadow:0 0 12px rgba(201,168,76,.35);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
 .blog-post-body .container .cta-btn:hover{background:var(--gold-light);}
@@ -701,6 +707,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </div>
 <!-- /KEYWORD-HUB-FOOTER -->
+
 
 
 
