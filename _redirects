@@ -50,7 +50,10 @@
 /photos                     /gallery                               301
 /events                     /calendar                              301
 
-# ── Catch-all for any remaining legacy Wix/2022 paths not otherwise mapped ──
-# Placed LAST so specific rules above always win.
-# Cloudflare Pages only serves this when no static asset matches the path.
-/*                          /                                      301
+# ── Catch-all REMOVED 2026-04-22 ──
+# A previous /* -> / splat was added on the assumption that Cloudflare Pages
+# only consults _redirects when no static asset matches. In this deployment
+# that is NOT the case: the splat was intercepting every .html request
+# site-wide and 301-looping to the homepage. All pages were returning 301.
+# Do not re-add /* as a catch-all here. If specific legacy URLs surface in
+# GSC, add each one explicitly above.
