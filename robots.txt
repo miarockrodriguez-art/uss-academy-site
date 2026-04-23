@@ -11,4 +11,4 @@ Disallow: /*?gclid=*
 Disallow: /*?mc_cid=*
 Disallow: /*?mc_eid=*
 
-Sitemap: https://ussacademy.org/sitemap.xml
+Sitemap: https://www.ussacademy.org/sitemap.xml
