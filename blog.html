@@ -395,7 +395,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .page-hero p{max-width:720px;margin:0 auto;font-size:15px;font-weight:300;color:#b8bcc8;line-height:1.75;}
 /* Blog post body overrides to match homepage typography */
 .blog-post-body{font-family:'Barlow',sans-serif;}
-.blog-post-body .container{max-width:800px;margin:0 auto;padding:120px 32px 48px;}
+.blog-post-body .container{max-width:800px;margin:0 auto;padding:40px 32px 48px;}
 .blog-post-body h1{font-family:'Cinzel',serif;font-weight:900;color:var(--gold);font-size:clamp(28px,4vw,44px);line-height:1.2;margin-bottom:16px;}
 .blog-post-body h2{font-family:'Cinzel',serif;font-weight:700;color:var(--white);font-size:22px;margin:36px 0 14px;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:10px;}
 .blog-post-body h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--gold);letter-spacing:.05em;margin:24px 0 10px;}
@@ -455,12 +455,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <li><a href="/#apply">Apply</a></li>
     <li><a href="/#contact">Contact</a></li>
     <li><a href="/blog.html">Blog</a></li>
-    <li><a href="/#schedule" class="nav-cta">Book Now</a></li>
   </ul>
   <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ MENU</button>
 </nav>
+<div class="notice-bar" role="alert" aria-label="Important class location notice">
+  <p>⚠ Classes held ONLINE &amp; at PARTNER RANGES — NOT at corporate office. Contact us to confirm your class location. &nbsp;|&nbsp; <a href="tel:4073058335" style="text-decoration:none;" aria-label="Call USS Academy at 407-305-8335">407-305-8335</a> &nbsp;|&nbsp; <a href="tel:3218788089" style="text-decoration:none;" aria-label="Text USS Academy at 321-878-8089">Text: 321-878-8089</a> &nbsp;|&nbsp; <a href="mailto:support@ussacademy.org" style="text-decoration:none;">support@ussacademy.org</a></p>
+</div>
 
-<div style="height:120px"></div>
+<!-- Spacer to clear fixed nav (80px) + fixed notice-bar (~40px) + breathing room -->
+<div style="height:160px"></div>
 
 <div class="page-hero">
   <div class="label">USS Academy Blog</div>
@@ -550,5 +553,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <p style="font-size:12px;color:var(--silver);opacity:.7;line-height:1.6;margin-bottom:6px;"><a href="/" style="color:var(--gold);text-decoration:none;">← Back to USS Academy</a> &nbsp;|&nbsp; <a href="tel:4073058335" style="color:var(--gold);text-decoration:none;">407-305-8335</a> &nbsp;|&nbsp; <a href="mailto:support@ussacademy.org" style="color:var(--gold);text-decoration:none;">support@ussacademy.org</a></p>
   <p style="font-size:11px;color:var(--silver);opacity:.6;line-height:1.6;">&copy; 2026 USS Academy LLC. NRA · USCCA · FL K License · Law Enforcement Firearms Instructor Certified.</p>
 </footer>
+
+<style>
+.sticky-book-btn{position:fixed;bottom:24px;right:24px;z-index:998;display:inline-flex;align-items:center;background:#C9A84C;color:#FFFFFF;padding:16px 28px;font-family:'Barlow Condensed','Inter',sans-serif;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;box-shadow:0 4px 16px rgba(201,168,76,0.35);animation:pulse-glow 3s ease-in-out infinite;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.sticky-book-btn:hover{background:#e8c96a;box-shadow:0 6px 24px rgba(201,168,76,0.5);animation:none}
+@media(max-width:768px){.sticky-book-btn{bottom:18px;right:18px;padding:14px 22px;font-size:13px}}
+</style>
+<a href="/#schedule" class="sticky-book-btn">Book Now</a>
 </body>
 </html>
