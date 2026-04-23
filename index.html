@@ -503,6 +503,91 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK5V8TWB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<!-- ═══ BLOG CARD GRID (homepage — 6 most recent) ═══ -->
+<section style="background:#0a1628;padding:80px 4%;position:relative;z-index:1;" id="homepage-blog">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:36px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;">USS Academy Blog</div>
+      <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,2.4rem);color:#f0f0eb;letter-spacing:1px;margin-bottom:12px;">Latest Articles &amp; <span style="color:#c9a84c;">Florida Firearms Guides</span></h2>
+      <p style="font-family:'Barlow',sans-serif;font-size:15px;font-weight:300;color:#b8bcc8;max-width:640px;margin:0 auto;line-height:1.65;">Expert-authored guides on Florida firearms law, concealed carry, training paths, and student journeys — written by the instructors who actually teach the classes.</p>
+    </div>
+    <style>
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:40px 0}
+.blog-card{display:flex;flex-direction:column;background:#0a1628;border:1px solid rgba(201,168,76,.25);text-decoration:none;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;overflow:hidden}
+.blog-card:hover{transform:translateY(-4px);border-color:#c9a84c;box-shadow:0 12px 32px rgba(0,0,0,.5),0 0 20px rgba(201,168,76,.15)}
+.blog-card-image{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;background-color:#112240;border-bottom:1px solid rgba(201,168,76,.2)}
+.blog-card-body{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1}
+.blog-card-date{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#c9a84c;margin-bottom:10px}
+.blog-card-title{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#c9a84c;line-height:1.35;margin-bottom:12px;min-height:2.7em}
+.blog-card-excerpt{font-family:'Barlow',sans-serif;font-size:14px;font-weight:300;color:#b8bcc8;line-height:1.65;margin-bottom:18px;flex:1}
+.blog-card-btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c9a84c;border-top:1px solid rgba(201,168,76,.2);padding-top:14px;margin-top:auto}
+.blog-card:hover .blog-card-btn{color:#e8c96a}
+@media(max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media(max-width:640px){.blog-grid{grid-template-columns:1fr;gap:18px}.blog-card-title{font-size:16px;min-height:0}}
+</style>
+    <div class="blog-grid">
+      <a href="/blog/florida-concealed-carry-permit" class="blog-card">
+        <div class="blog-card-image" style="background-image:url('/images/uss-academy-ccw-class-orlando-group-20.webp');"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">April 5, 2026</div>
+          <h3 class="blog-card-title">How to Get Your Florida Concealed Carry Permit: Step by Step</h3>
+          <p class="blog-card-excerpt">Full 2026 walkthrough of the Florida Concealed Weapons Permit process — eligibility, training requirements, live-fire qualification, FDACS application, and issued-license timeline.</p>
+          <span class="blog-card-btn">Read Article →</span>
+        </div>
+      </a>
+      <a href="/blog/florida-stand-your-ground-law" class="blog-card">
+        <div class="blog-card-image" style="background-image:url('/images/instructor-gesturing-class.jpg');"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">April 3, 2026</div>
+          <h3 class="blog-card-title">Florida Stand Your Ground Law Explained: Your 2026 Guide</h3>
+          <p class="blog-card-excerpt">Plain-English walkthrough of Florida Statute 776, justifiable use of force, Castle Doctrine, and how the law applies to real self-defense scenarios in Florida.</p>
+          <span class="blog-card-btn">Read Article →</span>
+        </div>
+      </a>
+      <a href="/blog/florida-firearms-safety-course" class="blog-card">
+        <div class="blog-card-image" style="background-image:url('/images/uss-academy-firearms-safety-stock.jpg');"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">March 28, 2026</div>
+          <h3 class="blog-card-title">Florida Firearms Safety Course: What to Expect Your First Day</h3>
+          <p class="blog-card-excerpt">Everything a first-time student should know before walking into a Florida firearms safety course — what to bring, how live-fire works, and what certificate you leave with.</p>
+          <span class="blog-card-btn">Read Article →</span>
+        </div>
+      </a>
+      <a href="/blog/women-firearms-ccw-florida" class="blog-card">
+        <div class="blog-card-image" style="background-image:url('/images/female-shooter-rifle-bw.jpg');"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">March 24, 2026</div>
+          <h3 class="blog-card-title">Women's Firearms Training in Florida: A Confidence-First Guide</h3>
+          <p class="blog-card-excerpt">Why more Florida women are training with firearms in 2026 — program options, women-only class environments, instructor credentials, and what the Ladies Arsenal program covers.</p>
+          <span class="blog-card-btn">Read Article →</span>
+        </div>
+      </a>
+      <a href="/blog/armed-vs-unarmed-firearms-course" class="blog-card">
+        <div class="blog-card-image" style="background-image:url('/images/uss-academy-training-session-01.webp');"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">March 20, 2026</div>
+          <h3 class="blog-card-title">Armed vs Unarmed Firearms Course: Which Is Right for You?</h3>
+          <p class="blog-card-excerpt">The real-world difference between armed-track and unarmed-track firearms training, which students benefit from each, and how to pick the path that fits your goals.</p>
+          <span class="blog-card-btn">Read Article →</span>
+        </div>
+      </a>
+      <a href="/blog/beginner-to-confident-firearms-journey" class="blog-card">
+        <div class="blog-card-image" style="background-image:url('/images/uss-academy-ccw-class-orlando-group-25.webp');"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">March 15, 2026</div>
+          <h3 class="blog-card-title">From Beginner to Confident: The Firearms Training Journey</h3>
+          <p class="blog-card-excerpt">USS Academy's full training pathway from first-time shooter through advanced tactical and night vision — what to expect at each tier and how long most students take.</p>
+          <span class="blog-card-btn">Read Article →</span>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="/blog.html" style="display:inline-block;padding:15px 40px;background:linear-gradient(90deg,#c9a84c,#e8c96a,#c9a84c);color:#0a1628;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));transition:filter .2s;" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'">View All Posts →</a>
+    </div>
+  </div>
+</section>
+<!-- ═══ /BLOG CARD GRID ═══ -->
+
 <!-- EST-2008-BAND -->
 <div style="background:rgba(201,168,76,.08);border-top:1px solid rgba(201,168,76,.25);border-bottom:1px solid rgba(201,168,76,.25);padding:12px 20px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#c9a84c;">Central Florida's Original Firearms Academy — Est. 2008</div>
 <!-- /EST-2008-BAND -->
