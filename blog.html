@@ -410,8 +410,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .blog-post-body hr{border:none;border-top:1px solid rgba(201,168,76,.15);margin:32px 0;}
 </style>
 
+<style>
+.blog-index .notice-bar,
+.blog-post-body .notice-bar { position: static !important; top: auto !important; left: auto !important; right: auto !important; z-index: auto !important; }
+</style>
 </head>
-<body>
+<body class="blog-index">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK5V8TWB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav role="navigation" aria-label="Main navigation" id="mainNav">
@@ -462,7 +466,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <div style="height:80px"></div>
 
 <!-- Order: notice bar -> credibility bar -> Book Now bar -> content (all static, all visible) -->
-<div class="notice-bar" role="alert" aria-label="Important class location notice" style="position:static;top:auto;left:auto;right:auto;">
+<div class="notice-bar" role="alert" aria-label="Important class location notice">
   <p>⚠ Classes held ONLINE &amp; at PARTNER RANGES — NOT at corporate office. Contact us to confirm your class location. &nbsp;|&nbsp; <a href="tel:4073058335" style="text-decoration:none;" aria-label="Call USS Academy at 407-305-8335">407-305-8335</a> &nbsp;|&nbsp; <a href="tel:3218788089" style="text-decoration:none;" aria-label="Text USS Academy at 321-878-8089">Text: 321-878-8089</a> &nbsp;|&nbsp; <a href="mailto:support@ussacademy.org" style="text-decoration:none;">support@ussacademy.org</a></p>
 </div>
 <div class="credibility-bar">Join 29,000+ Students Nationwide Trained by USS Academy &nbsp;·&nbsp; 4.9 ⭐ Google Rated &nbsp;·&nbsp; 747 Reviews &nbsp;·&nbsp; 17+ Years of Excellence</div>

@@ -62,6 +62,7 @@
 
 
 
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -446,6 +447,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .blog-post-body hr{border:none;border-top:1px solid rgba(201,168,76,.15);margin:32px 0;}
 </style>
 
+<style>
+.blog-index .notice-bar,
+.blog-post-body .notice-bar { position: static !important; top: auto !important; left: auto !important; right: auto !important; z-index: auto !important; }
+</style>
 </head>
 <body class="blog-post-body">
 <!-- NEW — Blog post hero top block -->
@@ -493,12 +498,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰ MENU</button>
 </nav>
 <div style="height:80px"></div>
-<div class="notice-bar" role="alert" aria-label="Important class location notice" style="position:static;top:auto;left:auto;right:auto;">
+<div class="notice-bar" role="alert" aria-label="Important class location notice">
   <p>⚠ Classes held ONLINE &amp; at PARTNER RANGES — NOT at corporate office. Contact us to confirm your class location. &nbsp;|&nbsp; <a href="tel:4073058335" style="text-decoration:none;" aria-label="Call USS Academy at 407-305-8335">407-305-8335</a> &nbsp;|&nbsp; <a href="tel:3218788089" style="text-decoration:none;" aria-label="Text USS Academy at 321-878-8089">Text: 321-878-8089</a> &nbsp;|&nbsp; <a href="mailto:support@ussacademy.org" style="text-decoration:none;">support@ussacademy.org</a></p>
 </div>
 <div class="credibility-bar">Join 29,000+ Students Nationwide Trained by USS Academy &nbsp;·&nbsp; 4.9 ⭐ Google Rated &nbsp;·&nbsp; 747 Reviews &nbsp;·&nbsp; 17+ Years of Excellence</div>
 <a href="/#schedule" class="book-now-bar" style="display:block;width:100%;padding:10px 48px;background:#c9a84c;color:#0a1628;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;text-align:center;border-bottom:1px solid rgba(201,168,76,.5);transition:background .2s;" onmouseover="this.style.background='#e8c96a'" onmouseout="this.style.background='#c9a84c'">Book Your Class Now</a>
 <!-- / NEW top block -->
+
 
 
 
@@ -758,6 +764,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 
 
+
+
 <!-- NEW — Blog post bottom block -->
 <section style="background:var(--navy);padding:40px 4% 60px;">
   <div style="max-width:900px;margin:0 auto;text-align:center;padding:40px 28px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.3);">
@@ -815,15 +823,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <p style="font-size:11px;color:var(--silver);opacity:.6;line-height:1.6;">&copy; 2026 USS Academy LLC. NRA · USCCA · FL K License · Law Enforcement Firearms Instructor Certified.</p>
 </footer>
 <!-- / NEW bottom block -->
-<style>
-@keyframes pulse-glow{0%,100%{box-shadow:0 4px 16px rgba(201,168,76,0.3)}50%{box-shadow:0 4px 24px rgba(201,168,76,0.6),0 0 40px rgba(201,168,76,0.15)}}
-.sticky-call-btn{position:fixed;top:120px;right:0;z-index:998;display:flex;flex-direction:row;align-items:center;gap:0;background:#C9A84C;color:#FFFFFF;padding:18px 32px;font-family:'Barlow Condensed','Inter',sans-serif;text-decoration:none;border-radius:0;box-shadow:0 4px 16px rgba(201,168,76,0.3);text-align:center;animation:pulse-glow 3s ease-in-out infinite;clip-path:polygon(0 0,100% 0,100% 100%,10px 100%,0 calc(100% - 10px))}
-.sticky-call-btn:hover{background:#e8c96a;box-shadow:0 6px 24px rgba(201,168,76,0.5);animation:none}
-.sticky-call-btn .call-line1{font-size:17px;font-weight:700;line-height:1.2;letter-spacing:.05em;color:#FFFFFF}
-.sticky-call-btn .call-sep{margin:0 8px;opacity:0.6;color:#FFFFFF}
-.sticky-call-btn .call-line2{font-size:15px;font-weight:700;line-height:1.2;color:#FFFFFF}
-@media(max-width:768px){.sticky-call-btn{top:115px;right:0;padding:14px 24px}.sticky-call-btn .call-line1{font-size:15px}.sticky-call-btn .call-line2{font-size:13px}}
-</style>
-<a href="tel:14073058335" class="sticky-call-btn"><span class="call-line1">Call Now</span><span class="call-sep">|</span><span class="call-line2">1-407-305-8335</span></a>
 </body>
 </html>
