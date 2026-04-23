@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.ussacademy.org/sitemap.xml
-# deploy trigger
+
+# Ignore tracking-parameter variants — canonical URL is the clean path
+Disallow: /*?ref=*
+Disallow: /*?utm_source=*
+Disallow: /*?utm_medium=*
+Disallow: /*?utm_campaign=*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?mc_cid=*
+Disallow: /*?mc_eid=*
+
+Sitemap: https://ussacademy.org/sitemap.xml
