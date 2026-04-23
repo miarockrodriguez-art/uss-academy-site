@@ -1,9 +1,56 @@
-/tos /terms.html 200
-/class-registration /waiver-class-registration.html 200
-/exam-registration /waiver-exam-registration.html 200
-/range-waiver /waiver-range.html 200
-/privacy-policy /privacy.html 301
-/terms-of-service /terms.html 301
+# ─────────────────────────────────────────────────────────────
+# USS Academy — Cloudflare Pages _redirects
+#
+# Order matters: Cloudflare evaluates top to bottom and returns on first
+# match. Specific rules MUST come above the catch-all splat at the end.
+# Cloudflare Pages also only falls through to _redirects when no static
+# file or asset matches — so legitimate .html pages are never hijacked.
+# ─────────────────────────────────────────────────────────────
 
-# External/indexed legacy path → closest current page
-/our-services / 301
+# ── Existing 200 rewrites (keep clean URL at user-facing path) ──
+/tos                        /terms.html                            200
+/class-registration         /waiver-class-registration.html        200
+/exam-registration          /waiver-exam-registration.html         200
+/range-waiver               /waiver-range.html                     200
+
+# ── Existing 301 canonicals ──
+/privacy-policy             /privacy.html                          301
+/terms-of-service           /terms.html                            301
+/our-services               /                                      301
+
+# ── Legacy Wix / old-site URL recovery (Apr 2026 — GSC showed 24 404s dating to 2022) ──
+/cwp                        /cwp-class-orlando                     301
+/cwp/                       /cwp-class-orlando                     301
+/cwp-class                  /cwp-class-orlando                     301
+/ccw                        /concealed-carry-class-orlando         301
+/ccw-class                  /concealed-carry-class-orlando         301
+/concealed-carry            /concealed-carry-class-orlando         301
+/concealed-weapons-permit   /cwp-class-orlando                     301
+
+/classes                    /#schedule                             301
+/class                      /#schedule                             301
+/schedule                   /#schedule                             301
+/register                   /#schedule                             301
+/registration               /#schedule                             301
+/book                       /#schedule                             301
+/booking                    /calendar                              301
+
+/contact                    /#contact                              301
+/contact-us                 /#contact                              301
+/get-in-touch               /#contact                              301
+
+/about                      /#about                                301
+/about-us                   /#about                                301
+/who-we-are                 /#about                                301
+
+/instructors                /#programs                             301
+/staff                      /#programs                             301
+/team                       /#programs                             301
+
+/photos                     /gallery                               301
+/events                     /calendar                              301
+
+# ── Catch-all for any remaining legacy Wix/2022 paths not otherwise mapped ──
+# Placed LAST so specific rules above always win.
+# Cloudflare Pages only serves this when no static asset matches the path.
+/*                          /                                      301
